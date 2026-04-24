@@ -199,8 +199,8 @@ html[data-theme="dark"] .border-bottom {
 /* Móvil/tablet: CTA + hamburguesa no deben ocupar el 100% del ancho (rompe alineación) */
 @media (max-width: 992px) {
   :root {
-    /* Altura aprox. de la fila logo + hamburguesa; el desplegable empieza debajo (no tapa el logo) */
-    --itcs-mobile-header-bar: 4.75rem;
+    /* Fila: logo + CTA; si es bajo, subir solo este valor. */
+    --itcs-mobile-header-bar: 6.75rem;
   }
   #wrapper {
     overflow-x: hidden;
@@ -253,15 +253,16 @@ html[data-theme="dark"] .border-bottom {
   header.header-mobile.menu-open #mainmenu,
   header.header-mobile.menu-open .header-col-mid #mainmenu {
     position: fixed !important;
-    top: var(--itcs-mobile-header-bar) !important;
+    /* = safe-area + franja (header con padding-top safe y .de-flex con min-height) */
+    top: calc(env(safe-area-inset-top, 0px) + var(--itcs-mobile-header-bar)) !important;
     left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
-    min-height: calc(100vh - var(--itcs-mobile-header-bar)) !important;
-    min-height: calc(100dvh - var(--itcs-mobile-header-bar)) !important;
+    min-height: calc(100vh - env(safe-area-inset-top, 0px) - var(--itcs-mobile-header-bar)) !important;
+    min-height: calc(100dvh - env(safe-area-inset-top, 0px) - var(--itcs-mobile-header-bar)) !important;
     max-height: none !important;
     margin: 0 !important;
     padding: 0.5rem 1.15rem 1.5rem !important;
@@ -270,7 +271,8 @@ html[data-theme="dark"] .border-bottom {
     -webkit-overflow-scrolling: touch;
     visibility: visible !important;
     pointer-events: auto !important;
-    z-index: 10050 !important;
+    /* Debajo de las columnas logo / CTA (esas llevan z-index mayor) */
+    z-index: 1 !important;
     background: rgba(10, 12, 20, 0.97) !important;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   }
@@ -284,21 +286,30 @@ html[data-theme="dark"] .border-bottom {
     align-items: center;
     justify-content: center;
   }
+  /* Altura mínima = franja de marca; laterales por encima del panel (z-index) */
   header.header-mobile.menu-open .de-flex {
     position: relative;
-    z-index: 10060 !important;
-    padding-bottom: 0.25rem;
+    z-index: 2 !important;
+    isolation: isolate;
+    min-height: var(--itcs-mobile-header-bar);
+    padding-bottom: 0.35rem;
+  }
+  header.header-mobile.menu-open .de-flex > .de-flex-col:not(.header-col-mid) {
+    position: relative;
+    z-index: 3 !important;
+  }
+  header.header-mobile.menu-open .header-col-mid {
+    z-index: 0 !important;
   }
   header.header-mobile.menu-open #menu-btn,
   header.header-mobile .menu_side_area,
   header.header-mobile.menu-open .de-flex > .de-flex-col:first-child {
     position: relative;
-    z-index: 1;
   }
   header.header-mobile .header-col-mid {
     min-height: 0;
   }
-  /* Fila superior (logo, CTA, hamburguesa) por encima del panel; franja sólida para no ver el scroll detrás */
+  /* Fila superior: safe-area + sólida detrás de logo/CTA */
   header.header-mobile.menu-open {
     position: fixed !important;
     top: 0 !important;
@@ -308,11 +319,12 @@ html[data-theme="dark"] .border-bottom {
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
+    padding-top: env(safe-area-inset-top, 0);
     z-index: 10055;
     background: linear-gradient(
       180deg,
-      rgba(10, 12, 20, 0.98) 0%,
-      rgba(10, 12, 20, 0.92) 100%
+      rgba(10, 12, 20, 0.99) 0%,
+      rgba(10, 12, 20, 0.94) 100%
     ) !important;
     overflow: visible !important; /* el template pone overflow:hidden; puede recortar el panel fijo */
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
