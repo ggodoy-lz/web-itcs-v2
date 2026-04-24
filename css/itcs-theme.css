@@ -599,6 +599,10 @@ html:not([data-theme="dark"]) .itcs-team-stat-box .itcs-team-stat-num {
  * además .itcs-service-card p tenía flex:1 1 auto y el recuadro recortaba el texto en móvil/tablet.
  */
 @media (max-width: 991.98px) {
+  /* En móvil/tablet no mostrar el párrafo descriptivo (solo título, icono y CTA) */
+  .itcs-service-card > .relative.z-2 > p {
+    display: none !important;
+  }
   .col-lg-4.col-md-6.d-flex {
     align-items: flex-start !important;
     min-width: 0; /* columna flex puede impedir el wrap sin esto */
