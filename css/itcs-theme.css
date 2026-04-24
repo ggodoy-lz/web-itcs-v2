@@ -11,8 +11,6 @@
   --itcs-c-electric: #2315f7;
   --itcs-c-green: #108400;
   --itcs-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  /* Tamaño logo cabecera (el * { --logo-width } de style.css pisa a :root en cada elemento) */
-  --itcs-header-logo-max: 30px;
 }
 
 /* Modo claro: acentos alineados a marca */
@@ -170,18 +168,26 @@ html[data-theme="dark"] .border-bottom {
   scroll-margin-top: 120px;
 }
 
-/* Logo iTCS en cabecera: siempre versión blanca (única marca en todo el sitio) */
+/* Logo iTCS en cabecera: mismo criterio que web-itcs-v3 (globals .itcs-logo__img / .site-theme-logo__img) */
 /*
- * style.css define --logo-width en * { } (todos los elementos, p. ej. 240px), no en :root solamente.
- * Eso gana a :root para cada <img>, así que hacía falta fijar aquí a mayor especificidad.
+ * style.css define --logo-width en * { } (cada <img>); hay que fijar aquí con mayor especificidad.
  */
 #logo img,
 #logo a img {
-  --logo-width: var(--itcs-header-logo-max);
-  max-width: var(--itcs-header-logo-max) !important;
+  --logo-width: min(220px, 42vw);
   width: auto !important;
+  max-width: min(220px, 42vw) !important;
   height: auto !important;
+  max-height: 44px !important;
+  object-fit: contain !important;
+  vertical-align: middle;
   box-sizing: border-box;
+}
+@media (min-width: 992px) {
+  #logo img,
+  #logo a img {
+    max-height: 50px !important;
+  }
 }
 #logo .itcs-logo-header-c {
   display: none !important;
@@ -197,9 +203,6 @@ html[data-theme="dark"] .border-bottom {
   }
   #logo .logo-mobile {
     display: block !important;
-    max-width: var(--itcs-header-logo-max) !important;
-    width: auto;
-    height: auto;
   }
 }
 @media (min-width: 993px) {
