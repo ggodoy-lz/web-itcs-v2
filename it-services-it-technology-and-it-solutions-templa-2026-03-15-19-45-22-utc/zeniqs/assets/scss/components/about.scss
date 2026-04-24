@@ -1,0 +1,42 @@
+/* ///////////////////////////////////////////////////////////
+21. about
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.zq_inner_about {
+    &-img {
+        &.mr-40 {
+            @media #{$xl}{
+                margin-right: 20px;
+            }
+            @media #{$lg}{
+                margin-right: 0;
+            }
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+    &-content {
+        &.ml-45 {
+            @media #{$xl}{
+                margin-left: 20px;
+            }
+            @media #{$lg}{
+                margin-left: 10px;
+            }
+            @media #{$md}{
+                margin-left: 0;
+            }
+        }
+        &.mr-80 {
+            @media #{$xl}{
+                margin-right: 40px;
+            }
+            @media #{$lg}{
+                margin-right: 0;
+            }
+        }
+    }
+}

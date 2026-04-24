@@ -1,0 +1,81 @@
+/* ///////////////////////////////////////////////////////////
+04. Hero CSS
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.header-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 9;
+}
+.header-top {
+    background: var(--clr-theme-primary);
+    text-align: center;
+  }
+  .heater-top-text p {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  .heater-top-text p a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    line-height: 1;
+  }
+  .heater-top-text {
+    padding: 10px 0 10px;
+  }
+  .heater-top-text p a i {
+    margin-left: 5px;
+  }
+  .header-bottom {
+    // background: #222222;
+    background: rgba(255, 255, 255, 0.05);
+    height: 70px;
+    display: flex;
+    align-items: center;
+  }
+  .header-menu nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+  }
+  .header-menu ul li a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+  }
+  .header-menu ul li a:hover {
+    color: var(--clr-theme-primary);
+  }
+  .header-action a {
+    padding: 8px 25px;
+    border-radius: 3px;
+    background: var(--clr-theme-primary);
+    color: #fff;
+    font-family: $inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-action {
+    display: flex;
+    justify-content: end;
+  }
+

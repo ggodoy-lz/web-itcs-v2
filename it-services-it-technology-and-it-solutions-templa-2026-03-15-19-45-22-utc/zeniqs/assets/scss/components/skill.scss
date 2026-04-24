@@ -1,0 +1,62 @@
+/* ///////////////////////////////////////////////////////////
+20. skill
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.zq_skill {
+    &-content {
+        &-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: Inter;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            margin-bottom: 27px;
+        }
+        &-progress {
+            margin-bottom: 24px;
+            .progress-title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+                margin-bottom: 10px;
+                p {
+                    color: rgba(255, 255, 255, 0.7);
+                    font-family: $inter;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    margin-bottom: 0;
+                }
+                span {
+                    color: rgba(255, 255, 255, 0.7);
+                    font-family: $inter;
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 24px;
+                    display: block;
+                }
+            }
+            .progress {
+                height: 10px;
+                border-radius: 20px;
+                background-color: #33574F;
+                &-bar {
+                    background-color: var(--clr-theme-primary);
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+.w-80 {
+    width: 80%;
+}
+.w-86 {
+    width: 86%;
+}
+.w-92 {
+    width: 92%;
+}

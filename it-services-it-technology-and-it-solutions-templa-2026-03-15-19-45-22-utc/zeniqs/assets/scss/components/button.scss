@@ -1,0 +1,42 @@
+/* ///////////////////////////////////////////////////////////
+14. button
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+
+.zq_theme-btn {
+    border-radius: 60px;
+    background: var(--clr-theme-primary);
+    color: var(--clr-common-black);
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    height: 55px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 35px;
+    &:hover {
+        background-color: #fff;
+        color: var(--clr-common-black);
+    }
+}
+
+
+.zq_h2_theme-btn {
+    border-radius: 8px;
+    background: var(--clr-theme-primary);
+    color: var(--clr-common-black);
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    height: 55px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 35px;
+    &:hover {
+        background-color: #fff;
+        color: var(--clr-common-black);
+    }
+}

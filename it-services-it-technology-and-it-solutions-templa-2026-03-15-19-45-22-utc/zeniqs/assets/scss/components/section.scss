@@ -1,0 +1,165 @@
+/* ///////////////////////////////////////////////////////////
+04. section
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+/* ///////////////////////////////////////////////////////////
+section CSS 01 Start
+/////////////////////////////////////////////////////////// */ 
+
+.zq_section {
+    &-subtitle {
+        color: var(--clr-theme-primary);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        text-transform: uppercase;
+        display: block;
+        letter-spacing: 2.5px;
+    }
+    &-title {
+        color: var(--clr-body-heading);
+        font-size: 44px;
+        font-weight: 600;
+        line-height: 1.22;
+        letter-spacing: -1.1px;
+        @media #{$lg}{
+            font-size: 38px;
+        }
+        @media #{$md}{
+            br {
+                display: none;
+            }
+        }
+        @media #{$xs}{
+            font-size: 34px;
+        }
+        @media #{$xxs}{
+            font-size: 28px;
+        }
+    }
+    &-text {
+        color: rgba(255, 255, 255, 0.7);
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.77;
+    }
+}
+
+/* ///////////////////////////////////////////////////////////
+section CSS 02 Start
+/////////////////////////////////////////////////////////// */ 
+
+
+.zq_h2_section {
+    &-subtitle {
+        border-radius: 40px;
+        background: var(--clr-common-lightBlack);
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 16px;
+        color: var(--clr-theme-primary);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        text-transform: capitalize;
+        margin-bottom: 18px;
+    }
+    &-title {
+        color: var(--clr-body-heading);
+        font-size: 44px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -1px;
+        @media #{$lg}{
+            font-size: 40px;
+        }
+        @media #{$md}{
+            br {
+                display: none;
+            }
+        }
+        @media #{$xs}{
+            font-size: 34px;
+        }
+        @media #{$xxs}{
+            font-size: 28px;
+        }
+    }
+}
+
+
+/* ///////////////////////////////////////////////////////////
+section CSS 02 Start
+/////////////////////////////////////////////////////////// */ 
+
+.zq_h3_section {
+    &-subtitle {
+        display: inline-flex;
+        align-items: center;
+        color: var(--clr-theme-primary);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        position: relative;
+        z-index: 1;
+        letter-spacing: 2.5px;
+        padding-left: 14px;
+        &::before {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            content: "";
+            width: 6px;
+            height: 6px;
+            background-color: var(--clr-theme-primary);
+            border-radius: 50%;
+        }
+    }
+    &-title {
+        color: var(--clr-body-heading);
+        font-size: 44px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -1px;
+        @media #{$lg}{
+            font-size: 38px;
+        }
+        @media #{$md}{
+            font-size: 36px;
+            br {
+                display: none;
+            }
+        }
+        @media #{$xs}{
+            font-size: 34px;
+        }
+        @media #{$xxs}{
+            font-size: 28px;
+        }
+    }
+    &-text {
+        color: rgba(255, 255, 255, 0.7);
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+    }
+}
+
+// inner section 
+
+.zq_inner_section {
+    .zq_section {
+        &-title {
+            span {
+                color: #8AF135;
+            }
+        }
+    }
+}

@@ -1,0 +1,136 @@
+/* ///////////////////////////////////////////////////////////
+04. Hero CSS
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.swiper-wrapper.roll-slider {
+	transition-timing-function: linear;
+}
+
+// other  
+
+.other {
+    &-area {
+        background: #0F2923;
+    }
+}
+
+
+.other-head-number {
+  text-align: center;
+  font-family: $inter;
+  font-size: 200px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(180deg, #fff 0%, rgba(37, 37, 37, 0.10) 85.52%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: -80px;
+  position: relative;
+  z-index: 1;
+  @media #{$xs}{
+    font-size: 150px;
+    margin-bottom: -50px;
+  }
+  @media #{$xxs}{
+    font-size: 110px;
+    margin-bottom: -30px;
+  }
+}
+  .other-head-content {
+    @media #{$xs}{
+      text-align: center;
+    }
+    h2 {
+      color: #D1D1D1;
+      font-size: 60px;
+      font-weight: 900;
+      text-transform: capitalize;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      font-family: $inter;
+      @media #{$xs}{
+          font-size: 50px;
+      }
+      @media #{$xxs}{
+          font-size: 40px;
+      }
+  
+    }
+  }
+  .other-head-content p {
+    color: rgba(255,255,255, 0.7);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 0;
+    @media #{$xxs}{
+      br {
+        display: none;
+      }
+    }
+  }
+
+  
+.other-feature-item {
+    display: inline-flex;
+    height: 50px;
+    padding: 0 25px;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #142F29;
+  }
+  .other-feature-item span {
+    color: rgba(255,255,255, 0.7);
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .other-feature-item span i {
+    width: 20px;
+    color: #fff;
+  }
+  .other-feature-wrap .swiper-slide {
+	width: fit-content !important;
+}
+
+
+.other-bottom-text h1 {
+    line-height: 1;
+    font-size: 200px;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    text-transform: capitalize;
+    -webkit-text-stroke: 1px #939393;
+    -webkit-text-fill-color:transparent;
+    color: transparent;
+    background: none;
+    display: inline-block;
+    @media #{$md} {
+        font-size: 100px;
+    }
+    @media #{$xs} {
+        font-size: 70px;
+    }
+    span {
+        font-weight: 700;
+        text-transform: capitalize;
+        background: linear-gradient(180deg, #D1D1D1 -26.69%, #525252 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        display: inline-block;
+    }
+}
+.other-text-active.swiper .swiper-wrapper .swiper-slide {
+	width: auto !important;
+}

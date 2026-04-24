@@ -1,0 +1,298 @@
+/* ///////////////////////////////////////////////////////////
+04. Hero CSS
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.item-one {
+    border-radius: 10px;
+    border: 1px solid #7D25EC;
+    background: #101931;
+    padding: 55px 85px 55px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    justify-content: space-between;
+    gap: 40px;
+    @media #{$xl}{
+      padding: 55px 60px 55px;
+      gap: 10px;
+    }
+    @media #{$md}{
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    @media #{$sm}{
+      padding: 55px 40px 55px;
+    }
+    @media #{$xs}{
+      padding: 45px 30px 45px;
+    }
+  }
+  .item-one-left {
+    width: 440px;
+    flex-shrink: 0;
+    @media #{$xl}{
+      width: 410px;
+    }
+    @media #{$md}{
+      width: 100%;
+    }
+  }
+  .item-one-shape {
+    position: absolute;
+    left: 28%;
+    bottom: 6%;
+    @media #{$lg}{
+      display: none;
+    }
+  }
+  .item-one-right {
+    flex-shrink: 0;
+    @media #{$lg}{
+      width: calc(100% - 420px);
+    }
+    @media #{$md}{
+      width: 100%;
+    }
+  }
+.mix-section-one {
+    margin-bottom: 25px;
+    .subtitle {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        display: block;
+    }
+    .title {
+        color: #fff;
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -1.76px;
+        margin-bottom: 17px;
+        @media #{$lg}{
+          font-size: 38px;
+        }
+        @media #{$xs}{
+          font-size: 30px;
+        }
+        span {
+            background: linear-gradient(81deg, #365FCB 8.7%, #C7A7F0 106.91%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 400;
+            display: inline-block;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+            &::before {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                width: 100%;
+                content: "";
+                background: linear-gradient(81deg, #365FCB 8.7%, #C7A7F0 106.91%);
+            }
+        }
+    }
+    p {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 0;
+    }
+}
+.item-one-list ul {
+    list-style: none;
+    li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        span {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 24px;
+            display: block;
+        }
+    }
+}
+
+.item-two {
+    border-radius: 10px;
+    border: 1px solid #7D25EC;
+    background: #101931;
+    padding: 55px 80px 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    @media #{$xl}{
+      gap: 50px;
+      padding: 55px 60px 55px;
+    }
+    @media #{$lg}{
+      gap: 40px;
+    }
+    @media #{$md}{
+      flex-wrap: wrap;
+    }
+    @media #{$sm}{
+      padding: 55px 40px 55px;
+    }
+    @media #{$xs}{
+      padding: 45px 30px 45px;
+    }
+    &-left {
+        width: 500px;
+        flex-shrink: 0;
+        @media #{$xl}{
+          width: 350px;
+        }
+        @media #{$md}{
+          width: 100%;
+        }
+    }
+    &-right {
+        display: flex;
+        gap: 55px;
+        @media #{$xl}{
+          gap: 40px;
+        }
+        @media #{$lg}{
+          flex-wrap: wrap;
+          width: calc(100% - 370px);
+        }
+        @media #{$md}{
+          width: 100%;
+        }
+    }
+    &-form {
+        display: none;
+    }
+}
+
+
+.item-two-right ul {
+    list-style: none;
+    @media #{$lg}{
+      order: 1;
+      display: flex;
+      gap: 20px;
+    }
+  }
+  .item-two-right ul li {
+    width: 54px;
+    height: 54px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media #{$lg}{
+      margin-bottom: 0;
+    }
+  }
+  .item-two-right ul li:last-child {
+    margin-bottom: 0;
+  }
+  .mix-section-two .subtitle {
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+    text-transform: uppercase;
+    background: var(--gradient, linear-gradient(81deg, rgba(54, 96, 203, 0.7) 8.7%, rgba(199, 167, 240, 0.7) 106.91%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .mix-section-two h2 {
+    color: #fff;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 46px;
+    letter-spacing: -1.2px;
+    margin-bottom: 20px;
+    @media #{$lg}{
+      font-size: 36px;
+    }
+    @media #{$xs}{
+      font-size: 30px;
+    }
+  }
+  .mix-section-two h2 span {
+    background: var(--400, linear-gradient(81deg, #33AD81 8.7%, #A7F0C0 106.91%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+  }
+  .mix-section-two p {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 25px;
+    margin-bottom: 0;
+  }
+
+
+
+.item-three {
+    border-radius: 10px;
+    border: 1px solid #7D25EC;
+    background: #101931;
+    padding: 55px 80px 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    @media #{$xl}{
+      padding: 55px 60px 55px;
+      gap: 10px;
+    }
+    @media #{$md}{
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    @media #{$sm}{
+      padding: 55px 40px 55px;
+    }
+    @media #{$xs}{
+      padding: 45px 30px 45px;
+    }
+}
+  .item-three-left {
+    width: 500px;
+    flex-shrink: 0;
+    @media #{$xl}{
+      width: 460px;
+    }
+    @media #{$lg}{
+      width: 400px;
+    }
+    @media #{$md}{
+      width: 100%;
+    }
+  }
+  .item-three-right {
+    flex-shrink: 0;
+    width: calc(100% - 410px);
+    @media #{$md}{
+      width: 100%;
+    }
+  }

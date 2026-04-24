@@ -1,0 +1,59 @@
+/* ///////////////////////////////////////////////////////////
+04. Hero CSS
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.feature-area {
+    background: #142F29;
+}
+.feature-section{
+    &-subtitle {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        border: 1px solid #2A4741;
+        gap: 6px;
+        height: 31px;
+        padding: 0 14px;
+        font-family: $inter;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    &-title {
+        color: var(--clr-theme-primary);
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.16;
+        @media #{$sm}{
+            font-size: 40px;
+        }
+        @media #{$xs}{
+            font-size: 35px;
+        }
+        @media #{$xxs}{
+            font-size: 32px;
+        }
+        span {
+            background: #fff;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 500;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            &::before {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 3px;
+                width: 100%;
+                content: "";
+                background: #fff;
+            }
+        }
+    }
+}

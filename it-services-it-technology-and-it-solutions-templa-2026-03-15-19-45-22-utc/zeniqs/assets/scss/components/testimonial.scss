@@ -1,0 +1,434 @@
+/* ///////////////////////////////////////////////////////////
+11. testimonial
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.zq_testimonial {
+    &-area {
+        background-color: var(--clr-common-lightBlack);
+        position: relative;
+        z-index: 1;
+        &::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: "";
+            width: 620px;
+            height: 100%;
+            background-color: #33574F;
+            z-index: -1;
+            @media #{$md}{
+                width: 40%;
+            }
+            @media #{$sm}{
+                display: none;
+            }
+        }
+    }
+    &-form {
+        background: var(--clr-theme-primary);
+        padding: 40px 50px 50px;
+        border-radius: 8px;
+        @media #{$xl}{
+            margin-right: 0;
+        }
+        @media #{$sm}{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        &-title {
+            color: rgb(29, 29, 29);
+            font-size: 44px;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 30px;
+            @media #{$sm}{
+                font-size: 40px;
+            }
+            @media #{$xxs}{
+                font-size: 36px;
+            }
+        }
+        input,
+        textarea {
+            height: 64px;
+            width: 100%;
+            background: transparent;
+            box-sizing: border-box;
+            border: 2px solid rgb(15, 41, 35);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: #000;
+            font-family: Inter;
+            font-size: 16px;
+            line-height: 52px;
+            font-weight: 400;
+            padding: 0 20px;
+            @include placeholder {
+                color: #4F4F4F;
+                font-size: 16px;
+            }
+        }
+        textarea {
+            height: 200px;
+        }
+    }
+    &-btn {
+        border-radius: 60px;
+        font-family: Inter;
+        background-color: #fff;
+        color: var(--clr-common-black);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px;
+        height: 64px;
+        display: inline-flex;
+        gap: 5px;
+        align-items: center;
+        padding: 0 35px;
+        border: none;
+        &:hover {
+            background: var(--clr-common-black);
+            color: var(--clr-theme-primary);
+            
+        }
+    }
+    &-item {
+        position: relative;
+        z-index: 1;
+        &-rating {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 37px;
+            li {
+                color: var(--clr-theme-primary);
+                font-size: 18px;
+            }
+        }
+        p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 38px;
+            margin-bottom: 30px;
+        }
+    }
+    &-admin {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 35px;
+        gap: 20px;
+        &-img {
+            width: 88px;
+            height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            &-inner {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+            }
+            &-shape {
+                position: absolute;
+                left: -3px;
+                top: -3px;
+            }
+        }
+        
+        &-info {
+            h3 {
+                color: rgb(255, 255, 255);
+                font-family: Outfit;
+                font-size: 28px;
+                font-weight: 600;
+                line-height: 1.2;
+                letter-spacing: -1px;
+                margin-bottom: 5px;
+            }
+            span {
+                color: rgb(163, 163, 163);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1;
+            }
+        }
+    }
+    &-quote {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        svg {
+            color: rgba(255, 255, 255, .1);
+            width: 125px;
+        }
+    }
+    &-wrap {
+        @media #{$lg}{
+            margin-left: 0;
+        }
+    }
+}
+
+
+// home 2 css start
+
+.zq_h2_testimonial {
+    &-area {
+        .pl-30.pr-30 {
+            @media #{$xxs}{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    }
+    &-bg {
+        background-color: #184239;
+    }
+    &-item {
+        background: #33574F;
+        padding: 35px 30px 35px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        @include transition (.3s);
+        cursor: pointer;
+        &:hover {
+            border-color: var(--clr-theme-primary);
+        }
+        &-rating {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 18px;
+            li {
+                color: #FFD600;
+            }
+        }
+        p {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: Inter;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            margin-bottom: 28px;
+        }
+    }
+    &-admin {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        &-info {
+            h5 {
+                color: var(--clr-body-heading);
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 1.2;
+                letter-spacing: -1px;
+                margin-bottom: 5px;
+            }
+            span {
+                color: rgba(255, 255, 255, 0.5);
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                display: block;
+            }
+        }
+    }
+}
+
+
+// home 3 css start
+
+.zq_h3_testimonial {
+    &-item {
+        text-align: center;
+        p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 34px;
+            letter-spacing: -0.5px;
+            margin-bottom: 22px;
+            @media #{$xs}{
+                font-size: 20px;
+            }
+            @media #{$xxs}{
+                font-size: 18px;
+            }
+        }
+        &-admin {
+            h4 {
+                color: rgb(255, 255, 255);
+                font-family: Outfit;
+                font-size: 28px;
+                font-weight: 600;
+                line-height: 38px;
+                letter-spacing: -0.6px;
+                margin-bottom: 5px;
+            }
+            span {
+                color: rgba(255, 255, 255, 0.5);
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                display: block;
+            }
+        }
+    }
+    &-img {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+.h3_testimonial-wrap {
+    position: relative;
+    z-index: 1;
+    .h3_testimonial-nav {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 56px;
+        height: 56px;
+        border: 1px solid rgba(138, 241, 53, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 20px;
+        @include transition (.3s);
+        color: var(--clr-theme-primary);
+        z-index: 99;
+        &:hover {
+            background: var(--clr-theme-primary);
+            color: var(--clr-common-black);
+        }
+    }
+    .h3_testimonial-next {
+        left: auto;
+        right: 0;
+    }
+}
+.h3_testimonial-active.swiper {
+	max-width: 865px;
+}
+.h3_testimonial-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    cursor: pointer;
+    @include transition (.3s);
+    position: relative;
+    z-index: 1;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &-shape {
+        @include transition (.3s);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.h3_testimonial-thumbs {
+    width: 330px;
+    @media #{$xxs}{
+        max-width: 215px;
+    }
+    .swiper-slide-thumb-active {
+      .h3_testimonial-img {
+        &-shape {
+            opacity: 1;
+            visibility: visible;
+        }
+      }
+    }
+}
+
+// home 5 css 
+
+.zq_h5_testimonial {
+    &-wrap {
+        max-width: 1760px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #184239;
+        border-radius: 16px;
+        position: relative;
+        z-index: 1;
+        &::before {
+            position: absolute;
+            left: 0;
+            content: "";
+            background: linear-gradient(90.00deg, rgb(24, 66, 57),rgba(24, 66, 57, 0) 100%);
+            height: 450px;
+            width: 285px;
+            z-index: 9;
+            bottom: 30px;
+            @media #{$xs}{
+                display: none;
+            }
+        }
+        &::after {
+            position: absolute;
+            right: 0;
+            content: "";
+            background: linear-gradient(90.00deg, rgb(24, 66, 57),rgba(24, 66, 57, 0) 100%);
+            height: 450px;
+            width: 285px;
+            z-index: 9;
+            bottom: 30px;
+            transform: rotate(180deg);
+            @media #{$xs}{
+                display: none;
+            }
+        }
+    }
+}
+.zq_h5_testimonial-wrap {
+    .h5_testimonial-active {
+        @media #{$xs}{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+}
+
+// inner page css 
+
+.zq_inner_testimonial-wrap {
+	margin-left: -45px;
+	margin-right: -45px;
+    @media #{$sm}{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+
+.swiper-wrapper.roll-slider {
+	transition-timing-function: linear;
+}

@@ -1,0 +1,116 @@
+/* ///////////////////////////////////////////////////////////
+17. breadcrumb
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.zq_breadcrumb {
+    &-area {
+        padding-top: 115px;
+        position: relative;
+        z-index: 1;
+        padding-left: 15px;
+        padding-right: 15px;
+        @media #{$sm}{
+            padding-top: 97px;
+        }
+        &::before {
+            position: absolute;
+            left: -169px;
+            top: -109px;
+            content: "";
+            width: 329px;
+            height: 329px;
+            border-radius: 50%;
+            filter: blur(400px);
+            background: rgba(138, 241, 53, 0.5);
+            z-index: -1;
+            
+        }
+        &::after {
+            position: absolute;
+            right: -164px;
+            top: -112px;
+            content: "";
+            width: 329px;
+            height: 329px;
+            border-radius: 50%;
+            filter: blur(400px);
+            background: rgba(138, 241, 53, 0.5);
+            z-index: -1;
+            
+        }
+    }
+    &-wrap {
+        max-width: 1777px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 24px;
+        background: linear-gradient(90.00deg, rgba(138, 241, 53, 0.2),rgba(138, 241, 53, 0.2) 100%);
+        padding-top: 130px;
+        padding-bottom: 140px;
+        position: relative;
+        z-index: 1;
+    }
+    &-img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    &-content {
+        &-title {
+            color: rgb(255, 255, 255);
+            font-family: Inter;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            @media #{$xs}{
+                font-size: 42px;
+            }
+            @media #{$xxs}{
+                font-size: 38px;
+            }
+        }
+        &-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            a {
+                color: rgb(255, 255, 255);
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: 0.5px;
+                display: block;
+                &:hover {
+                    color: var(--clr-theme-primary);
+                }
+            }
+            span {
+                color: rgb(138, 241, 53);
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: -0.5px;
+                display: flex;
+                align-items: center;
+                &::before {
+                    display: inline-block;
+                    font-family: "Font Awesome 6 Pro";
+                    content: "\f104";
+                    font-size: 12px;
+                    font-weight: 600;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

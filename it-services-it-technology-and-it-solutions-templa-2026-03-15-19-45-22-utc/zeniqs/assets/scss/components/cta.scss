@@ -1,0 +1,133 @@
+/* ///////////////////////////////////////////////////////////
+13. cta
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.zq_cta {
+    &-area {
+        position: relative;
+        z-index: 1;
+        margin-bottom: -110px;
+    }
+    &-wrapper {
+        position: relative;
+        z-index: 1;
+        background: var(--clr-theme-primary);
+        border-radius: 16px;
+        padding: 70px 50px 70px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        justify-content: space-between;
+        @media #{$md}{
+            padding: 70px 40px 70px;
+        }
+        @media #{$sm}{
+            padding: 45px 25px 45px;
+            flex-wrap: wrap;
+        }
+    }
+    &-shape {
+        &-1 {
+            position: absolute;
+            left: 47%;
+            bottom: 0;
+            transform: translateX(-50%);
+            z-index: -1;
+            svg {
+                color: rgba(15, 41, 35, .1);
+            }
+        }
+        &-2 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -1;
+            svg {
+                color: rgba(15, 41, 35, .1);
+            }
+        }
+    }
+    &-title {
+        color: rgb(15, 41, 35);
+        font-size: 44px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -1px;
+        margin-bottom: 0;
+        @media #{$lg}{
+            font-size: 40px;
+        }
+        @media #{$md}{
+            font-size: 32px;
+            br {
+                display: none;
+            }
+        }
+        @media #{$xxs}{
+            font-size: 28px;
+        }
+    }
+    &-action {
+        max-width: 470px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        @media #{$lg}{
+            max-width: 350px;
+        }
+        @media #{$md}{
+            max-width: 260px;
+        }
+        img {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            @media #{$md}{
+                width: 70px;
+                height: 70px;
+            }
+        }
+        &-info {
+            span {
+                color: rgb(15, 41, 35);
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                display: block;
+                margin-bottom: 10px;
+            }
+            a {
+                color: rgb(15, 41, 35);
+                font-size: 32px;
+                font-weight: 600;
+                line-height: 1;
+                display: block;
+                @media #{$md}{
+                    font-size: 24px;
+                }
+                @media #{$xxs}{
+                    font-size: 20px;
+                }
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+.zq_cta {
+    &_bg {
+        &::before{
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: "";
+            height: 135.6px;
+            width: 100%;
+            background-color: rgb(15, 15, 15);;
+        }
+    }
+}

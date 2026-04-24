@@ -1,0 +1,66 @@
+/* ///////////////////////////////////////////////////////////
+04. Hero CSS
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.faq-area {
+    background-color: #142F29;
+}
+.faq-content .accordion .accordion-item {
+	border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    &:not(:last-child){
+        margin-bottom: 15px;
+    }
+}
+.accordion-button:not(.collapsed) {
+    color: #222;
+}
+.faq-content .accordion .accordion-header .accordion-button {
+    border: 0;
+    background: transparent;
+    padding: 25px 35px 25px 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+ .faq-content .accordion .accordion-body {
+	padding: 0;
+    padding-top: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.accordion-button::after {
+    display: none;
+}
+.accordion-button {
+    position: relative;
+}
+.accordion-button::before {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "\f067"; 
+    font-family: "Font Awesome 6 Pro";
+    padding: 0;
+    padding-left: 20px;
+    font-size: 16px;
+    @include transition(.3s);
+    font-weight: 400;
+    color: #6E87AD;
+
+}
+.accordion-button:not(.collapsed)::before {
+	content: "\f068";
+}

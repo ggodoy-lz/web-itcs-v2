@@ -1,0 +1,223 @@
+/* ///////////////////////////////////////////////////////////
+06. faq
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.zq_faq {
+    &-img {
+        img {
+            border-radius: 17px;
+        }
+    }
+    &-content {
+        .accordion {
+            &-item {
+                overflow: hidden;
+                background: transparent;
+                border-radius: 8px;
+                border: 1px solid rgba(255, 255, 255, .1);
+            }
+            &-button {
+                position: relative;
+                cursor: pointer;
+                box-shadow: none;
+                background: transparent;
+                border: 1px solid transparent;
+                border-bottom: 0;
+                @include transition (.3s);
+                color: var(--clr-body-heading);
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 1.25;
+                border-radius: 8px 8px 0 0 !important;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 23px 20px 24px 20px;
+                @media #{$sm}{
+                    font-size: 22px;
+                }
+                @media #{$xs}{
+                    font-size: 20px;
+                }
+                span {
+                    color: var(--clr-theme-primary);
+                }
+                &::after {
+                    display: none;
+                }
+                &::before {
+                    position: absolute;
+                    right: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    content: "\f107";
+                    font-family: "Font Awesome 6 Pro";
+                    @include transition(.3s);
+                    font-weight: 700;
+                    color: rgba(255, 255, 255, .7);
+                    text-align: center;
+                    font-size: 20px;
+                    border-radius: 50%;
+                    @media #{$xs}{
+                        right: 20px;
+                    }
+                }
+                &:not(.collapsed) {
+                    background-color: var(--clr-common-lightBlack);
+                    padding-bottom: 17px;
+                    border: 1px solid var(--clr-theme-primary);
+                    border-bottom: 0;
+                    &::before {
+                        color: var(--clr-theme-primary);
+                        content: "\f106";
+                    }
+                }
+            }
+            &-body {
+                padding: 0 40px 28px 62px;
+                background: var(--clr-common-lightBlack);
+                border: 1px solid var(--clr-theme-primary);
+                border-top: 0;
+                border-radius: 0 0 8px 8px;
+                @include transition (.3s);
+                p {
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &-wrapper {
+        &.ml-50 {
+            @media #{$xl}{
+                margin-left: 0;
+            }
+        }
+        &.mr-30 {
+            @media #{$xl}{
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+// inner page css 
+
+.zq_inner_faq {
+    &-img {
+        img {
+            border-radius: 17px;
+        }
+    }
+    &-content {
+        .accordion {
+            &-item {
+                overflow: hidden;
+                background: transparent;
+                border-radius: 8px;
+                border: 1px solid rgba(255, 255, 255, .1);
+            }
+            &-button {
+                position: relative;
+                cursor: pointer;
+                box-shadow: none;
+                background: #2A4741;
+                border: 1px solid #2A4741;
+                border-bottom: 0;
+                @include transition (.3s);
+                color: var(--clr-body-heading);
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 1.25;
+                border-radius: 8px 8px 0 0 !important;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 30px 30px 30px;
+                @media #{$sm}{
+                    font-size: 22px;
+                }
+                @media #{$xs}{
+                    font-size: 20px;
+                    padding: 20px 20px 20px;
+                }
+                @media #{$xxs}{
+                    font-size: 18px;
+                }
+                span {
+                    background-color: var(--clr-theme-primary);
+                    display: flex;
+                    align-items: center;
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 50%;
+                    position: relative;
+                    z-index: 1;
+                    flex-shrink: 0;
+                    i {
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: var(--clr-common-black);
+                        font-size: 14px;
+                        @include transition (.3s);
+                        text-align: center;
+                        width: 100%;
+                    }
+                }
+                &::after {
+                    display: none;
+                }
+                &::before {
+                    display: none;
+                }
+                &:not(.collapsed) {
+                    padding-bottom: 25px;
+                    border: 1px solid var(--clr-theme-primary);
+                    border-bottom: 0;
+                    span {
+                        i {
+                            transform: translateY(-50%) rotate(45deg);
+                        }
+                    }
+                }
+            }
+            &-body {
+                padding: 0 30px 25px 76px;
+                background: var(--clr-common-lightBlack);
+                border: 1px solid var(--clr-theme-primary);
+                border-top: 0;
+                border-radius: 0 0 8px 8px;
+                @include transition (.3s);
+                @media #{$xs}{
+                    padding-left: 65px;
+                }
+                @media #{$xxs}{
+                    padding-left: 65px;
+                }
+                p {
+                    border-top: 1px solid rgba(255, 255, 255, 0.15);
+                    color: rgba(255, 255, 255, 0.7);
+                    font-family: Inter;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    padding-top: 19px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &-wrap {
+        &.ml-50 {
+            @media #{$xl}{
+                margin-left: 0;
+            }
+        }
+    }
+}

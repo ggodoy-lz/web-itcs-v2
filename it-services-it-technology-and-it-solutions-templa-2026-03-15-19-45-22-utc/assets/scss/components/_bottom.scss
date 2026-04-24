@@ -1,0 +1,102 @@
+/* ///////////////////////////////////////////////////////////
+04. Hero CSS
+/////////////////////////////////////////////////////////// */ 
+@use '../abstracts/variables' as *;
+
+.bottom-area {
+    position: relative;
+    z-index: 1;
+    background-color: #0F2923;
+}
+.bottom-content {
+    h2 {
+        color: #fff;
+        font-size: 90px;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -2.7px;
+        margin-bottom: 37px;
+        margin-top: 2px;
+        @media #{$xl}{
+            font-size: 80px;
+        }
+        @media #{$lg}{
+            font-size: 70px;
+        }
+        @media #{$md}{
+            font-size: 60px;
+        }
+        @media #{$sm}{
+            font-size: 50px;
+        }
+        @media #{$xs}{
+            font-size: 35px;
+        }
+        span {
+            background: #fff;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    p {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+        margin-bottom: 42px;
+        @media #{$sm}{
+            br {
+                display: none;
+            }
+        }
+        @media #{$xs}{
+            font-size: 16px;
+        }
+    }
+    a {
+        padding: 12px 25px;
+        border-radius: 6px;
+        background: var(--clr-theme-primary);
+        color: #0F2923;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 22px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+}
+.bottom-shape {
+    &-circle {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    &-1 {
+        position: absolute;
+        left: 10%;
+        top: 13%;
+    }
+    &-2 {
+        position: absolute;
+        left: 21%;
+        bottom: 38%;
+    }
+    &-3 {
+        position: absolute;
+        right: 11%;
+        top: 23%;
+    }
+    &-4 {
+        position: absolute;
+        right: 27%;
+        bottom: 30%;
+    }
+}
