@@ -12,7 +12,8 @@ const swiper = new Swiper('.swiper', {
   speed: 1200,
   mousewheel: false,
   watchSlidesProgress: true,
-  parallax: true,
+  // Sin parallax: evita desplazamientos del texto al cambiar de slide (caption dentro del slide)
+  parallax: false,
   spaceBetween: -1,
 
   // If we need pagination
