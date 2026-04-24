@@ -11,8 +11,8 @@
   --itcs-c-electric: #2315f7;
   --itcs-c-green: #108400;
   --itcs-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  /* Redefinido en tema: ~50% respecto al 240px del template base */
-  --logo-width: 120px;
+  /* Redefinido en tema: ~25% del 240px del template (50% adicional respecto a los 120px anteriores) */
+  --logo-width: 60px;
 }
 
 /* Modo claro: acentos alineados a marca */
