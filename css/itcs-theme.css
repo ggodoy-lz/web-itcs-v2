@@ -358,6 +358,11 @@ html[data-theme="dark"] .border-bottom {
 .itcs-service-card > .relative.z-2 p {
   flex: 1 1 auto;
   margin-bottom: 1rem;
+  /* Sin esto, el ítem flex tiene min-width:auto y el párrafo no puede ser más estrecho que el texto en una sola línea */
+  min-width: 0;
+  width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .itcs-service-card > .relative.z-2 .btn-main {
   margin-top: auto;
@@ -371,23 +376,32 @@ html[data-theme="dark"] .border-bottom {
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
+  overflow-x: hidden; /* refuerzo: el wrap a veces falla sin min-width en flex hijos */
 }
 .itcs-service-card > .relative.z-2,
 .itcs-partner-card > .relative.z-2,
 .itcs-product-card > .relative.z-2 {
   min-width: 0;
   max-width: 100%;
+  width: 100%;
 }
 .itcs-service-card h4,
-.itcs-service-card > .relative.z-2 p,
 .itcs-partner-card h4,
+.itcs-product-card h4 {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 .itcs-partner-card > .relative.z-2 p,
 .itcs-partner-card .itcs-partner-cat,
-.itcs-product-card h4,
 .itcs-product-card p {
+  min-width: 0;
+  width: 100%;
   max-width: 100%;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .itcs-service-card .btn-main,
 .itcs-partner-card .btn-main,
@@ -474,6 +488,10 @@ html:not([data-theme="dark"]) .itcs-team-stat-box .itcs-team-stat-num {
   margin-bottom: 1rem;
   opacity: 0.88;
   font-size: 0.9375rem;
+  min-width: 0;
+  width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .itcs-partner-card .btn-main {
   margin-top: auto;
@@ -566,6 +584,10 @@ html:not([data-theme="dark"]) .itcs-team-stat-box .itcs-team-stat-num {
 }
 .itcs-product-card p {
   flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .itcs-product-card .btn-main {
   margin-top: auto;
