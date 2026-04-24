@@ -364,6 +364,43 @@ html[data-theme="dark"] .border-bottom {
   align-self: flex-start;
 }
 
+/* Texto que envuelve dentro del ancho de la tarjeta (evita desbordes en flex) */
+.itcs-service-card,
+.itcs-partner-card,
+.itcs-product-card {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+.itcs-service-card > .relative.z-2,
+.itcs-partner-card > .relative.z-2,
+.itcs-product-card > .relative.z-2 {
+  min-width: 0;
+  max-width: 100%;
+}
+.itcs-service-card h4,
+.itcs-service-card > .relative.z-2 p,
+.itcs-partner-card h4,
+.itcs-partner-card > .relative.z-2 p,
+.itcs-partner-card .itcs-partner-cat,
+.itcs-product-card h4,
+.itcs-product-card p {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.itcs-service-card .btn-main,
+.itcs-partner-card .btn-main,
+.itcs-product-card .btn-main {
+  max-width: 100%;
+  white-space: normal;
+}
+.itcs-service-card .btn-main span,
+.itcs-partner-card .btn-main span,
+.itcs-product-card .btn-main span {
+  overflow-wrap: break-word;
+}
+
 /* Collage equipo: proporciones fijas e imágenes alineadas */
 .itcs-team-hero-img {
   width: 100%;
@@ -542,6 +579,7 @@ html:not([data-theme="dark"]) .itcs-team-stat-box .itcs-team-stat-num {
 @media (max-width: 991.98px) {
   .col-lg-4.col-md-6.d-flex {
     align-items: flex-start !important;
+    min-width: 0; /* columna flex puede impedir el wrap sin esto */
   }
   .col-lg-4.col-md-6.d-flex .itcs-service-card,
   .col-lg-4.col-md-6.d-flex .itcs-partner-card,
@@ -549,7 +587,9 @@ html:not([data-theme="dark"]) .itcs-team-stat-box .itcs-team-stat-num {
     min-height: auto !important;
     height: auto !important;
     max-height: none !important;
-    overflow: visible !important;
+    /* Contiene el ancho; el eje Y sigue pudiendo crecer con el contenido (no vuelve a recortar como overflow:hidden) */
+    overflow-x: hidden;
+    overflow-y: visible;
   }
   .itcs-service-card > .relative.z-2,
   .itcs-partner-card > .relative.z-2 {
@@ -557,21 +597,18 @@ html:not([data-theme="dark"]) .itcs-team-stat-box .itcs-team-stat-num {
     display: flex;
     flex-direction: column;
     min-height: 0;
+    min-width: 0;
   }
   .itcs-service-card > .relative.z-2 p,
   .itcs-partner-card > .relative.z-2 p {
     flex: 0 0 auto !important;
   }
   .itcs-product-card {
-    overflow: visible !important;
+    overflow-x: hidden;
+    overflow-y: visible;
   }
   .itcs-product-card p {
     flex: 0 0 auto !important;
-  }
-  .itcs-service-card h4,
-  .itcs-partner-card h4,
-  .itcs-product-card h4 {
-    overflow-wrap: anywhere;
   }
 }
 
