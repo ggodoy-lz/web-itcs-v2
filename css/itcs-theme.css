@@ -11,6 +11,8 @@
   --itcs-c-electric: #2315f7;
   --itcs-c-green: #108400;
   --itcs-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Redefinido en tema: ~50% respecto al 240px del template base */
+  --logo-width: 120px;
 }
 
 /* Modo claro: acentos alineados a marca */
@@ -174,6 +176,80 @@ html[data-theme="dark"] .border-bottom {
 }
 #logo .itcs-logo-header-w {
   display: inline-block !important;
+}
+/* El template oculta .logo-main en pantallas chicas; el !important de .itcs-logo-header-w
+   rompía eso y dejaba dos logos. Alineamos con el breakpoint del JS (993px). */
+@media (max-width: 992px) {
+  #logo .logo-main.itcs-logo-header-w {
+    display: none !important;
+  }
+  #logo .logo-mobile {
+    display: block !important;
+    max-width: var(--logo-width);
+    width: auto;
+    height: auto;
+  }
+}
+@media (min-width: 993px) {
+  #logo .logo-mobile {
+    display: none !important;
+  }
+}
+
+/* Móvil/tablet: CTA + hamburguesa no deben ocupar el 100% del ancho (rompe alineación) */
+@media (max-width: 992px) {
+  #wrapper {
+    overflow-x: hidden;
+  }
+  header.header-mobile .de-flex {
+    align-items: center;
+  }
+  header.header-mobile .de-flex > .de-flex-col:first-child {
+    min-width: 0;
+  }
+  header.header-mobile #logo a {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+  }
+  header.header-mobile .de-flex > .de-flex-col:nth-child(3) .menu_side_area,
+  header.header-mobile .menu_side_area {
+    width: auto !important;
+    max-width: none;
+    margin-left: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+  /* El template a veces deja #mainmenu a 200px; con cabecera móvil debe ser a pantalla completa */
+  header.header-mobile #mainmenu {
+    width: 100% !important;
+    max-width: 100vw;
+    left: 0 !important;
+    right: 0;
+    box-sizing: border-box;
+    padding-left: 1rem !important;
+    padding-right: 1.25rem !important;
+  }
+  #menu-btn {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Aire bajo el bloque fijo/absolute del menú con header más bajo (logo 120px) */
+  header.header-mobile .header-col-mid {
+    padding-top: 0.25rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .scroll-margin {
+    scroll-margin-top: 88px;
+  }
 }
 
 /* Tarjetas de servicios: misma altura, texto flexible, CTA al pie */
