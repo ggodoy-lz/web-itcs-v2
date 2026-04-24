@@ -11,8 +11,8 @@
   --itcs-c-electric: #2315f7;
   --itcs-c-green: #108400;
   --itcs-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  /* ~12.5% del 240px del template; mitad del tamaño anterior (60px) para desktop y móvil */
-  --logo-width: 30px;
+  /* Tamaño logo cabecera (el * { --logo-width } de style.css pisa a :root en cada elemento) */
+  --itcs-header-logo-max: 30px;
 }
 
 /* Modo claro: acentos alineados a marca */
@@ -171,6 +171,18 @@ html[data-theme="dark"] .border-bottom {
 }
 
 /* Logo iTCS en cabecera: siempre versión blanca (única marca en todo el sitio) */
+/*
+ * style.css define --logo-width en * { } (todos los elementos, p. ej. 240px), no en :root solamente.
+ * Eso gana a :root para cada <img>, así que hacía falta fijar aquí a mayor especificidad.
+ */
+#logo img,
+#logo a img {
+  --logo-width: var(--itcs-header-logo-max);
+  max-width: var(--itcs-header-logo-max) !important;
+  width: auto !important;
+  height: auto !important;
+  box-sizing: border-box;
+}
 #logo .itcs-logo-header-c {
   display: none !important;
 }
@@ -185,7 +197,7 @@ html[data-theme="dark"] .border-bottom {
   }
   #logo .logo-mobile {
     display: block !important;
-    max-width: var(--logo-width);
+    max-width: var(--itcs-header-logo-max) !important;
     width: auto;
     height: auto;
   }
