@@ -192,6 +192,8 @@
          enquire.register("screen and (max-width: 993px)", {
              match: function() {
                  $('header').addClass("header-mobile");
+                 /* En carga directa en móvil el unmatch de min-width:993 a veces no corre; el flag debe ser 0 para abrir con el 1.º toque. */
+                 mobile_menu_show = 0;
                  var body = jQuery('body');
                  if (body.hasClass('side-content')) {
                      body.removeClass('side-layout');
@@ -1422,19 +1424,18 @@
          // navigation for mobile
          // --------------------------------------------------
          jQuery('#menu-btn').on("click", function() {
-
-            var h = jQuery('header')[0].scrollHeight;
-            
-             if (mobile_menu_show === 0) {
-                 jQuery('header').addClass('menu-open');
-                 jQuery('header').css('height',$(window).innerHeight());
-                 mobile_menu_show = 1;
+             var $header = jQuery('header');
+             /* Alternar por clase: mobile_menu_show podía quedar en 1 y el 1.º click solo "cerraba". */
+             if (!$header.hasClass('menu-open')) {
+                 $header.addClass('menu-open');
+                 $header.css('height', $(window).innerHeight());
                  jQuery(this).addClass("menu-open");
+                 mobile_menu_show = 1;
              } else {
-                jQuery('header').removeClass('menu-open');
-                jQuery('header').css('height','auto');
-                 mobile_menu_show = 0;
+                 $header.removeClass('menu-open');
+                 $header.css('height', 'auto');
                  jQuery(this).removeClass("menu-open");
+                 mobile_menu_show = 0;
              }
          })
          jQuery("a.btn").on("click", function(evn) {

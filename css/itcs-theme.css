@@ -300,6 +300,10 @@ html[data-theme="dark"] .border-bottom {
     max-height: none !important;
     z-index: 10055;
     background: transparent !important;
+    overflow: visible !important; /* el template pone overflow:hidden; puede recortar el panel fijo */
+  }
+  header.header-mobile.menu-open .header-col-mid {
+    overflow: visible !important;
   }
   body:has(#wrapper > header.header-mobile.menu-open) {
     overflow: hidden;
