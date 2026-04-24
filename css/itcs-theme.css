@@ -456,7 +456,7 @@ html[data-theme="dark"] .itcs-iso-badge {
   opacity: 0.9;
 }
 
-/* Equipo: 4 roles — foto (arriba redondeada) + caja texto (#f8f9fa, abajo redondeada) */
+/* Equipo: tarjetas por rol (legacy; la home/about usan foto grupal .itcs-team-group-photo) */
 .itcs-team-roles-section {
   background: #ffffff;
   color: #0f172a;
@@ -487,6 +487,23 @@ html[data-theme="dark"] .itcs-team-roles-overline {
 html[data-theme="dark"] .itcs-team-roles-lead {
   color: rgba(203, 213, 225, 0.85);
 }
+
+/* Equipo: una sola imagen grupal */
+.itcs-team-group-photo {
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.12);
+}
+html[data-theme="dark"] .itcs-team-group-photo {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
+}
+.itcs-team-group-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .itcs-team-role-card {
   display: flex;
   flex-direction: column;
