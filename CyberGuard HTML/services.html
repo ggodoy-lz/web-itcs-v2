@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Servicios IT — iTCS S.A.</title>
+    <link rel="icon" href="images/favicon-itcs.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="images/favicon-itcs.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-itcs.png" sizes="180x180">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Servicios de infraestructura, ciberseguridad, networking, bases de datos, desarrollo, backup y más en Paraguay." name="description">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,800&family=Inter:wght@400;600;800&family=Manrope:wght@400;600;800&family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Grotesk:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("itcs-theme");
+                if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+                var f = localStorage.getItem("itcs-font");
+                if (f) document.documentElement.setAttribute("data-font", f);
+            } catch (e) {}
+        })();
+    </script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link id="colors" href="css/colors/scheme-1.css" rel="stylesheet" type="text/css">
+    <link href="css/itcs-theme.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="float-text show-on-scroll"><span><a href="#">Ir arriba</a></span></div>
+        <div class="scrollbar-v show-on-scroll"></div>
+        <div id="de-loader"></div>
+
+        <header>
+            <div id="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap xs-hide">
+                                <div class="d-flex flex-wrap">
+                                    <div class="topbar-widget me-3"><a href="contact.html"><i class="icofont-location-pin"></i>Asunción, Paraguay</a></div>
+                                    <div class="topbar-widget me-3"><a href="tel:+595217288222"><i class="icofont-phone"></i>+595 21 728-8222</a></div>
+                                    <div class="topbar-widget me-3"><a href="mailto:info@itcs.com.py"><i class="icofont-envelope"></i>info@itcs.com.py</a></div>
+                                </div>
+                                <div class="itcs-accessibility d-flex align-items-center gap-2 mt-2 mt-lg-0">
+                                    <label class="visually-hidden" for="itcs-font-select">Familia tipográfica</label>
+                                    <select id="itcs-font-select" class="form-select form-select-sm" aria-label="Elegir fuente del sitio">
+                                        <option value="inter">Inter</option>
+                                        <option value="plus-jakarta">Plus Jakarta Sans</option>
+                                        <option value="outfit">Outfit</option>
+                                        <option value="space-grotesk">Space Grotesk</option>
+                                        <option value="dm-sans">DM Sans</option>
+                                        <option value="manrope">Manrope</option>
+                                        <option value="source-sans">Source Sans 3</option>
+                                    </select>
+                                    <button type="button" class="btn-itcs-theme btn btn-sm">Oscuro</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <div id="logo">
+                                    <a href="index.html">
+                                        <img class="logo-main itcs-logo-header-w" src="images/logos/logo-itcs-blanco.webp" alt="iTCS S.A.">
+                                        
+                                        <img class="logo-mobile" src="images/logos/logo-itcs-blanco.webp" alt="iTCS S.A.">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                    <li><a class="menu-item" href="index.html">Inicio</a></li>
+                                    <li><a class="menu-item" href="about.html">Empresa</a>
+                                        <ul>
+                                            <li><a href="about.html">Quiénes somos</a></li>
+                                            <li><a href="partners.html">Partners</a></li>
+                                            <li><a href="certificaciones.html">Certificaciones</a></li>
+                                            <li><a href="politicas.html">Políticas ISO</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="partners.html">Partners</a></li>
+                                    <li><a class="menu-item" href="services.html">Servicios</a>
+                                        <ul>
+                                            <li><a href="services.html#infra">Infraestructura &amp; Productividad</a></li>
+                                            <li><a href="services.html#ciber">Ciberseguridad</a></li>
+                                            <li><a href="services.html#net">Networking &amp; Telecomunicaciones</a></li>
+                                            <li><a href="services.html#bd">Base de Datos</a></li>
+                                            <li><a href="services.html#dev">Desarrollo de Sistemas</a></li>
+                                            <li><a href="services.html#backup">Backup &amp; Continuidad</a></li>
+                                            <li><a href="services.html#mision">Cómputo de Misión Crítica</a></li>
+                                            <li><a href="services.html#soporte">Soporte Técnico</a></li>
+                                            <li><a href="services.html#obras">Obras Civiles</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="productos.html">Productos</a>
+                                        <ul>
+                                            <li><a href="producto-veeam.html">Veeam</a></li>
+                                            <li><a href="producto-sophos.html">Sophos</a></li>
+                                            <li><a href="producto-prtg.html">PRTG Monitor</a></li>
+                                            <li><a href="producto-hpe.html">HPE</a></li>
+                                            <li><a href="producto-aruba.html">Aruba</a></li>
+                                            <li><a href="producto-motor-gestion.html">Motor de Gestión</a></li>
+                                            <li><a href="producto-samsung.html">Samsung</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="blog.html">Blog</a></li>
+                                </ul>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="contact.html" class="btn-main fx-slide"><span>Contacto</span></a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="no-bottom no-top" id="content">
+            <div id="top"></div>
+            <section id="subheader" class="section-dark bg-dark text-light relative jarallax">
+                <div class="gradient-edge-top"></div>
+                <img src="images/background/2.webp" class="jarallax-img" alt="">
+                <div class="container relative z-2">
+                    <div class="row gy-4 gx-5 align-items-center">
+                        <div class="spacer-double sm-hide"></div>
+                        <div class="col-lg-8">
+                            <h1 class="mb-0 wow fadeInUp" data-wow-delay=".2s">Servicios</h1>
+                            <ul class="crumb wow fadeInUp">
+                                <li><a href="index.html">Inicio</a></li>
+                                <li class="active">Servicios</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 text-lg-end sm-hide">
+                            <h3 class="fs-24">Todo el ciclo tecnológico de tu empresa</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pt-5 pb-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1 text-center">
+                            <h2 class="mb-3">Servicios IT para cada necesidad empresarial</h2>
+                            <p class="lead mb-0">Desde la infraestructura base hasta la ciberseguridad avanzada, cubrimos todo el ciclo con expertos certificados.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="infra" class="section-dark bg-dark text-light scroll-margin">
+                <div class="container py-5">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-lg-8">
+                            <h3 class="id-color">Infraestructura &amp; Productividad</h3>
+                            <p>Diseño, implementación y gestión de servidores Microsoft y Linux. Más de 20 años en infraestructuras de misión crítica.</p>
+                            <ul class="ul-check">
+                                <li>Servidores físicos y virtuales · Azure &amp; AWS</li>
+                                <li>VMware vSphere / Hyper-V</li>
+                                <li>Active Directory &amp; Microsoft 365</li>
+                                <li>Migración a la nube</li>
+                            </ul>
+                            <p class="small op-7 mb-0">Tecnologías: HPE, Microsoft, VMware.</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
+                                <div class="itcs-service-tech-label">Ecosistema</div>
+                                <div class="itcs-service-tech-logos">
+                                    <img src="images/partners/hpe.png" alt="HPE" class="itcs-partner-logo itcs-partner-logo--color" width="110" height="32" loading="lazy">
+                                    <img src="images/partners/microsoft.png" alt="Microsoft" class="itcs-partner-logo itcs-partner-logo--color" width="110" height="32" loading="lazy">
+                                    <img src="images/partners/vmware.svg" alt="VMware" class="itcs-partner-logo itcs-partner-logo--mono" width="100" height="28" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ciber" class="bg-light scroll-margin">
+                <div class="container py-5">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-lg-8">
+                            <h3>Ciberseguridad</h3>
+                            <p>Protección integral contra amenazas con tecnología Sophos.</p>
+                            <ul class="ul-check">
+                                <li>Seguridad perimetral (firewall)</li>
+                                <li>Protección de endpoints (EDR/XDR)</li>
+                                <li>Auditorías de vulnerabilidades</li>
+                                <li>SOC &amp; monitoreo 24/7 · IAM</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Tecnologías: Sophos, ManageEngine.</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
+                                <div class="itcs-service-tech-label">Ecosistema</div>
+                                <div class="itcs-service-tech-logos">
+                                    <img src="images/partners/sophos.png" alt="Sophos" class="itcs-partner-logo itcs-partner-logo--color" width="120" height="32" loading="lazy">
+                                    <img src="images/partners/manageengine.png" alt="ManageEngine" class="itcs-partner-logo itcs-partner-logo--color" width="140" height="32" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="net" class="section-dark bg-dark-2 text-light scroll-margin">
+                <div class="container py-5">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-lg-8">
+                            <h3 class="id-color">Networking &amp; Telecomunicaciones</h3>
+                            <p>Redes robustas y conectividad de alto rendimiento.</p>
+                            <ul class="ul-check">
+                                <li>Cableado estructurado Cat 6A y fibra óptica</li>
+                                <li>Wi‑Fi empresarial (Aruba)</li>
+                                <li>SD‑WAN &amp; MPLS</li>
+                                <li>Montaje de data centers</li>
+                            </ul>
+                            <p class="small op-7 mb-0">Tecnologías: Aruba, CommScope, Yeastar.</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
+                                <div class="itcs-service-tech-label">Ecosistema</div>
+                                <div class="itcs-service-tech-logos">
+                                    <img src="images/partners/aruba.png" alt="Aruba" class="itcs-partner-logo itcs-partner-logo--color" width="110" height="32" loading="lazy">
+                                    <img src="images/partners/commscope.png" alt="CommScope" class="itcs-partner-logo itcs-partner-logo--color" width="120" height="32" loading="lazy">
+                                    <img src="images/partners/yeastar.png" alt="Yeastar" class="itcs-partner-logo itcs-partner-logo--color" width="100" height="32" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="bd" class="bg-light scroll-margin">
+                <div class="container py-5">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-lg-8">
+                            <h3>Base de Datos</h3>
+                            <ul class="ul-check">
+                                <li>SQL Server, Oracle, PostgreSQL, MongoDB</li>
+                                <li>Tuning y alta disponibilidad</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Tecnologías: Microsoft, Red Hat.</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
+                                <div class="itcs-service-tech-label">Ecosistema</div>
+                                <div class="itcs-service-tech-logos">
+                                    <img src="images/partners/microsoft.png" alt="Microsoft" class="itcs-partner-logo itcs-partner-logo--color" width="110" height="32" loading="lazy">
+                                    <img src="images/partners/redhat.svg" alt="Red Hat" class="itcs-partner-logo itcs-partner-logo--mono" width="100" height="28" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dev" class="section-dark bg-dark text-light scroll-margin">
+                <div class="container py-5">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-lg-8">
+                            <h3 class="id-color">Desarrollo de Sistemas</h3>
+                            <ul class="ul-check">
+                                <li>Web corporativa y aplicaciones móviles</li>
+                                <li>Integración API y RPA</li>
+                            </ul>
+                            <p class="small op-7 mb-0">Tecnologías: ManageEngine, Microsoft.</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
+                                <div class="itcs-service-tech-label">Ecosistema</div>
+                                <div class="itcs-service-tech-logos">
+                                    <img src="images/partners/microsoft.png" alt="Microsoft" class="itcs-partner-logo itcs-partner-logo--color" width="110" height="32" loading="lazy">
+                                    <img src="images/partners/adobe.svg" alt="Adobe" class="itcs-partner-logo itcs-partner-logo--mono" width="90" height="28" loading="lazy">
+                                    <img src="images/partners/manageengine.png" alt="ManageEngine" class="itcs-partner-logo itcs-partner-logo--color" width="130" height="32" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="backup" class="bg-light scroll-margin">
+                <div class="container py-5">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-lg-8">
+                            <h3>Backup &amp; Continuidad</h3>
+                            <p>Estrategias anti‑ransomware y Disaster Recovery.</p>
+                            <ul class="ul-check">
+                                <li>Backup híbrido y recuperación automática</li>
+                                <li>RTO/RPO acordados</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Tecnologías: Veeam, QNAP, Synology.</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
+                                <div class="itcs-service-tech-label">Ecosistema</div>
+                                <div class="itcs-service-tech-logos">
+                                    <img src="images/partners/veeam.svg" alt="Veeam" class="itcs-partner-logo itcs-partner-logo--mono" width="100" height="28" loading="lazy">
+                                    <img src="images/partners/qnap.svg" alt="QNAP" class="itcs-partner-logo itcs-partner-logo--mono" width="80" height="28" loading="lazy">
+                                    <img src="images/partners/synology.svg" alt="Synology" class="itcs-partner-logo itcs-partner-logo--mono" width="100" height="28" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="text-lg-end"><a href="producto-veeam.html" class="btn-main fx-slide btn-line me-2"><span>Veeam</span></a><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mision" class="section-dark bg-dark-2 text-light scroll-margin">
+                <div class="container py-5">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-lg-8">
+                            <h3 class="id-color">Cómputo de Misión Crítica</h3>
+                            <ul class="ul-check">
+                                <li>HCI (hiperconvergencia)</li>
+                                <li>SAN/NAS empresarial y almacenamiento flash</li>
+                            </ul>
+                            <p class="small op-7 mb-0">Tecnologías: HPE, QNAP, Synology.</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
+                                <div class="itcs-service-tech-label">Ecosistema</div>
+                                <div class="itcs-service-tech-logos">
+                                    <img src="images/partners/hpe.png" alt="HPE" class="itcs-partner-logo itcs-partner-logo--color" width="100" height="32" loading="lazy">
+                                    <img src="images/partners/qnap.svg" alt="QNAP" class="itcs-partner-logo itcs-partner-logo--mono" width="80" height="28" loading="lazy">
+                                    <img src="images/partners/synology.svg" alt="Synology" class="itcs-partner-logo itcs-partner-logo--mono" width="100" height="28" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="soporte" class="bg-light scroll-margin">
+                <div class="container py-5">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-lg-8">
+                            <h3>Soporte Técnico &amp; Outsourcing</h3>
+                            <ul class="ul-check">
+                                <li>Help desk multinivel · remoto y on‑site</li>
+                                <li>Gestión de activos (ITAM)</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Tecnologías: ManageEngine, PRTG.</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
+                                <div class="itcs-service-tech-label">Ecosistema</div>
+                                <div class="itcs-service-tech-logos">
+                                    <img src="images/partners/manageengine.png" alt="ManageEngine" class="itcs-partner-logo itcs-partner-logo--color" width="130" height="32" loading="lazy">
+                                    <img src="images/partners/prtg.png" alt="PRTG Network Monitor" class="itcs-partner-logo itcs-partner-logo--color" width="90" height="32" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="obras" class="section-dark bg-dark text-light scroll-margin">
+                <div class="container py-5">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-lg-8">
+                            <h3 class="id-color">Obras Civiles</h3>
+                            <ul class="ul-check">
+                                <li>Centros de datos modulares</li>
+                                <li>Estándar TIA‑942</li>
+                                <li>Climatización de precisión</li>
+                            </ul>
+                            <p class="small op-7 mb-0">Tecnologías: CommScope, EverExceed.</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
+                                <div class="itcs-service-tech-label">Ecosistema</div>
+                                <div class="itcs-service-tech-logos">
+                                    <img src="images/partners/commscope.png" alt="CommScope" class="itcs-partner-logo itcs-partner-logo--color" width="120" height="32" loading="lazy">
+                                    <img src="images/partners/everexceed.svg" alt="EverExceed" class="itcs-partner-logo itcs-partner-logo--textsvg" width="180" height="32" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-dark bg-color text-light pt-60 pb-50">
+                <div class="container text-center">
+                    <h3 class="mb-4">¿Necesitás una propuesta a medida?</h3>
+                    <a class="btn-main fx-slide btn-line me-2" href="productos.html"><span>Ver productos</span></a>
+                    <a class="btn-main fx-slide" href="contact.html"><span>Contacto</span></a>
+                </div>
+            </section>
+        </div>
+
+        <footer class="section-dark">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-sm-6">
+                        <img src="images/logos/logo-itcs-blanco.webp" class="logo-footer" alt="iTCS S.A.">
+                        <div class="spacer-20"></div>
+                        <p>iTCS S.A. — Paraguay. Lun–Vie · 08:00–18:00 hs.</p>
+                    </div>
+                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="widget">
+                                    <h5>Compañía</h5>
+                                    <ul>
+                                        <li><a href="about.html">Quiénes somos</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="certificaciones.html">Certificaciones</a></li>
+                                        <li><a href="politicas.html">Políticas ISO</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contacto</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="widget">
+                                    <h5>Productos</h5>
+                                    <ul>
+                                        <li><a href="producto-veeam.html">Veeam</a></li>
+                                        <li><a href="producto-sophos.html">Sophos</a></li>
+                                        <li><a href="producto-prtg.html">PRTG</a></li>
+                                        <li><a href="producto-hpe.html">HPE</a></li>
+                                        <li><a href="producto-aruba.html">Aruba</a></li>
+                                        <li><a href="producto-motor-gestion.html">Motor de Gestión</a></li>
+                                        <li><a href="producto-samsung.html">Samsung</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                        <div class="widget">
+                            <h5>Contacto</h5>
+                            <div class="fw-bold text-white"><i class="icofont-location-pin me-2 id-color"></i>Oficina</div>
+                            Barrio Virgen del Huerto, Asunción, Paraguay
+                            <div class="spacer-20"></div>
+                            <div class="fw-bold text-white"><i class="icofont-phone me-2 id-color"></i>Teléfono</div>
+                            <a href="tel:+595217288222" class="text-white">+595 21 728-8222</a>
+                            <div class="spacer-20"></div>
+                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Email</div>
+                            <a href="mailto:info@itcs.com.py" class="text-white">info@itcs.com.py</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">&copy; 2026 iTCS S.A.</div>
+                                <ul class="menu-simple">
+                                    <li><a href="politicas.html">Política de Calidad</a></li>
+                                    <li><a href="politicas.html">Política de Seguridad</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/plugins.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="js/itcs-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "¿Por qué su empresa necesita XDR?",
+            "slug": "por-que-su-empresa-necesita-xdr",
+            "category": "Ciberseguridad",
+            "read_minutes": 5,
+            "excerpt": "La nueva era de la ciberseguridad con Sophos: IA unificada en endpoints, redes y correo.",
+            "body": "<p>La nueva era de la ciberseguridad con Sophos: IA unificada en endpoints, redes y correo.</p><p>Contactá a iTCS para una evaluación de madurez y una propuesta adaptada a tu organización.</p>",
+            "gradient": "a",
+            "cta_label": "Hablar con ventas",
+            "cta_url": "contact.html",
+            "created_at": "2026-01-15T10:00:00+00:00",
+            "published": true
+        },
+        {
+            "id": 2,
+            "title": "Backup inteligente con Veeam",
+            "slug": "backup-inteligente-con-veeam",
+            "category": "Backup",
+            "read_minutes": 5,
+            "excerpt": "Protección ante ransomware y defensa de datos críticos en entornos físicos y cloud.",
+            "body": "<p>Protección ante ransomware y defensa de datos críticos en entornos físicos y cloud.</p><p>Veeam ofrece recuperación confiable y estrategias 3‑2‑1 alineadas a buenas prácticas.</p>",
+            "gradient": "b",
+            "cta_label": "Ver Veeam",
+            "cta_url": "producto-veeam.html",
+            "created_at": "2026-02-01T10:00:00+00:00",
+            "published": true
+        },
+        {
+            "id": 3,
+            "title": "Redes Wi‑Fi empresariales (Aruba)",
+            "slug": "redes-wi-fi-empresariales-aruba",
+            "category": "Networking",
+            "read_minutes": 5,
+            "excerpt": "Por qué Aruba lidera en entornos de misión crítica: hospitales, bancos y universidades.",
+            "body": "<p>Por qué Aruba lidera en entornos de misión crítica: hospitales, bancos y universidades.</p><p>En iTCS diseñamos cobertura, seguridad y operación centralizada para redes exigentes.</p>",
+            "gradient": "c",
+            "cta_label": "Ver Aruba",
+            "cta_url": "producto-aruba.html",
+            "created_at": "2026-03-01T10:00:00+00:00",
+            "published": true
+        }
+    ]
+}

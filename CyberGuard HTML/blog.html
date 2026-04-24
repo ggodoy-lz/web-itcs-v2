@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Blog — iTCS S.A.</title>
+    <link rel="icon" href="images/favicon-itcs.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="images/favicon-itcs.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-itcs.png" sizes="180x180">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Artículos sobre tecnología, ciberseguridad e infraestructura en Paraguay — iTCS." name="description">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,800&family=Inter:wght@400;600;800&family=Manrope:wght@400;600;800&family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Grotesk:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("itcs-theme");
+                if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+                var f = localStorage.getItem("itcs-font");
+                if (f) document.documentElement.setAttribute("data-font", f);
+            } catch (e) {}
+        })();
+    </script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link id="colors" href="css/colors/scheme-1.css" rel="stylesheet" type="text/css">
+    <link href="css/itcs-theme.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="float-text show-on-scroll"><span><a href="#">Ir arriba</a></span></div>
+        <div class="scrollbar-v show-on-scroll"></div>
+        <div id="de-loader"></div>
+
+        <header>
+            <div id="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap xs-hide">
+                                <div class="d-flex flex-wrap">
+                                    <div class="topbar-widget me-3"><a href="contact.html"><i class="icofont-location-pin"></i>Asunción, Paraguay</a></div>
+                                    <div class="topbar-widget me-3"><a href="tel:+595217288222"><i class="icofont-phone"></i>+595 21 728-8222</a></div>
+                                    <div class="topbar-widget me-3"><a href="mailto:info@itcs.com.py"><i class="icofont-envelope"></i>info@itcs.com.py</a></div>
+                                </div>
+                                <div class="itcs-accessibility d-flex align-items-center gap-2 mt-2 mt-lg-0">
+                                    <label class="visually-hidden" for="itcs-font-select">Familia tipográfica</label>
+                                    <select id="itcs-font-select" class="form-select form-select-sm" aria-label="Elegir fuente del sitio">
+                                        <option value="inter">Inter</option>
+                                        <option value="plus-jakarta">Plus Jakarta Sans</option>
+                                        <option value="outfit">Outfit</option>
+                                        <option value="space-grotesk">Space Grotesk</option>
+                                        <option value="dm-sans">DM Sans</option>
+                                        <option value="manrope">Manrope</option>
+                                        <option value="source-sans">Source Sans 3</option>
+                                    </select>
+                                    <button type="button" class="btn-itcs-theme btn btn-sm">Oscuro</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <div id="logo">
+                                    <a href="index.html">
+                                        <img class="logo-main itcs-logo-header-w" src="images/logos/logo-itcs-blanco.webp" alt="iTCS S.A.">
+                                        <img class="logo-mobile" src="images/logos/logo-itcs-blanco.webp" alt="iTCS S.A.">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                    <li><a class="menu-item" href="index.html">Inicio</a></li>
+                                    <li><a class="menu-item" href="about.html">Empresa</a>
+                                        <ul>
+                                            <li><a href="about.html">Quiénes somos</a></li>
+                                            <li><a href="partners.html">Partners</a></li>
+                                            <li><a href="certificaciones.html">Certificaciones</a></li>
+                                            <li><a href="politicas.html">Políticas ISO</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="partners.html">Partners</a></li>
+                                    <li><a class="menu-item" href="services.html">Servicios</a>
+                                        <ul>
+                                            <li><a href="services.html#infra">Infraestructura &amp; Productividad</a></li>
+                                            <li><a href="services.html#ciber">Ciberseguridad</a></li>
+                                            <li><a href="services.html#net">Networking &amp; Telecomunicaciones</a></li>
+                                            <li><a href="services.html#bd">Base de Datos</a></li>
+                                            <li><a href="services.html#dev">Desarrollo de Sistemas</a></li>
+                                            <li><a href="services.html#backup">Backup &amp; Continuidad</a></li>
+                                            <li><a href="services.html#mision">Cómputo de Misión Crítica</a></li>
+                                            <li><a href="services.html#soporte">Soporte Técnico</a></li>
+                                            <li><a href="services.html#obras">Obras Civiles</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="productos.html">Productos</a>
+                                        <ul>
+                                            <li><a href="producto-veeam.html">Veeam</a></li>
+                                            <li><a href="producto-sophos.html">Sophos</a></li>
+                                            <li><a href="producto-prtg.html">PRTG Monitor</a></li>
+                                            <li><a href="producto-hpe.html">HPE</a></li>
+                                            <li><a href="producto-aruba.html">Aruba</a></li>
+                                            <li><a href="producto-motor-gestion.html">Motor de Gestión</a></li>
+                                            <li><a href="producto-samsung.html">Samsung</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="blog.html">Blog</a></li>
+                                </ul>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="contact.html" class="btn-main fx-slide"><span>Contacto</span></a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="no-bottom no-top" id="content">
+            <div id="top"></div>
+            <section id="subheader" class="section-dark bg-dark text-light relative jarallax">
+                <div class="gradient-edge-top"></div>
+                <img src="images/background/3.webp" class="jarallax-img" alt="">
+                <div class="container relative z-2">
+                    <div class="row gy-4 gx-5 align-items-center">
+                        <div class="spacer-double sm-hide"></div>
+                        <div class="col-lg-8">
+                            <h1 class="mb-0 wow fadeInUp" data-wow-delay=".2s">Blog</h1>
+                            <ul class="crumb wow fadeInUp">
+                                <li><a href="index.html">Inicio</a></li>
+                                <li class="active">Blog</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 text-lg-end sm-hide">
+                            <h3 class="fs-24">Tecnología y seguridad en Paraguay</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pt-5 pb-5">
+                <div class="container">
+                    <p id="blog-load-error" class="alert alert-warning text-center" hidden>Sin conexión al servidor de datos. En Vercel: configurá Redis (Upstash) y variables de entorno.</p>
+                    <noscript>
+                        <p class="text-center text-muted">Activá JavaScript para ver el listado del blog.</p>
+                    </noscript>
+                    <div class="row g-4" id="blog-posts-mount"></div>
+                    <p class="text-center mt-5 mb-0 small text-muted">Autores: equipo iTCS. ¿Tema para el próximo artículo? <a href="contact.html">Escribinos</a>.</p>
+                </div>
+            </section>
+        </div>
+
+        <footer class="section-dark">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-sm-6">
+                        <img src="images/logos/logo-itcs-blanco.webp" class="logo-footer" alt="iTCS S.A.">
+                        <div class="spacer-20"></div>
+                        <p>iTCS S.A. — Paraguay.</p>
+                    </div>
+                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="widget">
+                                    <h5>Compañía</h5>
+                                    <ul>
+                                        <li><a href="about.html">Quiénes somos</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="certificaciones.html">Certificaciones</a></li>
+                                        <li><a href="politicas.html">Políticas ISO</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contacto</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="widget">
+                                    <h5>Productos</h5>
+                                    <ul>
+                                        <li><a href="producto-veeam.html">Veeam</a></li>
+                                        <li><a href="producto-sophos.html">Sophos</a></li>
+                                        <li><a href="producto-prtg.html">PRTG</a></li>
+                                        <li><a href="producto-hpe.html">HPE</a></li>
+                                        <li><a href="producto-aruba.html">Aruba</a></li>
+                                        <li><a href="producto-motor-gestion.html">Motor de Gestión</a></li>
+                                        <li><a href="producto-samsung.html">Samsung</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                        <div class="widget">
+                            <h5>Contacto</h5>
+                            <div class="fw-bold text-white"><i class="icofont-location-pin me-2 id-color"></i>Oficina</div>
+                            Barrio Virgen del Huerto, Asunción, Paraguay
+                            <div class="spacer-20"></div>
+                            <div class="fw-bold text-white"><i class="icofont-phone me-2 id-color"></i>Teléfono</div>
+                            <a href="tel:+595217288222" class="text-white">+595 21 728-8222</a>
+                            <div class="spacer-20"></div>
+                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Email</div>
+                            <a href="mailto:info@itcs.com.py" class="text-white">info@itcs.com.py</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">&copy; 2026 iTCS S.A.</div>
+                                <ul class="menu-simple">
+                                    <li><a href="politicas.html">Política de Calidad</a></li>
+                                    <li><a href="politicas.html">Política de Seguridad</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/plugins.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="js/itcs-ui.js"></script>
+    <script src="js/blog-list.js"></script>
+</body>
+</html>
