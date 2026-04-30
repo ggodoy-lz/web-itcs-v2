@@ -520,8 +520,7 @@ a.back-to-top {
 /* Jarallax subheader: sin tocar, dejar imágenes como están */
 
 /* Secciones con data-bgimage del template (cargan imágenes claras) — neutralizar */
-section[data-bgimage],
-[data-bgimage] {
+section[data-bgimage] {
   background-image: none !important;
   background:
     radial-gradient(circle at 15% 10%, rgba(83,149,163,.10), transparent 26%),
