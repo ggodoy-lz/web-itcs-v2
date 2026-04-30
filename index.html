@@ -19,8 +19,8 @@
     <script>
         (function () {
             try {
-                var t = localStorage.getItem("itcs-theme");
-                if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+                
+                document.documentElement.setAttribute("data-theme", "dark");
                 var f = localStorage.getItem("itcs-font");
                 if (f) document.documentElement.setAttribute("data-font", f);
             } catch (e) {}
@@ -35,7 +35,7 @@
     <link href="css/custom-swiper-1.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body class="dark-scheme">
     <div id="wrapper">
         <div class="float-text show-on-scroll">
             <span><a href="#">Ir arriba</a></span>
@@ -66,7 +66,7 @@
                                         <option value="manrope">Manrope</option>
                                         <option value="source-sans">Source Sans 3</option>
                                     </select>
-                                    <button type="button" class="btn-itcs-theme btn btn-sm">Oscuro</button>
+                                    
                                 </div>
                             </div>
                         </div>
