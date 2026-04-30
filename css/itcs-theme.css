@@ -151,12 +151,19 @@ body::before {
 body::after {
   content: "";
   position: fixed;
-  inset: auto -20% -30% -20%;
-  height: 55vh;
+  inset: -20%;
   pointer-events: none;
   z-index: -1;
-  background: radial-gradient(ellipse at center, rgba(0, 100, 121, 0.2), transparent 62%);
-  filter: blur(18px);
+  background:
+    radial-gradient(circle at 20% 30%, rgba(83,149,163,.18), transparent 26%),
+    radial-gradient(circle at 80% 20%, rgba(0,100,121,.22),  transparent 28%),
+    radial-gradient(circle at 60% 80%, rgba(171,201,208,.08), transparent 24%);
+  filter: blur(24px);
+  animation: ambientMove 18s ease-in-out infinite alternate;
+}
+@keyframes ambientMove {
+  from { transform: translate3d(-2%, -1%, 0) scale(1); }
+  to   { transform: translate3d(2%, 1.5%, 0) scale(1.04); }
 }
 #wrapper, main, section { background: transparent; }
 #content { background: transparent !important; }
@@ -1486,4 +1493,150 @@ html[data-theme="dark"] .itcs-team-role-card__body .itcs-team-role-sub {
 
 #inicio-hero .swiper-slide .swiper-inner {
   animation: none !important;
+}
+
+/* ==========================================================
+   EFFECTS v2 — scroll reveal, stagger, shimmer, marquee, CTA
+   ========================================================== */
+
+/* --- Scroll reveal --- */
+.itcs-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(.22,.68,0,1.2);
+}
+.itcs-reveal.itcs-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger para hijos directos (cards, items) */
+.itcs-stagger.itcs-visible > *:nth-child(1) { transition-delay:  80ms; }
+.itcs-stagger.itcs-visible > *:nth-child(2) { transition-delay: 160ms; }
+.itcs-stagger.itcs-visible > *:nth-child(3) { transition-delay: 240ms; }
+.itcs-stagger.itcs-visible > *:nth-child(4) { transition-delay: 320ms; }
+.itcs-stagger.itcs-visible > *:nth-child(5) { transition-delay: 400ms; }
+.itcs-stagger.itcs-visible > *:nth-child(6) { transition-delay: 480ms; }
+.itcs-stagger > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 650ms ease, transform 650ms cubic-bezier(.22,.68,0,1.2);
+}
+.itcs-stagger.itcs-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Shimmer hover en cards --- */
+.itcs-service-card,
+.itcs-partner-card,
+.itcs-product-card,
+.de-box, .card {
+  overflow: hidden;
+}
+.itcs-service-card::before,
+.itcs-partner-card::before,
+.itcs-product-card::before,
+.de-box::before, .card::before {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(171,201,208,.12), transparent 38%),
+    linear-gradient(135deg, rgba(171,201,208,.08), transparent 44%);
+  opacity: 0.8;
+  transition: opacity 280ms ease;
+}
+/* Shimmer sweep */
+.itcs-service-card::after,
+.itcs-partner-card::after,
+.itcs-product-card::after {
+  background: linear-gradient(90deg, transparent, rgba(171,201,208,.12) 42%, transparent 58%),
+              linear-gradient(90deg, transparent, rgba(171,201,208,.42), rgba(83,149,163,.28), transparent);
+  background-size: 200% 1px, 100% 1px;
+  background-position: -200% bottom, 0 bottom;
+  background-repeat: no-repeat;
+  transition: background-position 600ms ease;
+  height: auto;
+  inset: 0 0 auto 0;
+  top: 0;
+  bottom: 0;
+}
+.itcs-service-card:hover::after,
+.itcs-partner-card:hover::after,
+.itcs-product-card:hover::after {
+  background-position: 200% bottom, 0 bottom;
+}
+
+/* Cursor light — activado via JS con --mx/--my */
+.itcs-service-card,
+.itcs-partner-card,
+.itcs-product-card {
+  --mx: 50%;
+  --my: 50%;
+}
+.itcs-service-card:hover::before,
+.itcs-partner-card:hover::before,
+.itcs-product-card:hover::before {
+  background:
+    radial-gradient(circle at var(--mx) var(--my), rgba(171,201,208,.16), transparent 55%),
+    radial-gradient(circle at 18% 0%, rgba(171,201,208,.10), transparent 38%),
+    linear-gradient(135deg, rgba(171,201,208,.06), transparent 44%);
+  opacity: 1;
+}
+
+/* --- Marquee: bordes desvanecidos --- */
+.bg-color {
+  position: relative;
+  overflow: hidden;
+}
+.bg-color::before,
+.bg-color::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.bg-color::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--itcs-navy), transparent);
+}
+.bg-color::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--itcs-navy), transparent);
+  /* Anular el pseudo-element de sección anterior */
+  bottom: auto;
+  filter: none;
+  height: 100%;
+}
+
+/* --- CTA final breathing glow --- */
+section:last-of-type,
+.cta-section {
+  position: relative;
+  overflow: hidden;
+}
+section:last-of-type::before {
+  content: "";
+  position: absolute;
+  inset: auto 15% -120px 15%;
+  height: 240px;
+  background: radial-gradient(ellipse at center, rgba(83,149,163,.28), transparent 68%);
+  filter: blur(30px);
+  animation: ctaGlow 4s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes ctaGlow {
+  from { opacity: .45; transform: scale(.96); }
+  to   { opacity: .85; transform: scale(1.04); }
+}
+
+/* --- Accesibilidad --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  html { scroll-behavior: auto !important; }
 }
