@@ -517,38 +517,7 @@ a.back-to-top {
 .bg-white.text-dark, .bg-white .text-dark { color: var(--itcs-ice) !important; }
 .bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5 { color: var(--itcs-ice) !important; }
 
-/* Jarallax subheader: fondo oscuro via gradient, imagen semi-transparente encima */
-#subheader,
-section.jarallax {
-  position: relative !important;
-  background:
-    radial-gradient(circle at 12% 8%, rgba(83,149,163,.25), transparent 38%),
-    linear-gradient(180deg, var(--ink-900) 0%, var(--itcs-navy) 100%) !important;
-  color: var(--text-main) !important;
-}
-/* La img jarallax va encima del fondo oscuro con mezcla oscura */
-#subheader .jarallax-img,
-#subheader > img,
-section.jarallax .jarallax-img,
-section.jarallax > img {
-  opacity: 0.22 !important;
-  mix-blend-mode: luminosity !important;
-  object-fit: cover !important;
-  width: 100% !important;
-  height: 100% !important;
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 0 !important;
-  display: block !important;
-  visibility: visible !important;
-}
-#subheader .container,
-#subheader .relative.z-2,
-section.jarallax .container,
-section.jarallax .relative.z-2 {
-  position: relative !important;
-  z-index: 2 !important;
-}
+/* Jarallax subheader: sin tocar, dejar imágenes como están */
 
 /* Secciones con data-bgimage del template (cargan imágenes claras) — neutralizar */
 section[data-bgimage],
