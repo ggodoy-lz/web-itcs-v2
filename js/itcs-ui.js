@@ -3,13 +3,6 @@
 
   var FONT_KEY = "itcs-font";
 
-  function forceDark() {
-    document.documentElement.setAttribute("data-theme", "dark");
-    if (document.body && !document.body.classList.contains("dark-scheme")) {
-      document.body.classList.add("dark-scheme");
-    }
-  }
-
   function applyFont(id) {
     if (!id) return;
     document.documentElement.setAttribute("data-font", id);
@@ -18,11 +11,7 @@
     if (sel) sel.value = id;
   }
 
-  forceDark();
-
   document.addEventListener("DOMContentLoaded", function () {
-    forceDark();
-
     try {
       var f = localStorage.getItem(FONT_KEY);
       if (f) applyFont(f);
