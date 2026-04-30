@@ -1236,12 +1236,25 @@ html[data-theme="dark"] .itcs-iso-badge {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--itcs-ice);
-  background: linear-gradient(135deg, rgba(83,149,163,.28), rgba(0,100,121,.22));
-  border: 1px solid rgba(171,201,208,.30);
+  color: #ABC9D0 !important;
+  background: rgba(83,149,163,.38);
+  border: 1px solid rgba(171,201,208,.50);
   border-radius: 999px;
-  padding: 0.2rem 0.75rem;
-  box-shadow: inset 0 1px 0 rgba(171,201,208,.12);
+  padding: 0.22rem 0.85rem;
+  box-shadow: inset 0 1px 0 rgba(171,201,208,.18), 0 2px 8px rgba(2,19,28,.3);
+}
+
+/* Badge en index.html (usando .bg-color span) */
+.itcs-blog-card .bg-color,
+.itcs-blog-card span.bg-color {
+  color: #ABC9D0 !important;
+  background: rgba(83,149,163,.38) !important;
+  border: 1px solid rgba(171,201,208,.50) !important;
+  border-radius: 999px !important;
+  padding: 0.22rem 0.85rem !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
 }
 .itcs-blog-card-list {
   background: var(--surface-glass);
@@ -1276,6 +1289,18 @@ html[data-theme="dark"] .itcs-iso-badge {
   border-color: var(--line-accent);
   box-shadow: 0 30px 82px rgba(2,19,28,.62), 0 0 48px rgba(83,149,163,.12);
 }
+/* Asegurar que contenido de blog cards sea siempre visible sobre pseudo-elementos */
+.itcs-blog-card > *,
+.itcs-blog-card .p-4,
+.itcs-blog-card h4,
+.itcs-blog-card p,
+.itcs-blog-card a,
+.itcs-blog-card .itcs-blog-badge { position: relative; z-index: 3; }
+.itcs-blog-card h4 { color: var(--itcs-ice) !important; }
+.itcs-blog-card h4 a { color: var(--itcs-ice) !important; }
+.itcs-blog-card:hover h4,
+.itcs-blog-card:hover h4 a,
+.itcs-blog-card:hover p { color: var(--itcs-ice) !important; }
 .itcs-blog-card .itcs-blog-card-bg {
   position: absolute;
   inset: 0;
@@ -1342,16 +1367,13 @@ html[data-theme="dark"] .itcs-iso-badge {
 
 /* Equipo: tarjetas por rol (legacy; la home/about usan foto grupal .itcs-team-group-photo) */
 .itcs-team-roles-section {
-  background: #ffffff;
-  color: #0f172a;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(83,149,163,.12), transparent 26%),
+    radial-gradient(circle at 90% 70%, rgba(0,100,121,.14), transparent 32%),
+    linear-gradient(180deg, var(--ink-925) 0%, var(--ink-900) 100%);
+  color: var(--text-main);
 }
-html[data-theme="dark"] .itcs-team-roles-section {
-  background: var(--bg-dark-1);
-  color: #f4f4f5;
-}
-html[data-theme="dark"] .itcs-team-roles-section h2 {
-  color: #f4f4f5;
-}
+.itcs-team-roles-section h2 { color: var(--itcs-ice); }
 .itcs-team-roles-overline {
   color: var(--itcs-c-blue);
   font-weight: 600;
