@@ -514,6 +514,19 @@ a.back-to-top {
     linear-gradient(180deg, var(--ink-925) 0%, var(--ink-950) 100%) !important;
   color: var(--text-main) !important;
 }
+.bg-white.text-dark, .bg-white .text-dark { color: var(--itcs-ice) !important; }
+.bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5 { color: var(--itcs-ice) !important; }
+
+/* Secciones con data-bgimage del template (cargan imágenes claras) — neutralizar */
+section[data-bgimage],
+[data-bgimage] {
+  background-image: none !important;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(83,149,163,.10), transparent 26%),
+    radial-gradient(circle at 90% 70%, rgba(0,100,121,.14),  transparent 32%),
+    linear-gradient(180deg, var(--ink-925) 0%, var(--ink-900) 100%) !important;
+  color: var(--text-main) !important;
+}
 .text-black, .text-dark,
 .text-gray-950, .text-gray-900, .text-gray-800, .text-gray-700,
 .text-slate-950, .text-slate-900,
