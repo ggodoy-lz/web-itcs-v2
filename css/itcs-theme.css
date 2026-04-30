@@ -75,335 +75,270 @@ html[data-font] h4, html[data-font] h5, html[data-font] h6 {
   color: #fff;
 }
 
-html[data-theme="dark"] .itcs-accessibility .form-select {
-  background-color: rgba(0, 0, 0, 0.35);
-  border-color: rgba(171, 201, 208, 0.35);
-  color: #ffffff;
-}
-
 /* =====================================================================
-   Paleta extendida iTCS — sin blancos puros, fondos teñidos.
-   Marca: #ABC9D0 #5395A3 #006479 #003550
+   iTCS — Dark Mode real basado en paleta del cliente
+   #ABC9D0  #5395A3  #006479  #003550
    ===================================================================== */
+
+/* --- Tokens globales --- */
 :root {
-  /* Brand */
   --color-1: #ABC9D0;
   --color-2: #5395A3;
   --color-3: #006479;
   --color-4: #003550;
 
-  /* Backgrounds (no white) */
-  --background: #F3F8F9;
-  --background-soft: #EAF3F5;
-  --background-tint: #DCECEF;
+  --bg-main:     #062B3B;
+  --bg-section:  #082F42;
+  --bg-soft:     #0B394D;
+  --bg-elevated: #0D4358;
+  --bg-card:     #0E465C;
+  --bg-card-hover: #11506A;
 
-  /* Surfaces */
-  --surface: #F8FBFC;
-  --surface-muted: #EEF6F8;
-  --surface-strong: #D8E8EB;
+  --text-main:      #ABC9D0;
+  --text-secondary: rgba(171, 201, 208, 0.82);
+  --text-muted:     rgba(171, 201, 208, 0.66);
+  --text-soft:      rgba(171, 201, 208, 0.52);
 
-  /* Text */
-  --text: #082832;
-  --text-muted: #425E66;
-  --text-soft: #5D747B;
-  --text-inverse: #F3F8F9;
+  --primary:      #006479;
+  --primary-hover: #5395A3;
+  --primary-dark:  #003550;
 
-  /* Actions */
-  --primary: #006479;
-  --primary-hover: #003550;
-  --accent: #5395A3;
-  --accent-soft: rgba(83, 149, 163, 0.16);
-  --accent-medium: rgba(83, 149, 163, 0.28);
+  --border:        rgba(171, 201, 208, 0.14);
+  --border-strong: rgba(171, 201, 208, 0.24);
+  --shadow:        0 18px 45px rgba(0, 0, 0, 0.32);
 
-  /* Borders / shadow */
-  --border: rgba(0, 53, 80, 0.16);
-  --border-strong: rgba(0, 53, 80, 0.28);
-  --shadow: 0 18px 45px rgba(0, 53, 80, 0.12);
-
-  /* Override template tokens */
-  --primary-color: #006479;
-  --primary-color-rgb: 0, 100, 121;
-  --secondary-color: #5395A3;
-  --primary-gradient: 90deg, #006479, #5395A3;
-  --bg-gradient-1: 0deg, rgba(83,149,163,.10) 0%, rgba(83,149,163,.20) 100%;
-  --bg-light: #F3F8F9;
-  --bg-dark-1: #003550;
-  --bg-dark-1-rgb: 0, 53, 80;
-  --bg-dark-2: #00263d;
-  --bg-dark-3: #006479;
+  /* Template token overrides */
+  --primary-color:     #5395A3;
+  --primary-color-rgb: 83, 149, 163;
+  --secondary-color:   #006479;
+  --primary-gradient:  90deg, #006479, #5395A3;
+  --bg-gradient-1:     0deg, rgba(83,149,163,.14) 0%, rgba(83,149,163,.24) 100%;
+  --bg-light:   #0B394D;
+  --bg-dark-1:  #062B3B;
+  --bg-dark-1-rgb: 6, 43, 59;
+  --bg-dark-2:  #082F42;
+  --bg-dark-3:  #006479;
 }
 
-/* ---- Base ---- */
-html, body {
-  background: #F3F8F9;
+/* --- Base --- */
+html {
+  background: var(--bg-main);
 }
 body {
   background:
-    radial-gradient(circle at top right, rgba(171, 201, 208, 0.35), transparent 32%),
-    linear-gradient(180deg, #F3F8F9 0%, #EAF3F5 100%) !important;
-  color: var(--text);
+    radial-gradient(circle at 85% 8%,  rgba(83, 149, 163, 0.18), transparent 30%),
+    radial-gradient(circle at 10% 12%, rgba(0, 100, 121, 0.22),  transparent 28%),
+    linear-gradient(180deg, #062B3B 0%, #003550 100%) !important;
+  color: var(--text-main);
 }
 #wrapper {
   background: transparent;
 }
-
-/* ---- Tipografía ---- */
-body, body p, body li, body span, body small {
-  color: var(--text);
+section {
+  background: transparent;
 }
-.text-muted, .op-7, .op-8 {
+#content {
+  background: transparent !important;
+}
+
+/* --- Tipografía --- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+}
+p, li, span, small {
+  color: var(--text-secondary);
+}
+.text-dark, .text-black, .text-muted {
+  color: var(--text-secondary) !important;
+}
+.subtitle, .id-color, .text-primary {
+  color: var(--color-2) !important;
+}
+.op-7, .op-8 {
   color: var(--text-muted) !important;
-}
-h1, h2, h3, h4, h5, h6,
-.text-dark, .text-black {
-  color: var(--color-4) !important;
-}
-.id-color, .text-primary {
-  color: var(--color-3) !important;
-}
-.subtitle {
-  color: var(--color-3);
+  opacity: 1 !important;
 }
 
-/* ---- Links ---- */
-a { color: var(--color-3); }
-a:hover { color: var(--color-4); }
+/* --- Links --- */
+a              { color: var(--color-2); }
+a:hover        { color: var(--color-1); }
 
-/* ---- Reemplazo de blancos por superficies teñidas ---- */
-#content,
-section,
+/* --- Header / topbar --- */
+header,
+header.transparent,
+header:not(.header-light) {
+  background: rgba(0, 53, 80, 0.92) !important;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+}
+header a, #mainmenu a              { color: var(--text-secondary); }
+header a:hover, #mainmenu a:hover,
+#mainmenu li.active > a            { color: var(--text-main); }
+#topbar {
+  background: rgba(0, 53, 80, 0.96) !important;
+  border-bottom: 1px solid var(--border);
+}
+#topbar a, #topbar .topbar-widget a { color: var(--text-secondary); }
+
+/* --- Fondos de secciones: forzar a paleta oscura --- */
+.bg-white, .bg-white-10,
+.bg-light, .bg-light-2,
 section.bg-grey,
-.bg-light,
-.bg-light-2,
-.bg-white,
-.bg-white-10,
 #content.zebra section:nth-child(even) {
-  background: var(--background) !important;
-  color: var(--text);
-}
-
-/* Secciones alternadas (zebra) → teñido más fuerte */
-#content section:nth-of-type(even) {
-  background: var(--background-soft);
-}
-.section-soft   { background: var(--background-soft) !important; }
-.section-muted  { background: var(--background-tint) !important; }
-.section-brand-soft {
   background:
-    radial-gradient(circle at top left, rgba(83,149,163,.22), transparent 30%),
-    linear-gradient(180deg, #DCECEF 0%, #EAF3F5 100%) !important;
+    radial-gradient(circle at top right, rgba(83,149,163,.16), transparent 32%),
+    linear-gradient(180deg, #082F42 0%, #062B3B 100%) !important;
+  color: var(--text-main) !important;
 }
 
-/* ---- Bloques oscuros institucionales ---- */
+/* Bloques dark del template → paleta navy */
 .section-dark,
-.bg-dark, .bg-dark-1, .bg-dark-2, .bg-dark-3,
-.bg-dark-gradient {
+.bg-dark, .bg-dark-1, .bg-dark-2, .bg-dark-3 {
   background:
-    radial-gradient(circle at top right, rgba(83,149,163,.24), transparent 35%),
-    var(--color-4) !important;
-  color: var(--text-inverse);
+    radial-gradient(circle at top right, rgba(83,149,163,.20), transparent 35%),
+    #003550 !important;
+  color: var(--text-main) !important;
 }
 .section-dark h1, .section-dark h2, .section-dark h3,
 .section-dark h4, .section-dark h5, .section-dark h6,
-.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark h6,
-.bg-dark-gradient h1, .bg-dark-gradient h2, .bg-dark-gradient h3,
-.bg-dark-gradient h4, .bg-dark-gradient h5, .bg-dark-gradient h6 {
-  color: var(--text-inverse) !important;
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark h6 {
+  color: var(--text-main) !important;
 }
 .section-dark p, .section-dark li, .section-dark span,
-.bg-dark p, .bg-dark li, .bg-dark span,
-.bg-dark-gradient p, .bg-dark-gradient li, .bg-dark-gradient span {
-  color: rgba(243, 248, 249, 0.82);
-}
-.section-dark a, .bg-dark a, .bg-dark-gradient a {
-  color: var(--color-1);
+.bg-dark p, .bg-dark li, .bg-dark span {
+  color: var(--text-secondary) !important;
 }
 
-/* ---- Header oscuro ---- */
-header.transparent,
-header:not(.header-light) {
-  background: rgba(0, 53, 80, 0.94) !important;
-  border-bottom: 1px solid rgba(171, 201, 208, 0.18);
-  backdrop-filter: blur(14px);
-}
-header a {
-  color: rgba(243, 248, 249, 0.82);
-}
-header a:hover,
-header a.active,
-#mainmenu a:hover,
-#mainmenu li.active > a {
-  color: var(--color-1);
-}
-#topbar {
-  background: rgba(0, 53, 80, 0.96) !important;
-  color: rgba(243, 248, 249, 0.82);
-  border-bottom: 1px solid rgba(171, 201, 208, 0.12);
-}
-#topbar a, #topbar .topbar-widget a {
-  color: rgba(243, 248, 249, 0.82);
+/* Card con gradiente dark */
+.bg-dark-gradient {
+  background: linear-gradient(135deg, rgba(14,70,92,.94), rgba(11,57,77,.98)) !important;
+  color: var(--text-main) !important;
 }
 
-/* ---- Hero claro teñido ---- */
-.hero,
-section.hero,
-#inicio-hero,
-section:first-of-type.no-bg {
-  background:
-    radial-gradient(circle at 85% 20%, rgba(83,149,163,.28), transparent 34%),
-    radial-gradient(circle at 10% 10%, rgba(171,201,208,.45), transparent 28%),
-    linear-gradient(135deg, #EAF3F5 0%, #DCECEF 100%) !important;
-  color: var(--text);
-}
-
-/* ---- Marquee con .bg-color: gradiente teal ---- */
+/* --- Marquee / .bg-color --- */
 .bg-color {
   background: linear-gradient(90deg, #006479, #5395A3) !important;
-  color: var(--text-inverse) !important;
-}
-
-/* ---- Cards de servicios / counters ---- */
-.itcs-service-card,
-.de-box,
-.de_count,
-.card {
-  background: linear-gradient(180deg, rgba(248,251,252,.92), rgba(238,246,248,.92)) !important;
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  box-shadow: 0 14px 38px rgba(0, 53, 80, 0.10);
-  color: var(--text);
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-}
-.itcs-service-card:hover,
-.de-box:hover,
-.card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 100, 121, 0.34);
-  box-shadow: 0 22px 54px rgba(0, 53, 80, 0.15);
-}
-.itcs-service-card h1, .itcs-service-card h2, .itcs-service-card h3,
-.itcs-service-card h4, .itcs-service-card h5,
-.de-box h1, .de-box h2, .de-box h3, .de-box h4, .de-box h5,
-.card h1, .card h2, .card h3, .card h4, .card h5 {
   color: var(--color-4) !important;
 }
-.itcs-service-card p, .de-box p, .card p {
-  color: var(--text-muted);
+.bg-color span, .bg-color i { color: var(--color-4); }
+
+/* --- Counters / stats --- */
+.de_count { background: transparent !important; }
+.de_count h3 { color: var(--text-main) !important; }
+.de_count small, .de_count p { color: var(--text-secondary) !important; }
+.de_count i.bg-color, .de_count .circle.bg-color {
+  background: rgba(83, 149, 163, 0.16) !important;
+  color: var(--color-1) !important;
+  border: 1px solid var(--border-strong);
 }
 
-/* Counters: número en navy fuerte, label en muted */
-.de_count h3 { color: var(--color-4) !important; }
-.de_count i.bg-color { background: var(--color-1) !important; color: var(--color-3) !important; }
+/* --- Cards de servicios --- */
+.itcs-service-card,
+.de-box,
+.card {
+  background: linear-gradient(180deg, rgba(14,70,92,.94), rgba(11,57,77,.98)) !important;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  color: var(--text-main);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+.itcs-service-card:hover, .de-box:hover, .card:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(180deg, rgba(17,80,106,.96), rgba(13,67,88,.98)) !important;
+  border-color: var(--border-strong);
+  box-shadow: 0 24px 54px rgba(0,0,0,.36);
+}
+.itcs-service-card h1,.itcs-service-card h2,.itcs-service-card h3,
+.itcs-service-card h4,.itcs-service-card h5,
+.de-box h1,.de-box h2,.de-box h3,.de-box h4,.de-box h5,
+.card h1,.card h2,.card h3,.card h4,.card h5 {
+  color: var(--text-main) !important;
+}
+.itcs-service-card p, .de-box p, .card p { color: var(--text-secondary); }
 
-/* ---- Botones ---- */
+/* --- Botones primarios (.btn-main) --- */
 .btn-main {
   --btn-gradient: linear-gradient(90deg, #006479, #003550);
   background: var(--primary) !important;
-  color: var(--text-inverse) !important;
-  border: 1px solid rgba(171, 201, 208, 0.28);
-  box-shadow: 0 12px 28px rgba(0, 100, 121, 0.24);
+  color: var(--text-main) !important;
+  border: 1px solid rgba(171,201,208,.18);
+  box-shadow: 0 10px 24px rgba(0,0,0,.26);
 }
 .btn-main:hover {
   background: var(--primary-hover) !important;
-  border-color: rgba(171, 201, 208, 0.42);
-  color: var(--text-inverse) !important;
-}
-.btn-main span { color: var(--text-inverse); }
-
-.btn-line, a.btn-line, .btn-outline {
-  background: rgba(243, 248, 249, 0.72) !important;
   color: var(--color-4) !important;
-  border: 1px solid var(--border) !important;
+  border-color: rgba(171,201,208,.32);
+  transform: translateY(-2px);
+}
+.btn-main span { color: inherit; }
+
+/* --- Botones secundarios / outline --- */
+.btn-line, a.btn-line, .btn-outline {
+  background: rgba(171,201,208,.08) !important;
+  color: var(--text-main) !important;
+  border: 1px solid rgba(171,201,208,.18) !important;
 }
 .btn-line:hover, .btn-outline:hover {
-  background: var(--background-tint) !important;
-  border-color: rgba(0, 100, 121, 0.35) !important;
-  color: var(--color-4) !important;
+  background: rgba(171,201,208,.14) !important;
+  border-color: rgba(171,201,208,.28) !important;
+  transform: translateY(-2px);
 }
 
-.section-dark .btn-line,
-.section-dark .btn-outline,
-.bg-dark-gradient .btn-line,
-.bg-dark-gradient .btn-outline,
-header .btn-line,
-header .btn-main.bg-dark {
-  background: rgba(171, 201, 208, 0.12) !important;
-  color: var(--text-inverse) !important;
-  border: 1px solid rgba(171, 201, 208, 0.32) !important;
+/* --- Badges --- */
+.badge, .rounded-1.bg-color {
+  background: rgba(83,149,163,.16) !important;
+  color: var(--text-main) !important;
+  border: 1px solid rgba(171,201,208,.14) !important;
 }
-.section-dark .btn-line:hover,
-.section-dark .btn-outline:hover,
-.bg-dark-gradient .btn-line:hover,
-.bg-dark-gradient .btn-outline:hover {
-  background: rgba(171, 201, 208, 0.22) !important;
-}
-
-/* ---- Badges ---- */
-.badge,
-.itcs-blog-card-bg + div .bg-color {
-  background: rgba(83, 149, 163, 0.16);
-  color: var(--color-4);
-  border: 1px solid rgba(83, 149, 163, 0.26);
-}
-.section-dark .badge,
-.bg-dark .badge,
 .itcs-blog-card .bg-color {
-  background: rgba(171, 201, 208, 0.14) !important;
-  color: var(--text-inverse) !important;
-  border: 1px solid rgba(171, 201, 208, 0.28) !important;
+  background: rgba(83,149,163,.16) !important;
+  color: var(--text-main) !important;
+  border: 1px solid rgba(171,201,208,.14) !important;
 }
 
-/* ---- Bordes ---- */
-.rounded-1.border,
-.border,
-.border-bottom,
-.border-top {
+/* --- Bordes --- */
+.rounded-1.border, .border, .border-bottom, .border-top {
   border-color: var(--border) !important;
 }
 
-/* ---- Inputs ---- */
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=date],
-textarea,
-select {
-  background: rgba(243, 248, 249, 0.76) !important;
-  color: var(--text) !important;
+/* --- Inputs --- */
+input[type=text], input[type=email], input[type=password],
+input[type=date], textarea, select {
+  background: rgba(8,47,66,.92) !important;
+  color: var(--text-main) !important;
   border: 1px solid var(--border) !important;
+}
+input::placeholder, textarea::placeholder {
+  color: rgba(171,201,208,.44);
 }
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: var(--color-3) !important;
-  box-shadow: 0 0 0 4px rgba(0, 100, 121, 0.12);
-}
-input::placeholder, textarea::placeholder {
-  color: var(--text-soft);
-  opacity: 1;
+  border-color: rgba(83,149,163,.42) !important;
+  box-shadow: 0 0 0 4px rgba(83,149,163,.12);
 }
 
-/* ---- Footer ---- */
+/* --- Footer --- */
 footer {
-  background: var(--color-4) !important;
-  color: var(--text-inverse) !important;
-  border-top: 1px solid rgba(171, 201, 208, 0.18);
+  background: linear-gradient(180deg, #003550 0%, #062B3B 100%) !important;
+  color: var(--text-main) !important;
+  border-top: 1px solid var(--border);
 }
-footer a { color: rgba(243, 248, 249, 0.78); }
-footer a:hover { color: var(--color-1); }
+footer a              { color: var(--text-secondary); }
+footer a:hover        { color: var(--color-2); }
 footer h1, footer h2, footer h3, footer h4, footer h5 {
-  color: var(--text-inverse) !important;
+  color: var(--text-main) !important;
 }
 .subfooter {
-  background: #00263d !important;
-  color: rgba(243, 248, 249, 0.78);
-  border-top: 1px solid rgba(171, 201, 208, 0.10);
+  background: rgba(0,0,0,.22) !important;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
 }
 
-/* ---- Topbar accesibilidad ---- */
+/* --- Topbar accesibilidad --- */
 .itcs-accessibility .form-select {
-  background-color: rgba(243, 248, 249, 0.10);
-  border-color: rgba(171, 201, 208, 0.28);
-  color: var(--text-inverse);
+  background-color: rgba(171,201,208,.08);
+  border-color: rgba(171,201,208,.24);
+  color: var(--text-main);
 }
 
 /* Anclas con menú fijo */
