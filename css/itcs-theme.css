@@ -517,33 +517,37 @@ a.back-to-top {
 .bg-white.text-dark, .bg-white .text-dark { color: var(--itcs-ice) !important; }
 .bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5 { color: var(--itcs-ice) !important; }
 
-/* Jarallax: imagen queda en z-index:-100 (JS), fondo de sección debe ser transparent para que se vea */
+/* Jarallax subheader: fondo oscuro via gradient, imagen semi-transparente encima */
 #subheader,
-section.jarallax,
-section#subheader {
-  position: relative;
-  background: transparent !important;
+section.jarallax {
+  position: relative !important;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(83,149,163,.25), transparent 38%),
+    linear-gradient(180deg, var(--ink-900) 0%, var(--itcs-navy) 100%) !important;
   color: var(--text-main) !important;
 }
-/* Overlay oscuro sobre la imagen */
-#subheader::after,
-section.jarallax::after,
-section#subheader::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 12% 8%, rgba(83,149,163,.22), transparent 35%),
-    linear-gradient(180deg, rgba(2,19,28,.72) 0%, rgba(0,53,80,.65) 100%);
+/* La img jarallax va encima del fondo oscuro con mezcla oscura */
+#subheader .jarallax-img,
+#subheader > img,
+section.jarallax .jarallax-img,
+section.jarallax > img {
+  opacity: 0.22 !important;
+  mix-blend-mode: luminosity !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  display: block !important;
+  visibility: visible !important;
 }
 #subheader .container,
 #subheader .relative.z-2,
 section.jarallax .container,
 section.jarallax .relative.z-2 {
-  position: relative;
-  z-index: 2;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 /* Secciones con data-bgimage del template (cargan imágenes claras) — neutralizar */
