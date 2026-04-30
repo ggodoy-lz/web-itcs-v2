@@ -517,27 +517,29 @@ a.back-to-top {
 .bg-white.text-dark, .bg-white .text-dark { color: var(--itcs-ice) !important; }
 .bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5 { color: var(--itcs-ice) !important; }
 
-/* Jarallax: mantener imagen, agregar overlay oscuro encima */
+/* Jarallax: imagen queda en z-index:-100 (JS), fondo de sección debe ser transparent para que se vea */
 #subheader,
 section.jarallax,
 section#subheader {
   position: relative;
+  background: transparent !important;
   color: var(--text-main) !important;
 }
-#subheader::before,
-section.jarallax::before,
-section#subheader::before {
+/* Overlay oscuro sobre la imagen */
+#subheader::after,
+section.jarallax::after,
+section#subheader::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
   background:
     radial-gradient(circle at 12% 8%, rgba(83,149,163,.22), transparent 35%),
     linear-gradient(180deg, rgba(2,19,28,.72) 0%, rgba(0,53,80,.65) 100%);
 }
 #subheader .container,
-#subheader .relative,
+#subheader .relative.z-2,
 section.jarallax .container,
 section.jarallax .relative.z-2 {
   position: relative;
