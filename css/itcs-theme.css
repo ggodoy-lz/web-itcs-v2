@@ -323,18 +323,26 @@ h2.wow::after {
   text-shadow: 0 0 24px rgba(171,201,208,.5);
 }
 
-/* --- Footer links: hover con desplazamiento --- */
+/* --- Footer links --- */
 footer a {
-  transition: color 200ms ease, padding-left 200ms ease;
+  transition: color 180ms ease, padding-left 180ms ease;
   display: inline-block;
-  color: rgba(255,255,255,.80) !important;
+  color: rgba(171,201,208,.86) !important;
+  text-decoration: none;
 }
 footer a:hover {
   padding-left: 4px;
-  color: #ffffff !important;
+  color: #5395A3 !important;
 }
-footer p, footer li, footer small { color: rgba(255,255,255,.80) !important; }
-footer h5, footer h4              { color: #ffffff !important; font-weight: 700; }
+footer p, footer li, footer small { color: rgba(171,201,208,.84) !important; }
+footer h5, footer h4 {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+}
+footer i, footer svg { color: #5395A3 !important; }
 
 /* --- Tipografía --- */
 h1, h2, h3, h4, h5, h6        { color: var(--text-strong); letter-spacing: -0.035em; }
@@ -599,20 +607,33 @@ input:focus, textarea:focus, select:focus {
 /* --- Footer --- */
 footer {
   background:
-    radial-gradient(circle at 15% 0%, rgba(83,149,163,.14), transparent 25%),
-    linear-gradient(180deg, var(--itcs-navy) 0%, var(--ink-1000) 100%) !important;
-  color: var(--text-main) !important;
-  border-top: 1px solid var(--line-soft);
+    radial-gradient(circle at 15% 0%, rgba(83,149,163,.16), transparent 28%),
+    linear-gradient(180deg, #003550 0%, #02131C 100%) !important;
+  color: rgba(171,201,208,.84) !important;
+  border-top: 1px solid rgba(171,201,208,.14);
 }
-footer a                         { color: var(--text-main) !important; }
-footer a:hover                   { color: var(--itcs-teal) !important; }
 footer h1, footer h2, footer h3,
-footer h4, footer h5             { color: var(--text-strong) !important; }
-.subfooter {
-  background: rgba(2,19,28,.6) !important;
-  color: var(--text-soft);
-  border-top: 1px solid var(--line-soft);
+footer h4, footer h5 {
+  color: #ffffff !important;
+  font-weight: 800 !important;
 }
+/* Contact column: labels white+bold, values white, desc celeste */
+footer .contact-label             { color: #ffffff !important; font-weight: 800; }
+footer .contact-value             { color: #ffffff !important; font-weight: 700; }
+footer .contact-description       { color: rgba(171,201,208,.84) !important; }
+/* Text-white overrides in footer stay white */
+footer .text-white                { color: #ffffff !important; }
+footer .fw-bold.text-white        { color: #ffffff !important; font-weight: 800 !important; }
+.subfooter {
+  margin-top: 0;
+  padding-top: 0;
+  background: rgba(2,19,28,.6) !important;
+  color: rgba(171,201,208,.62) !important;
+  font-size: 13px;
+  border-top: 1px solid rgba(171,201,208,.12);
+}
+.subfooter a { color: rgba(171,201,208,.62) !important; }
+.subfooter a:hover { color: #5395A3 !important; padding-left: 0 !important; }
 
 /* --- Topbar accesibilidad --- */
 .itcs-accessibility .form-select {
