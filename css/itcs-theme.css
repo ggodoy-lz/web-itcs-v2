@@ -323,17 +323,6 @@ h2.wow::after {
   text-shadow: 0 0 24px rgba(171,201,208,.5);
 }
 
-/* --- Footer links --- */
-footer a {
-  transition: color 180ms ease, padding-left 180ms ease;
-  display: inline-block;
-  color: rgba(171,201,208,.86) !important;
-  text-decoration: none;
-}
-footer a:hover {
-  padding-left: 4px;
-  color: #5395A3 !important;
-}
 footer p, footer li, footer small { color: rgba(171,201,208,.84) !important; }
 footer h5, footer h4 {
   color: #ffffff !important;
@@ -604,10 +593,18 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 0 0 4px rgba(83,149,163,.12), 0 14px 34px rgba(2,19,28,.28);
 }
 
+/* --- CTA Section --- */
+.itcs-cta-section {
+  background:
+    radial-gradient(circle at 80% 30%, rgba(83,149,163,.22), transparent 34%),
+    linear-gradient(135deg, #006479 0%, #003550 100%) !important;
+  border-bottom: 1px solid rgba(171,201,208,.16);
+}
+
 /* --- Footer --- */
 footer {
   background:
-    radial-gradient(circle at 15% 0%, rgba(83,149,163,.16), transparent 28%),
+    radial-gradient(circle at 12% 0%, rgba(83,149,163,.12), transparent 26%),
     linear-gradient(180deg, #003550 0%, #02131C 100%) !important;
   color: rgba(171,201,208,.84) !important;
   border-top: 1px solid rgba(171,201,208,.14);
@@ -617,13 +614,27 @@ footer h4, footer h5 {
   color: #ffffff !important;
   font-weight: 800 !important;
 }
-/* Contact column: labels white+bold, values white, desc celeste */
-footer .contact-label             { color: #ffffff !important; font-weight: 800; }
-footer .contact-value             { color: #ffffff !important; font-weight: 700; }
-footer .contact-description       { color: rgba(171,201,208,.84) !important; }
-/* Text-white overrides in footer stay white */
+/* Links footer: hover blanco con desplazamiento */
+footer a {
+  color: rgba(171,201,208,.84) !important;
+  transition: color 180ms ease, transform 180ms ease;
+  display: inline-block;
+}
+footer a:hover {
+  color: #ffffff !important;
+  transform: translateX(3px);
+  padding-left: 0 !important;
+}
+/* Contact column */
 footer .text-white                { color: #ffffff !important; }
 footer .fw-bold.text-white        { color: #ffffff !important; font-weight: 800 !important; }
+/* Texto institucional izquierda */
+.footer-brand-text {
+  max-width: 360px;
+  color: rgba(171,201,208,.84) !important;
+  line-height: 1.7;
+}
+.footer-brand-text strong         { color: #ffffff; font-weight: 700; }
 .subfooter {
   margin-top: 0;
   padding-top: 0;
@@ -633,7 +644,7 @@ footer .fw-bold.text-white        { color: #ffffff !important; font-weight: 800 
   border-top: 1px solid rgba(171,201,208,.12);
 }
 .subfooter a { color: rgba(171,201,208,.62) !important; }
-.subfooter a:hover { color: #5395A3 !important; padding-left: 0 !important; }
+.subfooter a:hover { color: #ffffff !important; transform: none; padding-left: 0 !important; }
 
 /* --- Topbar accesibilidad --- */
 .itcs-accessibility .form-select {
