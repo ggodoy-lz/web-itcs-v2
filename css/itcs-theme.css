@@ -626,6 +626,18 @@ footer h4, footer h5             { color: var(--text-strong) !important; }
   scroll-margin-top: 120px;
 }
 
+/* Subheader: overlay oscuro sobre cualquier imagen de fondo */
+#subheader.jarallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 19, 28, 0.62);
+  z-index: 1;
+  pointer-events: none;
+}
+#subheader .container.relative.z-2,
+#subheader .gradient-edge-top { position: relative; z-index: 2; }
+
 /* --- Botón "Ir arriba" — circular, esquina inferior derecha, discreto --- */
 #back-to-top,
 .back-to-top,
