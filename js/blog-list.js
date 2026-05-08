@@ -73,18 +73,18 @@
   ];
 
   function card(p) {
-    var g       = ['a','b','c'].includes(p.gradient) ? p.gradient : 'a';
+    var g = ['a','b','c'].includes(p.gradient) ? p.gradient : 'a';
     var postUrl = 'blog-post.html?slug=' + encodeURIComponent(p.slug || '');
     return (
       '<div class="col-lg-4 d-flex">' +
-        '<a href="' + postUrl + '" class="itcs-blog-card h-100 d-block hover relative rounded-20 overflow-hidden text-light w-100 text-decoration-none">' +
+        '<a href="' + postUrl + '" class="itcs-blog-card h-100 d-flex flex-column hover rounded-20 overflow-hidden text-light text-decoration-none w-100">' +
           '<span class="itcs-blog-card-bg itcs-blog-card-bg--' + g + '" aria-hidden="true"></span>' +
-          '<div class="absolute start-0 bottom-0 p-40 z-2 w-100">' +
+          '<div class="gradient-edge-bottom h-70"></div>' +
+          '<div class="mt-auto p-4 position-relative z-2">' +
             '<div class="itcs-blog-tag mb-3">' + esc(p.category || '') + ' · ~' + (parseInt(p.read_minutes,10)||5) + ' min</div>' +
             '<h4 class="mb-2">' + esc(p.title || '') + '</h4>' +
-            '<p class="mb-0 fs-14 op-8">' + esc(p.excerpt || '') + '</p>' +
+            '<p class="mb-0 small" style="color:rgba(171,201,208,.80)">' + esc(p.excerpt || '') + '</p>' +
           '</div>' +
-          '<div class="gradient-edge-bottom h-70"></div>' +
         '</a>' +
       '</div>'
     );
