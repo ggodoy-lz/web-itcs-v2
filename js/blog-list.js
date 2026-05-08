@@ -75,23 +75,17 @@
   function card(p) {
     var g       = ['a','b','c'].includes(p.gradient) ? p.gradient : 'a';
     var postUrl = 'blog-post.html?slug=' + encodeURIComponent(p.slug || '');
-    var ctaUrl  = esc(p.cta_url   || 'contact.html');
-    var ctaLabel= esc(p.cta_label || 'Contacto');
     return (
-      '<div class="col-lg-4">' +
-        '<div class="itcs-blog-card rounded-1 overflow-hidden h-100 d-flex flex-column">' +
-          '<a href="' + postUrl + '" class="d-block text-decoration-none">' +
-            '<div class="itcs-blog-thumb itcs-blog-card-bg--' + g + '" role="img"></div>' +
-          '</a>' +
-          '<div class="p-4 d-flex flex-column flex-grow-1">' +
-            '<div class="itcs-blog-badge mb-2">' + esc(p.category || '') + ' · ~' + (parseInt(p.read_minutes,10)||5) + ' min</div>' +
-            '<h4 class="mb-2 flex-grow-1">' +
-              '<a href="' + postUrl + '" class="text-decoration-none" style="color:inherit">' + esc(p.title || '') + '</a>' +
-            '</h4>' +
-            '<p class="mb-3" style="color:var(--text-soft)">' + esc(p.excerpt || '') + '</p>' +
-            '<a href="' + ctaUrl + '" class="btn-main fx-slide btn-sm align-self-start"><span>' + ctaLabel + '</span></a>' +
+      '<div class="col-lg-4 d-flex">' +
+        '<a href="' + postUrl + '" class="itcs-blog-card h-100 d-block hover relative rounded-20 overflow-hidden text-light w-100 text-decoration-none">' +
+          '<span class="itcs-blog-card-bg itcs-blog-card-bg--' + g + '" aria-hidden="true"></span>' +
+          '<div class="absolute start-0 bottom-0 p-40 z-2 w-100">' +
+            '<div class="itcs-blog-tag mb-3">' + esc(p.category || '') + ' · ~' + (parseInt(p.read_minutes,10)||5) + ' min</div>' +
+            '<h4 class="mb-2">' + esc(p.title || '') + '</h4>' +
+            '<p class="mb-0 fs-14 op-8">' + esc(p.excerpt || '') + '</p>' +
           '</div>' +
-        '</div>' +
+          '<div class="gradient-edge-bottom h-70"></div>' +
+        '</a>' +
       '</div>'
     );
   }
