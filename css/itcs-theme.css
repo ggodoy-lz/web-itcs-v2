@@ -1497,6 +1497,12 @@ html[data-theme="dark"] .itcs-iso-badge {
 .itcs-blog-card .position-relative.z-2,
 .itcs-blog-card > .absolute.z-2 { z-index: 2 !important; }
 
+/* Cards del home: altura mínima uniforme */
+.itcs-blog-section .itcs-blog-card {
+  min-height: 300px;
+  overflow: hidden !important;
+}
+
 /* Blog listado: franja de marca en lugar de foto stock */
 .itcs-blog-thumb {
   min-height: 200px;
