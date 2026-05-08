@@ -1695,3 +1695,46 @@ section:last-of-type::before {
   }
   html { scroll-behavior: auto !important; }
 }
+
+/* --- Dropdown / submenu del nav --- */
+#mainmenu ul,
+.dark-scheme #mainmenu ul {
+  background: #031B27 !important;
+  border: 1px solid rgba(171, 201, 208, 0.14) !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35) !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#mainmenu ul li a,
+#mainmenu li li a {
+  color: rgba(171, 201, 208, 0.82) !important;
+  transition: background 180ms ease, color 180ms ease, padding-left 180ms ease;
+  position: relative;
+}
+
+#mainmenu ul li a:hover,
+#mainmenu li li a:hover,
+#mainmenu ul li:hover > a {
+  background: rgba(83, 149, 163, 0.18) !important;
+  color: #ABC9D0 !important;
+  padding-left: 18px;
+}
+
+#mainmenu ul li a:hover::before,
+#mainmenu li li a:hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  border-radius: 999px;
+  background: #5395A3;
+}
+
+#mainmenu ul li.active > a,
+#mainmenu li li a[aria-current="page"] {
+  background: linear-gradient(90deg, rgba(83,149,163,0.30), rgba(0,100,121,0.24)) !important;
+  color: #ABC9D0 !important;
+}
