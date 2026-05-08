@@ -345,7 +345,8 @@ footer h5, footer h4 {
 footer i, footer svg { color: #5395A3 !important; }
 
 /* --- Tipografía --- */
-h1, h2, h3, h4, h5, h6        { color: var(--text-strong); letter-spacing: -0.035em; }
+h1, h2                         { color: #ffffff; letter-spacing: -0.035em; }
+h3, h4, h5, h6                 { color: var(--text-strong); letter-spacing: -0.035em; }
 h1                             { text-shadow: 0 18px 70px rgba(83,149,163,.22); }
 p, li                          { color: rgba(255,255,255,.88); }
 small, .subtitle, .description { color: rgba(255,255,255,.70); }
@@ -576,8 +577,7 @@ main > section > *,
 }
 
 /* --- Badges / pills --- */
-.badge, .pill, .tag,
-.itcs-blog-card .bg-color {
+.badge, .pill, .tag {
   background: linear-gradient(135deg, rgba(171,201,208,.12), rgba(83,149,163,.08)) !important;
   color: var(--itcs-ice) !important;
   border: 1px solid rgba(171,201,208,.16) !important;
@@ -1240,6 +1240,13 @@ html[data-theme="dark"] .itcs-iso-badge {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
 }
 
+/* --- Sección Blog --- */
+.itcs-blog-section h2 { color: #ffffff !important; font-weight: 800; }
+.itcs-blog-section .lead {
+  color: rgba(171,201,208,.86) !important;
+  font-weight: 500;
+}
+
 /* Blog: fondos de marca sin fotos de stock con logos ajenos */
 /* Blog card (listado dinámico) */
 .itcs-blog-badge {
@@ -1258,15 +1265,17 @@ html[data-theme="dark"] .itcs-iso-badge {
 
 /* Badge en index.html (usando .bg-color span) */
 .itcs-blog-card .bg-color,
-.itcs-blog-card span.bg-color {
-  color: #ABC9D0 !important;
-  background: rgba(83,149,163,.38) !important;
-  border: 1px solid rgba(171,201,208,.50) !important;
+.itcs-blog-card span.bg-color,
+.itcs-blog-card div.bg-color {
+  color: #ffffff !important;
+  background: rgba(83,149,163,.28) !important;
+  border: 1px solid rgba(171,201,208,.26) !important;
   border-radius: 999px !important;
   padding: 0.22rem 0.85rem !important;
   font-size: 0.72rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
 }
 .itcs-blog-card-list {
   background: var(--surface-glass);
@@ -1281,38 +1290,46 @@ html[data-theme="dark"] .itcs-iso-badge {
   border-color: var(--line-accent);
   box-shadow: 0 30px 82px rgba(2,19,28,.62), 0 0 48px rgba(83,149,163,.12);
 }
-.itcs-blog-card-bg--a { background: linear-gradient(145deg, #003550 0%, #00465A 60%, #006479 100%); }
-.itcs-blog-card-bg--b { background: linear-gradient(145deg, #031B27 0%, #003550 55%, #0A3D50 100%); }
-.itcs-blog-card-bg--c { background: linear-gradient(145deg, #052333 0%, #006479 60%, #5395A3 100%); }
-
 .itcs-blog-card {
   position: relative;
   isolation: isolate;
   min-height: 320px;
-  background: var(--surface-glass);
-  border: 1px solid var(--line-soft);
+  border: 1px solid rgba(171,201,208,.14);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 18px 45px rgba(2,19,28,.42), inset 0 1px 0 rgba(171,201,208,.05);
   transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
 }
 .itcs-blog-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--line-accent);
-  box-shadow: 0 30px 82px rgba(2,19,28,.62), 0 0 48px rgba(83,149,163,.12);
+  transform: translateY(-4px);
+  border-color: rgba(83,149,163,.34);
+  box-shadow: 0 24px 60px rgba(2,19,28,.54), 0 0 36px rgba(83,149,163,.10);
 }
-/* Asegurar que contenido de blog cards sea siempre visible sobre pseudo-elementos */
+/* Fondos específicos por card */
+.itcs-blog-card-bg--a {
+  background: linear-gradient(145deg, #003550 0%, #00465A 60%, #006479 100%);
+}
+.itcs-blog-card-bg--b {
+  background: linear-gradient(145deg, #031B27 0%, #003550 55%, #0A3D50 100%);
+}
+.itcs-blog-card-bg--c {
+  background: linear-gradient(145deg, #052333 0%, #006479 60%, #5395A3 100%);
+}
+/* Z-index: contenido sobre fondo */
 .itcs-blog-card > *,
 .itcs-blog-card .p-4,
 .itcs-blog-card h4,
 .itcs-blog-card p,
 .itcs-blog-card a,
 .itcs-blog-card .itcs-blog-badge { position: relative; z-index: 3; }
-.itcs-blog-card h4 { color: var(--itcs-ice) !important; }
-.itcs-blog-card h4 a { color: var(--itcs-ice) !important; }
+/* Títulos de cards: blanco puro */
+.itcs-blog-card h4,
+.itcs-blog-card h4 a { color: #ffffff !important; font-weight: 700 !important; letter-spacing: -0.02em; }
 .itcs-blog-card:hover h4,
-.itcs-blog-card:hover h4 a,
-.itcs-blog-card:hover p { color: var(--itcs-ice) !important; }
+.itcs-blog-card:hover h4 a { color: #ffffff !important; }
+/* Descripciones: celeste claro */
+.itcs-blog-card p { color: rgba(171,201,208,.86) !important; }
+.itcs-blog-card:hover p { color: rgba(171,201,208,.96) !important; }
 .itcs-blog-card .itcs-blog-card-bg {
   position: absolute;
   inset: 0;
@@ -1323,18 +1340,9 @@ html[data-theme="dark"] .itcs-iso-badge {
   transform: scale(1.03);
   opacity: 0.95;
 }
-.itcs-blog-card-bg--a,
-.itcs-blog-card-bg--b,
-.itcs-blog-card-bg--c {
-  background: linear-gradient(145deg, #003550 0%, #006479 100%);
-}
-.itcs-blog-card .gradient-edge-bottom {
-  z-index: 1;
-}
+.itcs-blog-card .gradient-edge-bottom { z-index: 1; }
 .itcs-blog-card .position-relative.z-2,
-.itcs-blog-card > .absolute.z-2 {
-  z-index: 2 !important;
-}
+.itcs-blog-card > .absolute.z-2 { z-index: 2 !important; }
 
 /* Blog listado: franja de marca en lugar de foto stock */
 .itcs-blog-thumb {
