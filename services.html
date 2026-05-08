@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -15,8 +15,6 @@
     <script>
         (function () {
             try {
-                
-                
                 var f = localStorage.getItem("itcs-font");
                 if (f) document.documentElement.setAttribute("data-font", f);
             } catch (e) {}
@@ -46,9 +44,7 @@
                                     <div class="topbar-widget me-3"><a href="tel:+595217288222"><i class="icofont-phone"></i>+595 21 728-8222</a></div>
                                     <div class="topbar-widget me-3"><a href="mailto:info@itcs.com.py"><i class="icofont-envelope"></i>info@itcs.com.py</a></div>
                                 </div>
-                                <div class="itcs-accessibility d-flex align-items-center gap-2 mt-2 mt-lg-0">
-                                    
-                                </div>
+                                <div class="itcs-accessibility d-flex align-items-center gap-2 mt-2 mt-lg-0"></div>
                             </div>
                         </div>
                     </div>
@@ -63,7 +59,6 @@
                                 <div id="logo">
                                     <a href="index.html">
                                         <img class="logo-main itcs-logo-header-w" src="images/logos/logo-itcs-blanco.webp" alt="iTCS S.A.">
-                                        
                                         <img class="logo-mobile" src="images/logos/logo-itcs-blanco.webp" alt="iTCS S.A.">
                                     </a>
                                 </div>
@@ -89,7 +84,7 @@
                                             <li><a href="services.html#dev">Desarrollo de Sistemas</a></li>
                                             <li><a href="services.html#backup">Backup &amp; Continuidad</a></li>
                                             <li><a href="services.html#mision">Cómputo de Misión Crítica</a></li>
-                                            <li><a href="services.html#soporte">Soporte Técnico</a></li>
+                                            <li><a href="services.html#soporte">Soporte Técnico &amp; Outsourcing</a></li>
                                             <li><a href="services.html#obras">Obras Civiles</a></li>
                                         </ul>
                                     </li>
@@ -121,6 +116,8 @@
 
         <div class="no-bottom no-top" id="content">
             <div id="top"></div>
+
+            <!-- ── Hero ──────────────────────────────────────────── -->
             <section id="subheader" class="section-dark bg-dark text-light relative jarallax">
                 <div class="gradient-edge-top"></div>
                 <img src="images/background/2.webp" class="jarallax-img" alt="">
@@ -128,276 +125,295 @@
                     <div class="row gy-4 gx-5 align-items-center">
                         <div class="spacer-double sm-hide"></div>
                         <div class="col-lg-8">
-                            <h1 class="mb-0 wow fadeInUp" data-wow-delay=".2s">Servicios</h1>
-                            <ul class="crumb wow fadeInUp">
+                            <div class="svc-hero-badge wow fadeInUp" data-wow-delay=".1s">Servicios empresariales</div>
+                            <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">Soluciones IT para cada<br class="sm-hide"> necesidad empresarial</h1>
+                            <p class="svc-hero-sub wow fadeInUp" data-wow-delay=".3s">Desde infraestructura y ciberseguridad hasta backup, soporte y misión crítica:<br class="sm-hide"> acompañamos todo el ciclo tecnológico de tu empresa.</p>
+                            <ul class="crumb wow fadeInUp" data-wow-delay=".35s">
                                 <li><a href="index.html">Inicio</a></li>
                                 <li class="active">Servicios</li>
                             </ul>
                         </div>
                         <div class="col-lg-4 text-lg-end sm-hide">
-                            <h3 class="fs-24">Todo el ciclo tecnológico de tu empresa</h3>
+                            <p class="svc-hero-stat wow fadeInUp" data-wow-delay=".4s">+20 años<br><span>en tecnología empresarial</span></p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="pt-5 pb-4">
+            <!-- ── Filter bar ────────────────────────────────────── -->
+            <section class="svc-filter-section">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 offset-lg-1 text-center">
-                            <h2 class="mb-3">Servicios IT para cada necesidad empresarial</h2>
-                            <p class="lead mb-0">Desde la infraestructura base hasta la ciberseguridad avanzada, cubrimos todo el ciclo con expertos certificados.</p>
-                        </div>
+                    <div class="svc-filter-bar">
+                        <button class="svc-filter-btn active" data-filter="all">Todos</button>
+                        <button class="svc-filter-btn" data-filter="infraestructura">Infraestructura</button>
+                        <button class="svc-filter-btn" data-filter="seguridad">Seguridad</button>
+                        <button class="svc-filter-btn" data-filter="networking">Networking</button>
+                        <button class="svc-filter-btn" data-filter="continuidad">Continuidad</button>
+                        <button class="svc-filter-btn" data-filter="datos">Datos</button>
+                        <button class="svc-filter-btn" data-filter="desarrollo">Desarrollo</button>
+                        <button class="svc-filter-btn" data-filter="soporte">Soporte</button>
                     </div>
                 </div>
             </section>
 
-            <section id="infra" class="section-dark bg-dark text-light scroll-margin">
-                <div class="container py-5">
-                    <div class="row g-4 align-items-start">
-                        <div class="col-lg-8">
-                            <h3 class="id-color">Infraestructura &amp; Productividad</h3>
-                            <p>Diseño, implementación y gestión de servidores Microsoft y Linux. Más de 20 años en infraestructuras de misión crítica.</p>
-                            <ul class="ul-check">
-                                <li>Servidores físicos y virtuales · Azure &amp; AWS</li>
-                                <li>VMware vSphere / Hyper-V</li>
-                                <li>Active Directory &amp; Microsoft 365</li>
-                                <li>Migración a la nube</li>
-                            </ul>
-                            <p class="small op-7 mb-0">Tecnologías: HPE, Microsoft, VMware.</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
-                                <div class="itcs-service-tech-label">Ecosistema</div>
-                                <div class="itcs-service-tech-logos">
-                                    <img src="images/partners/hpe.png" alt="HPE" class="itcs-partner-logo itcs-partner-logo--color" width="110" height="32" loading="lazy">
-                                    <img src="images/partners/microsoft.png" alt="Microsoft" class="itcs-partner-logo itcs-partner-logo--color" width="110" height="32" loading="lazy">
-                                    <img src="images/partners/vmware.svg" alt="VMware" class="itcs-partner-logo itcs-partner-logo--mono" width="100" height="28" loading="lazy">
+            <!-- ── Cards grid ────────────────────────────────────── -->
+            <section class="pt-4 pb-5">
+                <div class="container">
+                    <div class="row g-4" id="svc-grid">
+
+                        <!-- Infraestructura & Productividad -->
+                        <div class="col-lg-4 col-md-6 svc-card-wrap" data-category="infraestructura" id="infra">
+                            <div class="svc-card">
+                                <div class="svc-card-header">
+                                    <div class="svc-card-icon"><i class="icofont-server"></i></div>
+                                    <span class="svc-badge">Infraestructura</span>
+                                </div>
+                                <h3 class="svc-card-title">Infraestructura &amp; Productividad</h3>
+                                <p class="svc-card-desc">Diseño, implementación y gestión de servidores Microsoft y Linux. Más de 20 años en infraestructuras de misión crítica.</p>
+                                <ul class="svc-list">
+                                    <li>Servidores físicos y virtuales · Azure &amp; AWS</li>
+                                    <li>VMware vSphere / Hyper-V</li>
+                                    <li>Active Directory &amp; Microsoft 365</li>
+                                    <li>Migración a la nube</li>
+                                </ul>
+                                <hr class="svc-divider">
+                                <div class="svc-tech-stack">
+                                    <div class="svc-tech-chip"><img src="images/partners/hpe.png" alt="HPE" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/microsoft.png" alt="Microsoft" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/vmware.svg" alt="VMware" loading="lazy"></div>
+                                </div>
+                                <div class="svc-card-actions">
+                                    <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
                                 </div>
                             </div>
-                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            <section id="ciber" class="bg-light scroll-margin">
-                <div class="container py-5">
-                    <div class="row g-4 align-items-start">
-                        <div class="col-lg-8">
-                            <h3>Ciberseguridad</h3>
-                            <p>Protección integral contra amenazas con tecnología Sophos.</p>
-                            <ul class="ul-check">
-                                <li>Seguridad perimetral (firewall)</li>
-                                <li>Protección de endpoints (EDR/XDR)</li>
-                                <li>Auditorías de vulnerabilidades</li>
-                                <li>SOC &amp; monitoreo 24/7 · IAM</li>
-                            </ul>
-                            <p class="small text-muted mb-0">Tecnologías: Sophos, ManageEngine.</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
-                                <div class="itcs-service-tech-label">Ecosistema</div>
-                                <div class="itcs-service-tech-logos">
-                                    <img src="images/partners/sophos.png" alt="Sophos" class="itcs-partner-logo itcs-partner-logo--color" width="120" height="32" loading="lazy">
-                                    <img src="images/partners/manageengine.png" alt="ManageEngine" class="itcs-partner-logo itcs-partner-logo--color" width="140" height="32" loading="lazy">
+                        <!-- Ciberseguridad -->
+                        <div class="col-lg-4 col-md-6 svc-card-wrap" data-category="seguridad" id="ciber">
+                            <div class="svc-card">
+                                <div class="svc-card-header">
+                                    <div class="svc-card-icon"><i class="icofont-lock"></i></div>
+                                    <span class="svc-badge">Seguridad</span>
+                                </div>
+                                <h3 class="svc-card-title">Ciberseguridad</h3>
+                                <p class="svc-card-desc">Protección integral contra amenazas avanzadas con tecnología Sophos y monitoreo continuo de tu entorno IT.</p>
+                                <ul class="svc-list">
+                                    <li>Seguridad perimetral (firewall)</li>
+                                    <li>Protección de endpoints (EDR/XDR)</li>
+                                    <li>Auditorías de vulnerabilidades</li>
+                                    <li>SOC &amp; monitoreo 24/7 · IAM</li>
+                                </ul>
+                                <hr class="svc-divider">
+                                <div class="svc-tech-stack">
+                                    <div class="svc-tech-chip"><img src="images/partners/sophos.png" alt="Sophos" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/manageengine.png" alt="ManageEngine" loading="lazy"></div>
+                                </div>
+                                <div class="svc-card-actions">
+                                    <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
+                                    <a href="producto-sophos.html" class="svc-btn-outline">Ver Sophos</a>
                                 </div>
                             </div>
-                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            <section id="net" class="section-dark bg-dark-2 text-light scroll-margin">
-                <div class="container py-5">
-                    <div class="row g-4 align-items-start">
-                        <div class="col-lg-8">
-                            <h3 class="id-color">Networking &amp; Telecomunicaciones</h3>
-                            <p>Redes robustas y conectividad de alto rendimiento.</p>
-                            <ul class="ul-check">
-                                <li>Cableado estructurado Cat 6A y fibra óptica</li>
-                                <li>Wi‑Fi empresarial (Aruba)</li>
-                                <li>SD‑WAN &amp; MPLS</li>
-                                <li>Montaje de data centers</li>
-                            </ul>
-                            <p class="small op-7 mb-0">Tecnologías: Aruba, CommScope, Yeastar.</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
-                                <div class="itcs-service-tech-label">Ecosistema</div>
-                                <div class="itcs-service-tech-logos">
-                                    <img src="images/partners/aruba.png" alt="Aruba" class="itcs-partner-logo itcs-partner-logo--color" width="110" height="32" loading="lazy">
-                                    <img src="images/partners/commscope.png" alt="CommScope" class="itcs-partner-logo itcs-partner-logo--color" width="120" height="32" loading="lazy">
-                                    <img src="images/partners/yeastar.png" alt="Yeastar" class="itcs-partner-logo itcs-partner-logo--color" width="100" height="32" loading="lazy">
+                        <!-- Networking & Telecomunicaciones -->
+                        <div class="col-lg-4 col-md-6 svc-card-wrap" data-category="networking" id="net">
+                            <div class="svc-card">
+                                <div class="svc-card-header">
+                                    <div class="svc-card-icon"><i class="icofont-network-tower"></i></div>
+                                    <span class="svc-badge">Networking</span>
+                                </div>
+                                <h3 class="svc-card-title">Networking &amp; Telecomunicaciones</h3>
+                                <p class="svc-card-desc">Redes robustas y conectividad de alto rendimiento para operaciones críticas.</p>
+                                <ul class="svc-list">
+                                    <li>Cableado estructurado Cat 6A y fibra óptica</li>
+                                    <li>Wi-Fi empresarial (Aruba)</li>
+                                    <li>SD-WAN &amp; MPLS</li>
+                                    <li>Montaje de data centers</li>
+                                </ul>
+                                <hr class="svc-divider">
+                                <div class="svc-tech-stack">
+                                    <div class="svc-tech-chip"><img src="images/partners/aruba.png" alt="Aruba" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/commscope.png" alt="CommScope" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/yeastar.png" alt="Yeastar" loading="lazy"></div>
+                                </div>
+                                <div class="svc-card-actions">
+                                    <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
+                                    <a href="producto-aruba.html" class="svc-btn-outline">Ver Aruba</a>
                                 </div>
                             </div>
-                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            <section id="bd" class="bg-light scroll-margin">
-                <div class="container py-5">
-                    <div class="row g-4 align-items-start">
-                        <div class="col-lg-8">
-                            <h3>Base de Datos</h3>
-                            <ul class="ul-check">
-                                <li>SQL Server, Oracle, PostgreSQL, MongoDB</li>
-                                <li>Tuning y alta disponibilidad</li>
-                            </ul>
-                            <p class="small text-muted mb-0">Tecnologías: Microsoft, Red Hat.</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
-                                <div class="itcs-service-tech-label">Ecosistema</div>
-                                <div class="itcs-service-tech-logos">
-                                    <img src="images/partners/microsoft.png" alt="Microsoft" class="itcs-partner-logo itcs-partner-logo--color" width="110" height="32" loading="lazy">
-                                    <img src="images/partners/redhat.svg" alt="Red Hat" class="itcs-partner-logo itcs-partner-logo--mono" width="100" height="28" loading="lazy">
+                        <!-- Backup & Continuidad -->
+                        <div class="col-lg-4 col-md-6 svc-card-wrap" data-category="continuidad" id="backup">
+                            <div class="svc-card">
+                                <div class="svc-card-header">
+                                    <div class="svc-card-icon"><i class="icofont-shield"></i></div>
+                                    <span class="svc-badge">Continuidad</span>
+                                </div>
+                                <h3 class="svc-card-title">Backup &amp; Continuidad</h3>
+                                <p class="svc-card-desc">Estrategias anti-ransomware y Disaster Recovery con RTO/RPO acordados para tu operación.</p>
+                                <ul class="svc-list">
+                                    <li>Backup híbrido y recuperación automática</li>
+                                    <li>Planes de Disaster Recovery</li>
+                                    <li>RTO/RPO acordados por contrato</li>
+                                </ul>
+                                <hr class="svc-divider">
+                                <div class="svc-tech-stack">
+                                    <div class="svc-tech-chip"><img src="images/partners/veeam.svg" alt="Veeam" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/qnap.svg" alt="QNAP" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/synology.svg" alt="Synology" loading="lazy"></div>
+                                </div>
+                                <div class="svc-card-actions">
+                                    <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
+                                    <a href="producto-veeam.html" class="svc-btn-outline">Ver Veeam</a>
                                 </div>
                             </div>
-                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            <section id="dev" class="section-dark bg-dark text-light scroll-margin">
-                <div class="container py-5">
-                    <div class="row g-4 align-items-start">
-                        <div class="col-lg-8">
-                            <h3 class="id-color">Desarrollo de Sistemas</h3>
-                            <ul class="ul-check">
-                                <li>Web corporativa y aplicaciones móviles</li>
-                                <li>Integración API y RPA</li>
-                            </ul>
-                            <p class="small op-7 mb-0">Tecnologías: ManageEngine, Microsoft.</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
-                                <div class="itcs-service-tech-label">Ecosistema</div>
-                                <div class="itcs-service-tech-logos">
-                                    <img src="images/partners/microsoft.png" alt="Microsoft" class="itcs-partner-logo itcs-partner-logo--color" width="110" height="32" loading="lazy">
-                                    <img src="images/partners/adobe.svg" alt="Adobe" class="itcs-partner-logo itcs-partner-logo--mono" width="90" height="28" loading="lazy">
-                                    <img src="images/partners/manageengine.png" alt="ManageEngine" class="itcs-partner-logo itcs-partner-logo--color" width="130" height="32" loading="lazy">
+                        <!-- Cómputo de Misión Crítica -->
+                        <div class="col-lg-4 col-md-6 svc-card-wrap" data-category="infraestructura" id="mision">
+                            <div class="svc-card">
+                                <div class="svc-card-header">
+                                    <div class="svc-card-icon"><i class="icofont-chip"></i></div>
+                                    <span class="svc-badge">Misión crítica</span>
+                                </div>
+                                <h3 class="svc-card-title">Cómputo de Misión Crítica</h3>
+                                <p class="svc-card-desc">Plataformas de alta disponibilidad y almacenamiento empresarial para entornos donde no existe margen de falla.</p>
+                                <ul class="svc-list">
+                                    <li>HCI — hiperconvergencia</li>
+                                    <li>SAN/NAS empresarial</li>
+                                    <li>Almacenamiento flash de alto rendimiento</li>
+                                </ul>
+                                <hr class="svc-divider">
+                                <div class="svc-tech-stack">
+                                    <div class="svc-tech-chip"><img src="images/partners/hpe.png" alt="HPE" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/qnap.svg" alt="QNAP" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/synology.svg" alt="Synology" loading="lazy"></div>
+                                </div>
+                                <div class="svc-card-actions">
+                                    <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
+                                    <a href="producto-hpe.html" class="svc-btn-outline">Ver HPE</a>
                                 </div>
                             </div>
-                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            <section id="backup" class="bg-light scroll-margin">
-                <div class="container py-5">
-                    <div class="row g-4 align-items-start">
-                        <div class="col-lg-8">
-                            <h3>Backup &amp; Continuidad</h3>
-                            <p>Estrategias anti‑ransomware y Disaster Recovery.</p>
-                            <ul class="ul-check">
-                                <li>Backup híbrido y recuperación automática</li>
-                                <li>RTO/RPO acordados</li>
-                            </ul>
-                            <p class="small text-muted mb-0">Tecnologías: Veeam, QNAP, Synology.</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
-                                <div class="itcs-service-tech-label">Ecosistema</div>
-                                <div class="itcs-service-tech-logos">
-                                    <img src="images/partners/veeam.svg" alt="Veeam" class="itcs-partner-logo itcs-partner-logo--mono" width="100" height="28" loading="lazy">
-                                    <img src="images/partners/qnap.svg" alt="QNAP" class="itcs-partner-logo itcs-partner-logo--mono" width="80" height="28" loading="lazy">
-                                    <img src="images/partners/synology.svg" alt="Synology" class="itcs-partner-logo itcs-partner-logo--mono" width="100" height="28" loading="lazy">
+                        <!-- Base de Datos -->
+                        <div class="col-lg-4 col-md-6 svc-card-wrap" data-category="datos" id="bd">
+                            <div class="svc-card">
+                                <div class="svc-card-header">
+                                    <div class="svc-card-icon"><i class="icofont-database"></i></div>
+                                    <span class="svc-badge">Datos</span>
+                                </div>
+                                <h3 class="svc-card-title">Base de Datos</h3>
+                                <p class="svc-card-desc">Administración, optimización y alta disponibilidad de motores de bases de datos críticos para el negocio.</p>
+                                <ul class="svc-list">
+                                    <li>SQL Server, Oracle, PostgreSQL, MongoDB</li>
+                                    <li>Tuning y optimización de queries</li>
+                                    <li>Alta disponibilidad y failover</li>
+                                </ul>
+                                <hr class="svc-divider">
+                                <div class="svc-tech-stack">
+                                    <div class="svc-tech-chip"><img src="images/partners/microsoft.png" alt="Microsoft" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/redhat.svg" alt="Red Hat" loading="lazy"></div>
+                                </div>
+                                <div class="svc-card-actions">
+                                    <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
                                 </div>
                             </div>
-                            <div class="text-lg-end"><a href="producto-veeam.html" class="btn-main fx-slide btn-line me-2"><span>Veeam</span></a><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            <section id="mision" class="section-dark bg-dark-2 text-light scroll-margin">
-                <div class="container py-5">
-                    <div class="row g-4 align-items-start">
-                        <div class="col-lg-8">
-                            <h3 class="id-color">Cómputo de Misión Crítica</h3>
-                            <ul class="ul-check">
-                                <li>HCI (hiperconvergencia)</li>
-                                <li>SAN/NAS empresarial y almacenamiento flash</li>
-                            </ul>
-                            <p class="small op-7 mb-0">Tecnologías: HPE, QNAP, Synology.</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
-                                <div class="itcs-service-tech-label">Ecosistema</div>
-                                <div class="itcs-service-tech-logos">
-                                    <img src="images/partners/hpe.png" alt="HPE" class="itcs-partner-logo itcs-partner-logo--color" width="100" height="32" loading="lazy">
-                                    <img src="images/partners/qnap.svg" alt="QNAP" class="itcs-partner-logo itcs-partner-logo--mono" width="80" height="28" loading="lazy">
-                                    <img src="images/partners/synology.svg" alt="Synology" class="itcs-partner-logo itcs-partner-logo--mono" width="100" height="28" loading="lazy">
+                        <!-- Soporte Técnico & Outsourcing -->
+                        <div class="col-lg-4 col-md-6 svc-card-wrap" data-category="soporte" id="soporte">
+                            <div class="svc-card">
+                                <div class="svc-card-header">
+                                    <div class="svc-card-icon"><i class="icofont-headphone-alt"></i></div>
+                                    <span class="svc-badge">Soporte</span>
+                                </div>
+                                <h3 class="svc-card-title">Soporte Técnico &amp; Outsourcing</h3>
+                                <p class="svc-card-desc">Help desk multinivel con ingenieros certificados, disponible de forma remota y on-site según tu SLA.</p>
+                                <ul class="svc-list">
+                                    <li>Help desk multinivel · remoto y on-site</li>
+                                    <li>Gestión de activos (ITAM)</li>
+                                    <li>Monitoreo proactivo con PRTG</li>
+                                </ul>
+                                <hr class="svc-divider">
+                                <div class="svc-tech-stack">
+                                    <div class="svc-tech-chip"><img src="images/partners/manageengine.png" alt="ManageEngine" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/prtg.png" alt="PRTG Monitor" loading="lazy"></div>
+                                </div>
+                                <div class="svc-card-actions">
+                                    <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
+                                    <a href="producto-prtg.html" class="svc-btn-outline">Ver PRTG</a>
                                 </div>
                             </div>
-                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            <section id="soporte" class="bg-light scroll-margin">
-                <div class="container py-5">
-                    <div class="row g-4 align-items-start">
-                        <div class="col-lg-8">
-                            <h3>Soporte Técnico &amp; Outsourcing</h3>
-                            <ul class="ul-check">
-                                <li>Help desk multinivel · remoto y on‑site</li>
-                                <li>Gestión de activos (ITAM)</li>
-                            </ul>
-                            <p class="small text-muted mb-0">Tecnologías: ManageEngine, PRTG.</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
-                                <div class="itcs-service-tech-label">Ecosistema</div>
-                                <div class="itcs-service-tech-logos">
-                                    <img src="images/partners/manageengine.png" alt="ManageEngine" class="itcs-partner-logo itcs-partner-logo--color" width="130" height="32" loading="lazy">
-                                    <img src="images/partners/prtg.png" alt="PRTG Network Monitor" class="itcs-partner-logo itcs-partner-logo--color" width="90" height="32" loading="lazy">
+                        <!-- Desarrollo de Sistemas -->
+                        <div class="col-lg-4 col-md-6 svc-card-wrap" data-category="desarrollo" id="dev">
+                            <div class="svc-card">
+                                <div class="svc-card-header">
+                                    <div class="svc-card-icon"><i class="icofont-code-alt"></i></div>
+                                    <span class="svc-badge">Desarrollo</span>
+                                </div>
+                                <h3 class="svc-card-title">Desarrollo de Sistemas</h3>
+                                <p class="svc-card-desc">Aplicaciones a medida, integración de sistemas y automatización de procesos para tu empresa.</p>
+                                <ul class="svc-list">
+                                    <li>Web corporativa y aplicaciones móviles</li>
+                                    <li>Integración API y RPA</li>
+                                    <li>Motor de Gestión IT personalizado</li>
+                                </ul>
+                                <hr class="svc-divider">
+                                <div class="svc-tech-stack">
+                                    <div class="svc-tech-chip"><img src="images/partners/microsoft.png" alt="Microsoft" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/manageengine.png" alt="ManageEngine" loading="lazy"></div>
+                                </div>
+                                <div class="svc-card-actions">
+                                    <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
+                                    <a href="producto-motor-gestion.html" class="svc-btn-outline">Motor de Gestión</a>
                                 </div>
                             </div>
-                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            <section id="obras" class="section-dark bg-dark text-light scroll-margin">
-                <div class="container py-5">
-                    <div class="row g-4 align-items-start">
-                        <div class="col-lg-8">
-                            <h3 class="id-color">Obras Civiles</h3>
-                            <ul class="ul-check">
-                                <li>Centros de datos modulares</li>
-                                <li>Estándar TIA‑942</li>
-                                <li>Climatización de precisión</li>
-                            </ul>
-                            <p class="small op-7 mb-0">Tecnologías: CommScope, EverExceed.</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bg-dark-gradient text-light rounded-1 p-4 mb-3">
-                                <div class="itcs-service-tech-label">Ecosistema</div>
-                                <div class="itcs-service-tech-logos">
-                                    <img src="images/partners/commscope.png" alt="CommScope" class="itcs-partner-logo itcs-partner-logo--color" width="120" height="32" loading="lazy">
-                                    <img src="images/partners/everexceed.svg" alt="EverExceed" class="itcs-partner-logo itcs-partner-logo--textsvg" width="180" height="32" loading="lazy">
+                        <!-- Obras Civiles -->
+                        <div class="col-lg-4 col-md-6 svc-card-wrap" data-category="infraestructura" id="obras">
+                            <div class="svc-card">
+                                <div class="svc-card-header">
+                                    <div class="svc-card-icon"><i class="icofont-building-alt"></i></div>
+                                    <span class="svc-badge">Infraestructura</span>
+                                </div>
+                                <h3 class="svc-card-title">Obras Civiles</h3>
+                                <p class="svc-card-desc">Construcción y acondicionamiento de centros de datos bajo estándares internacionales de disponibilidad.</p>
+                                <ul class="svc-list">
+                                    <li>Centros de datos modulares</li>
+                                    <li>Estándar TIA-942</li>
+                                    <li>Climatización de precisión</li>
+                                </ul>
+                                <hr class="svc-divider">
+                                <div class="svc-tech-stack">
+                                    <div class="svc-tech-chip"><img src="images/partners/commscope.png" alt="CommScope" loading="lazy"></div>
+                                    <div class="svc-tech-chip"><img src="images/partners/everexceed.svg" alt="EverExceed" loading="lazy"></div>
+                                </div>
+                                <div class="svc-card-actions">
+                                    <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
                                 </div>
                             </div>
-                            <div class="text-lg-end"><a href="contact.html" class="btn-main fx-slide"><span>Consultar</span></a></div>
                         </div>
-                    </div>
+
+                    </div><!-- /.row -->
                 </div>
             </section>
 
-            <section class="section-dark bg-color text-light pt-60 pb-50">
+            <!-- ── CTA final ──────────────────────────────────────── -->
+            <section class="itcs-cta-section text-light">
                 <div class="container text-center">
-                    <h3 class="mb-4">¿Necesitás una propuesta a medida?</h3>
-                    <a class="btn-main fx-slide btn-line me-2" href="productos.html"><span>Ver productos</span></a>
-                    <a class="btn-main fx-slide" href="contact.html"><span>Contacto</span></a>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <h2 class="mb-3">¿Necesitás una solución IT a medida?</h2>
+                            <p class="mb-4" style="color:rgba(171,201,208,.84);font-size:1.05rem;">Contanos el desafío de tu empresa y te ayudamos a definir la arquitectura, servicios y tecnologías adecuadas.</p>
+                            <a class="btn-main fx-slide me-2" href="contact.html"><span>Hablar con un experto</span></a>
+                            <a class="btn-main fx-slide btn-line" href="productos.html"><span>Ver productos</span></a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -476,6 +492,22 @@
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
     <script src="js/itcs-ui.js"></script>
-<script src="js/itcs-effects.js"></script>
+    <script src="js/itcs-effects.js"></script>
+    <script>
+    (function () {
+        var btns  = document.querySelectorAll('.svc-filter-btn');
+        var cards = document.querySelectorAll('.svc-card-wrap');
+        btns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                btns.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                var f = btn.dataset.filter;
+                cards.forEach(function (c) {
+                    c.style.display = (f === 'all' || c.dataset.category === f) ? '' : 'none';
+                });
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
