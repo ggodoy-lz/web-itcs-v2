@@ -4,7 +4,7 @@
  */
 
 :root {
-  --itcs-font-sans: "Space Grotesk", system-ui, sans-serif;
+  --itcs-font-sans: "Inter", system-ui, sans-serif;
 }
 
 body, body p, body li, body a, body span,
