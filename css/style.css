@@ -9216,7 +9216,7 @@ p.slider-teaser{
 }
 
 .float-text a{
-    color: #000000;
+    color: #ffffff !important;
 }
 
 .float-text.dark a{
