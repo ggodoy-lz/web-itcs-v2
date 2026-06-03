@@ -2435,6 +2435,9 @@ section:last-of-type::before {
 /* Chip de tecnología con texto (marcas sin logo) */
 .svc-tech-text { font-weight: 700; font-size: .80rem; color: var(--itcs-ice); letter-spacing: .01em; padding: 0 4px; }
 
+/* Logos normalizados a blanco (assets oscuros/color en fondo oscuro) */
+.itcs-logo-mono { filter: brightness(0) invert(1); opacity: .85; }
+
 /* Logo en texto para marcas sin asset (listado Tecnologías) */
 .itcs-partner-logo-text { display: inline-block; font-weight: 800; font-size: 1.5rem; letter-spacing: -.01em; color: #fff; }
 
