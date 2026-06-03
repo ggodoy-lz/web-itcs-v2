@@ -2684,3 +2684,10 @@ a.svc-tech-chip:hover img { opacity: 1; }
   opacity: .82;
 }
 .itcs-logo-item--text:hover { opacity: 1; }
+
+/* Contenido completo de páginas de marca */
+.itcs-marca-content h3 { font-size: 1.5rem; }
+.itcs-marca-content h4 { font-size: 1.15rem; font-weight: 800; }
+.itcs-marca-content p { color: var(--text-main); line-height: 1.7; margin-bottom: .9rem; }
+.itcs-marca-content .ul-check { margin-bottom: 1.2rem; }
+.itcs-marca-content .ul-check li { margin-bottom: .35rem; }
