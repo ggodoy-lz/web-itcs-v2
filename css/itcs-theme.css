@@ -466,17 +466,82 @@ main > section > *,
 .bg-color span, .bg-color i,
 [class*="marquee"] *, [class*="ticker"] * { color: var(--itcs-ice) !important; }
 
-/* --- Counters / stats --- */
-.de_count                         { background: transparent !important; }
-.de_count h3                      { color: var(--text-strong) !important; text-shadow: 0 0 32px rgba(83,149,163,.2); }
-.de_count small, .de_count p      { color: var(--text-main) !important; }
-.de_count i.bg-color,
-.de_count .circle.bg-color {
-  background: linear-gradient(145deg, rgba(83,149,163,.22), rgba(0,100,121,.12)) !important;
-  border: 1px solid rgba(171,201,208,.16) !important;
-  color: var(--itcs-ice) !important;
-  box-shadow: 0 14px 34px rgba(2,19,28,.34), 0 0 32px rgba(83,149,163,.10);
+/* Stats sin íconos */
+.itcs-stats .de_count i { display: none !important; }
+
+/* --- Counters / stats (editorial, separadores verticales) --- */
+.de_count {
+  background: transparent !important;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: .80rem;
+  color: var(--text-soft) !important;
 }
+/* Ícono liviano: glifo teal dentro de un anillo fino (outline, sin relleno) */
+.de_count i {
+  background: none !important;
+  border: 1px solid rgba(83,149,163,.42) !important;
+  box-shadow: 0 0 0 6px rgba(83,149,163,.05);
+  color: var(--itcs-teal) !important;
+  width: 62px !important;
+  height: 62px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 1rem !important;
+  padding: 0 !important;
+  font-size: 26px !important;
+  line-height: 1 !important;
+  text-shadow: 0 0 26px rgba(83,149,163,.30);
+  transition: transform .28s cubic-bezier(.22,.68,0,1.2), border-color .28s ease, color .28s ease, box-shadow .28s ease;
+}
+.de_count:hover i {
+  transform: translateY(-4px) scale(1.06);
+  border-color: var(--itcs-ice) !important;
+  color: var(--itcs-ice) !important;
+  box-shadow: 0 0 0 7px rgba(83,149,163,.10), 0 0 28px rgba(83,149,163,.18);
+}
+.de_count:hover h3 { text-shadow: 0 0 38px rgba(171,201,208,.40); }
+/* Número protagonista con acento bajo */
+.de_count h3 {
+  position: relative;
+  display: block;
+  text-transform: none;
+  letter-spacing: -.02em;
+  color: var(--itcs-ice) !important;
+  font-size: 2.7rem !important;
+  padding-bottom: .55rem;
+  margin-bottom: .65rem;
+  text-shadow: 0 0 32px rgba(83,149,163,.18);
+}
+.de_count h3::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--itcs-ice), var(--itcs-teal));
+}
+.de_count small, .de_count p { color: var(--text-soft) !important; }
+
+/* Separadores verticales finos entre columnas de stats (≥768px) */
+@media (min-width: 768px) {
+  .itcs-stats > [class*="col-"] + [class*="col-"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 64px;
+    width: 1px;
+    background: linear-gradient(transparent, rgba(171,201,208,.24), transparent);
+  }
+}
+.itcs-stats > [class*="col-"] { position: relative; }
 
 /* --- Cards (glass técnico) --- */
 .itcs-service-card,
@@ -968,13 +1033,24 @@ section[data-bgimage] {
   align-self: flex-start;
 }
 
+/* style.css define .d-flex{white-space:nowrap}, lo que recorta texto en cualquier
+   contenedor flex de Bootstrap. Bootstrap NO aplica nowrap a .d-flex; lo restauramos.
+   Botones (.btn-main) y marquee tienen su propio nowrap, así que no se ven afectados. */
+.d-flex { white-space: normal; }
+
 /* Texto que envuelve dentro del ancho de la tarjeta (evita desbordes en flex) */
 .itcs-service-card,
 .itcs-partner-card,
-.itcs-product-card {
+.itcs-product-card,
+.svc-card {
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
+  white-space: normal;
+}
+.itcs-service-card,
+.itcs-partner-card,
+.itcs-product-card {
   overflow-x: hidden; /* refuerzo: el wrap a veces falla sin min-width en flex hijos */
 }
 .itcs-service-card > .relative.z-2,
@@ -2355,3 +2431,247 @@ section:last-of-type::before {
   .svc-hero-sub { font-size: .95rem; }
   .svc-filter-btn { font-size: 11px; padding: 7px 14px; }
 }
+
+/* Chip de tecnología con texto (marcas sin logo) */
+.svc-tech-text { font-weight: 700; font-size: .80rem; color: var(--itcs-ice); letter-spacing: .01em; padding: 0 4px; }
+
+/* Logo en texto para marcas sin asset (listado Tecnologías) */
+.itcs-partner-logo-text { display: inline-block; font-weight: 800; font-size: 1.5rem; letter-spacing: -.01em; color: #fff; }
+
+/* ===== Listado Tecnologías — tarjetas compactas ===== */
+.svc-filter-bar { display: flex; flex-wrap: wrap; gap: 8px; }
+/* Transición suave al filtrar */
+#tec-grid > [data-category] { transition: opacity .38s ease, transform .38s cubic-bezier(.22,.68,0,1.2); will-change: opacity, transform; }
+#tec-grid > [data-category].tec-hide { opacity: 0; transform: translateY(10px) scale(.97); pointer-events: none; }
+
+/* Acento cromático por categoría (tonos fríos cohesivos) */
+#tec-grid > [data-category="ciberseguridad"]   { --acc: #5395A3; }
+#tec-grid > [data-category="infraestructura"]  { --acc: #3E8EA8; }
+#tec-grid > [data-category="backup-storage"]   { --acc: #3FB39A; }
+#tec-grid > [data-category="cloud"]            { --acc: #4F9FD1; }
+#tec-grid > [data-category="gestion"]          { --acc: #6C8FC7; }
+#tec-grid > [data-category="seguridad-fisica"] { --acc: #5E83B5; }
+#tec-grid > [data-category="energia"]          { --acc: #46B6C4; }
+#tec-grid > [data-category="euc"]              { --acc: #9BC2CE; }
+
+/* Fondo con profundidad detrás del grid */
+.tec-section { position: relative; isolation: isolate; }
+.tec-section::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(820px 460px at 14% 2%, rgba(83,149,163,.12), transparent 60%),
+    radial-gradient(760px 480px at 88% 26%, rgba(0,100,121,.13), transparent 62%),
+    radial-gradient(700px 500px at 50% 100%, rgba(171,201,208,.06), transparent 60%);
+}
+.tec-section::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .5;
+  background-image: radial-gradient(rgba(171,201,208,.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 78%);
+          mask-image: radial-gradient(ellipse at center, #000 30%, transparent 78%);
+}
+.tec-card {
+  display: flex; flex-direction: column; height: 100%;
+  padding: 24px 22px 20px; border-radius: 18px;
+  background: linear-gradient(165deg, rgba(13,80,101,.42) 0%, rgba(3,27,39,.82) 100%);
+  border: 1px solid rgba(171,201,208,.12);
+  text-decoration: none; color: inherit; position: relative; overflow: hidden;
+  transition: transform .25s cubic-bezier(.22,.68,0,1.2), border-color .25s ease, box-shadow .25s ease;
+}
+.tec-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 2px; background: linear-gradient(90deg, transparent, rgba(171,201,208,.4), transparent); opacity: 0; transition: opacity .25s; }
+.tec-card:hover { transform: translateY(-5px); border-color: rgba(83,149,163,.42); box-shadow: 0 22px 50px rgba(2,19,28,.5), 0 0 30px rgba(83,149,163,.1); }
+.tec-card:hover::before { opacity: 1; }
+.tec-cat { position: absolute; top: 15px; right: 16px; font-size: .60rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--text-soft, rgba(171,201,208,.6)); }
+.tec-logo { height: 42px; display: flex; align-items: center; margin-bottom: 16px; }
+.tec-logo img { max-height: 34px; max-width: 140px; width: auto; object-fit: contain; }
+.tec-logo .itcs-partner-logo-text { font-size: 1.3rem; }
+.tec-card h4 { color: #fff !important; margin: 0 0 4px; font-size: 1.18rem; letter-spacing: -.01em; }
+.tec-card > p { color: var(--text-soft, rgba(171,201,208,.7)); font-size: .85rem; margin: 0 0 16px; line-height: 1.45; }
+.tec-link { margin-top: auto; color: var(--itcs-ice); font-weight: 700; font-size: .82rem; display: inline-flex; align-items: center; gap: 7px; }
+.tec-link i { transition: transform .25s ease; }
+.tec-card:hover .tec-link i { transform: translateX(4px); }
+
+/* Cards con más vida (acento por categoría) — debe ir tras el bloque base */
+.tec-card { border-left: 3px solid var(--acc, rgba(83,149,163,.5)); }
+.tec-card::before { background: linear-gradient(90deg, transparent, var(--acc, rgba(171,201,208,.4)), transparent); }
+.tec-cat { color: var(--acc, var(--text-soft)) !important; opacity: .92; }
+.tec-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(171,201,208,.18);
+  border-left-color: var(--acc);
+  box-shadow: 0 24px 54px rgba(2,19,28,.55), 0 0 40px -6px var(--acc);
+}
+.tec-logo { height: 48px; margin-bottom: 18px; }
+.tec-logo img { max-height: 40px; max-width: 150px; }
+.tec-link { color: var(--acc, var(--itcs-ice)); }
+
+/* Logo destacado en intro de página de marca */
+.itcs-brand-logo-lead img { max-width: 220px; height: 46px; object-fit: contain; }
+
+/* ===== Páginas de marca — formatos alternativos ===== */
+/* A: lista compacta de capacidades — grid alineado (filas parejas) */
+.cap-list { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 44px; }
+@media (max-width: 767px) { .cap-list { grid-template-columns: 1fr; } }
+.cap-item { padding: 16px 0; border-bottom: 1px solid rgba(171,201,208,.10); display: flex; gap: 14px; align-items: flex-start; }
+.cap-item i { color: var(--itcs-teal); font-size: 22px; margin-top: 2px; flex-shrink: 0; }
+.cap-item h5 { color: #fff !important; margin: 0 0 3px; font-size: 1.04rem; }
+.cap-item p { margin: 0; color: var(--text-soft); font-size: .88rem; line-height: 1.5; }
+
+/* B: ficha técnica con sidebar fijo */
+.brand-sticky { position: sticky; top: 100px; }
+.brand-aside { padding: 30px 26px; border-radius: 22px; background: linear-gradient(160deg, rgba(13,80,101,.5), rgba(3,27,39,.85)); border: 1px solid rgba(171,201,208,.12); }
+.brand-aside .itcs-partner-logo-text { font-size: 1.7rem; }
+.brand-block + .brand-block { margin-top: 38px; }
+.brand-block > h3 { font-size: 1.4rem; margin-bottom: 18px; }
+
+/* C: pestañas */
+.brand-tabs { display: flex; gap: 6px; flex-wrap: wrap; border-bottom: 1px solid rgba(171,201,208,.14); margin-bottom: 30px; }
+.brand-tab { padding: 12px 22px; cursor: pointer; color: var(--text-soft); font-weight: 700; border: none; background: none; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; font-size: .98rem; }
+.brand-tab:hover { color: var(--itcs-ice); }
+.brand-tab.active { color: var(--itcs-ice); border-bottom-color: var(--itcs-teal); }
+.brand-panel { display: none; }
+.brand-panel.active { display: block; animation: itcs-fade .35s ease; }
+@keyframes itcs-fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* Lista de servicios en 2 columnas (card ancha) */
+.svc-list-2col { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 575.98px) { .svc-list-2col { grid-template-columns: 1fr; } }
+
+/* Plan destacado en la grilla de SLA */
+.itcs-plan-featured {
+  border-color: rgba(83,149,163,.55) !important;
+  box-shadow: 0 24px 64px rgba(2,19,28,.55), 0 0 48px rgba(83,149,163,.22) !important;
+  transform: translateY(-6px);
+}
+.itcs-plan-featured .svc-badge {
+  color: var(--itcs-navy);
+  background: linear-gradient(135deg, var(--itcs-ice), var(--itcs-teal));
+  border-color: transparent;
+}
+
+/* ============================================================
+   Industrias — vocabulario propio (on-brand)
+   ============================================================ */
+.ind-tile {
+  position: relative;
+  height: 100%;
+  padding: 30px 28px;
+  border-radius: 22px;
+  background: linear-gradient(160deg, rgba(13,80,101,.55) 0%, rgba(3,27,39,.86) 100%);
+  border: 1px solid rgba(171,201,208,.12);
+  border-left: 3px solid rgba(83,149,163,.55);
+  box-shadow: 0 16px 40px rgba(2,19,28,.38);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+.ind-tile:hover {
+  transform: translateY(-4px);
+  border-left-color: var(--itcs-ice);
+  box-shadow: 0 24px 58px rgba(2,19,28,.52), 0 0 34px rgba(83,149,163,.12);
+}
+.ind-ico {
+  width: 56px; height: 56px;
+  border-radius: 15px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+  color: var(--itcs-ice);
+  background: rgba(83,149,163,.16);
+  border: 1px solid rgba(171,201,208,.18);
+  margin-bottom: 16px;
+}
+.ind-tile h4 { color: #fff !important; margin-bottom: .5rem; }
+.ind-desc { color: rgba(171,201,208,.80); font-size: .92rem; line-height: 1.6; margin-bottom: 1rem; }
+.ind-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
+.ind-chip {
+  font-size: .74rem; font-weight: 700; line-height: 1.2;
+  color: rgba(171,201,208,.92);
+  background: rgba(171,201,208,.07);
+  border: 1px solid rgba(171,201,208,.16);
+  border-radius: 999px;
+  padding: 5px 11px;
+}
+.ind-tech { font-size: .80rem; color: var(--text-soft, rgba(171,201,208,.68)); }
+.ind-tech strong { color: var(--itcs-ice); font-weight: 700; }
+
+/* Proceso numerado (Nuestro enfoque) */
+.ind-step {
+  position: relative;
+  height: 100%;
+  padding: 26px 24px;
+  border-radius: 18px;
+  background: rgba(171,201,208,.035);
+  border: 1px solid rgba(171,201,208,.10);
+  transition: border-color 200ms ease, background 200ms ease;
+}
+.ind-step:hover { border-color: rgba(83,149,163,.34); background: rgba(171,201,208,.06); }
+.ind-step-num {
+  display: block;
+  font-size: 2.2rem; font-weight: 800; line-height: 1;
+  color: rgba(83,149,163,.55);
+  margin-bottom: 12px;
+  letter-spacing: -.02em;
+}
+.ind-step h5 { color: #fff !important; margin-bottom: .4rem; }
+.ind-step p { color: rgba(171,201,208,.78); font-size: .9rem; margin-bottom: 0; }
+
+/* ============================================================
+   Marquee de logos de tecnologías
+   ============================================================ */
+.itcs-logo-marquee {
+  border-top: 1px solid rgba(171,201,208,.08);
+  border-bottom: 1px solid rgba(171,201,208,.08);
+  position: relative;
+}
+/* Degradados laterales para que los logos entren/salgan suavemente */
+.itcs-logo-marquee::before,
+.itcs-logo-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 90px;
+  z-index: 2;
+  pointer-events: none;
+}
+.itcs-logo-marquee::before { left: 0; background: linear-gradient(90deg, var(--ink-925, #052333), transparent); }
+.itcs-logo-marquee::after { right: 0; background: linear-gradient(270deg, var(--ink-925, #052333), transparent); }
+
+.itcs-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+  animation: itcs-marquee-scroll 30s linear infinite;
+}
+.itcs-logo-marquee:hover .itcs-marquee-track { animation-play-state: paused; }
+@keyframes itcs-marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .itcs-marquee-track { animation: none; flex-wrap: wrap; justify-content: center; }
+}
+.itcs-logo-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  padding: 0 46px;
+  flex-shrink: 0;
+}
+.itcs-logo-item img {
+  max-height: 54px;
+  max-width: 190px;
+  width: auto;
+  object-fit: contain;
+  opacity: .82;
+  filter: grayscale(100%) brightness(0) invert(1);
+  transition: opacity 200ms ease, filter 200ms ease;
+}
+.itcs-logo-item:hover img { opacity: 1; filter: none; }
+.itcs-logo-item--text {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.85rem;
+  letter-spacing: -.01em;
+  opacity: .82;
+}
+.itcs-logo-item--text:hover { opacity: 1; }
