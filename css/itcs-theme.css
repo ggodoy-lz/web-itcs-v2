@@ -2388,11 +2388,14 @@ section:last-of-type::before {
   border: 1px solid rgba(171,201,208,.12);
 }
 .svc-tech-chip img {
-  max-width: 82px;
-  max-height: 22px;
+  height: 22px;
+  width: auto;
+  max-width: 90px;
   object-fit: contain;
   opacity: .88;
 }
+/* logos mono blancos en chip: leve sombra para contraste sobre fondo claro */
+.svc-tech-chip img.itcs-logo-mono { opacity: 1; }
 
 /* Card actions */
 .svc-card-actions {
