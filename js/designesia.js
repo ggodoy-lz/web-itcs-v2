@@ -1767,6 +1767,9 @@
          /* --------------------------------------------------
           * window | on scroll
           * --------------------------------------------------*/
+         /* contar al cargar si las stats ya están en viewport */
+         de_counter();
+         jQuery(window).on("load", de_counter);
          jQuery(window).on("scroll", function() {
              /* functions */
              header_sticky();
