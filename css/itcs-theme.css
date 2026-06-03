@@ -2394,6 +2394,9 @@ section:last-of-type::before {
   object-fit: contain;
   opacity: .88;
 }
+a.svc-tech-chip { text-decoration: none; cursor: pointer; transition: border-color .2s ease, transform .2s ease, background .2s ease; }
+a.svc-tech-chip:hover { border-color: rgba(83,149,163,.55); background: rgba(171,201,208,.12); transform: translateY(-2px); }
+a.svc-tech-chip:hover img { opacity: 1; }
 /* logos mono blancos en chip: leve sombra para contraste sobre fondo claro */
 .svc-tech-chip img.itcs-logo-mono { opacity: 1; }
 
