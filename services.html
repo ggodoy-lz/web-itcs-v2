@@ -53,7 +53,7 @@
                         <div class="col-lg-12">
                             <div class="d-flex justify-content-between align-items-center flex-wrap xs-hide">
                                 <div class="d-flex flex-wrap">
-                                    <div class="topbar-widget me-3"><a href="https://maps.app.goo.gl/S8KhuqYSfBDnCqu6A" target="_blank"><i class="icofont-location-pin"></i>Barrio Virgen del Huerto, Asunción, Paraguay</a></div>
+                                    <div class="topbar-widget me-3"><a href="https://maps.app.goo.gl/S8KhuqYSfBDnCqu6A" target="_blank"><i class="icofont-location-pin"></i><a href="https://maps.app.goo.gl/S8KhuqYSfBDnCqu6A" target="_blank" class="text-white">Asunción, Paraguay</a></a></div>
                                     <div class="topbar-widget me-3"><a href="tel:+595217288222"><i class="icofont-phone"></i>+595 21 728-8222</a></div>
                                     <div class="topbar-widget me-3"><a href="mailto:info@itcs.com.py"><i class="icofont-envelope"></i>info@itcs.com.py</a></div>
                                 </div>
@@ -153,7 +153,7 @@
                         <button class="svc-filter-btn" data-filter="cloud">Cloud</button>
                         <button class="svc-filter-btn" data-filter="continuidad">Continuidad</button>
                         <button class="svc-filter-btn" data-filter="gestion">Gestión</button>
-                        <button class="svc-filter-btn" data-filter="colaboracion">Colaboración</button>
+                        <button class="svc-filter-btn" data-filter="colaboracion">Salas de Conferencias</button>
                         <button class="svc-filter-btn" data-filter="energia">Energía</button>
                     </div>
                 </div>
@@ -188,7 +188,6 @@
                                 </div>
                                 <div class="svc-card-actions">
                                     <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
-                                    <a href="producto-sophos.html" class="svc-btn-outline">Ver Sophos</a>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +216,6 @@
                                 </div>
                                 <div class="svc-card-actions">
                                     <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
-                                    <a href="producto-hpe.html" class="svc-btn-outline">Ver HPE</a>
                                 </div>
                             </div>
                         </div>
@@ -245,7 +243,6 @@
                                 </div>
                                 <div class="svc-card-actions">
                                     <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
-                                    <a href="producto-aruba.html" class="svc-btn-outline">Ver Aruba</a>
                                 </div>
                             </div>
                         </div>
@@ -299,7 +296,6 @@
                                 </div>
                                 <div class="svc-card-actions">
                                     <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
-                                    <a href="producto-veeam.html" class="svc-btn-outline">Ver Veeam</a>
                                 </div>
                             </div>
                         </div>
@@ -326,7 +322,6 @@
                                 </div>
                                 <div class="svc-card-actions">
                                     <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
-                                    <a href="producto-manageengine.html" class="svc-btn-outline">Ver ManageEngine</a>
                                 </div>
                             </div>
                         </div>
@@ -355,7 +350,6 @@
                                 </div>
                                 <div class="svc-card-actions">
                                     <a href="contact.html" class="btn-main fx-slide btn-sm"><span>Consultar</span></a>
-                                    <a href="producto-samsung.html" class="svc-btn-outline">Ver Samsung</a>
                                 </div>
                             </div>
                         </div>
@@ -469,7 +463,7 @@
                         <div class="widget">
                             <h5>Contacto</h5>
                             <div class="fw-bold text-white"><i class="icofont-location-pin me-2 id-color"></i>Oficina</div>
-                            Barrio Virgen del Huerto, Asunción, Paraguay
+                            <a href="https://maps.app.goo.gl/S8KhuqYSfBDnCqu6A" target="_blank" class="text-white">Asunción, Paraguay</a>
                             <div class="spacer-20"></div>
                             <div class="fw-bold text-white"><i class="icofont-phone me-2 id-color"></i>Teléfono</div>
                             <a href="tel:+595217288222" class="text-white">+595 21 728-8222</a>
@@ -505,16 +499,27 @@
     (function () {
         var btns  = document.querySelectorAll('.svc-filter-btn');
         var cards = document.querySelectorAll('.svc-card-wrap');
-        btns.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                btns.forEach(function (b) { b.classList.remove('active'); });
-                btn.classList.add('active');
-                var f = btn.dataset.filter;
-                cards.forEach(function (c) {
-                    c.style.display = (f === 'all' || c.dataset.category === f) ? '' : 'none';
-                });
+        function applyFilter(f) {
+            btns.forEach(function (b) { b.classList.toggle('active', b.dataset.filter === f); });
+            cards.forEach(function (c) {
+                c.style.display = (f === 'all' || c.dataset.category === f) ? '' : 'none';
             });
+        }
+        btns.forEach(function (btn) {
+            btn.addEventListener('click', function () { applyFilter(btn.dataset.filter); });
         });
+        // Filtrar segun el hash (ej: llegar desde menu Soluciones a #ciberseguridad)
+        function filterFromHash() {
+            var id = location.hash.replace('#', '');
+            if (!id) return;
+            var card = document.getElementById(id);
+            if (card && card.dataset.category) {
+                applyFilter(card.dataset.category);
+                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        filterFromHash();
+        window.addEventListener('hashchange', filterFromHash);
     })();
     </script>
 </body>

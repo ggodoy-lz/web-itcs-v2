@@ -735,6 +735,14 @@ footer .fw-bold.text-white        { color: #ffffff !important; font-weight: 800 
 #subheader .container.relative.z-2,
 #subheader .gradient-edge-top { position: relative; z-index: 2; }
 
+/* Sombra de texto en todas las cabeceras (legibilidad sobre imagen) */
+#subheader h1,
+#subheader h2,
+#subheader h3,
+#subheader p,
+#subheader .svc-hero-badge,
+#subheader .crumb { text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55); }
+
 /* --- Botón "Ir arriba" — circular, esquina inferior derecha, discreto --- */
 #back-to-top,
 .back-to-top,
