@@ -773,15 +773,22 @@ select.itcs-select {
   color: #abc9d0; font-size: 18px;
   transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
 }
-.itcs-social a:hover {
-  background: var(--itcs-teal, #00b3c4);
-  border-color: var(--itcs-teal, #00b3c4);
-  color: #fff; transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .itcs-social a:hover {
+    border-color: var(--itcs-teal, #00b3c4);
+    color: var(--itcs-teal, #00b3c4);
+    transform: translateY(-2px);
+  }
 }
 
 /* B — Titulo de cabecera mas equilibrado en movil */
 @media (max-width: 767px) {
   #subheader h1 { font-size: 2.1rem; line-height: 1.18; }
+}
+
+/* Rails laterales "Ir arriba"/scrollbar: ocultar tambien en tablets (se superponen) */
+@media (max-width: 991px) {
+  .float-text, .scrollbar-v { display: none !important; }
 }
 
 /* C — Tap targets minimos (48px) en campos del formulario */
