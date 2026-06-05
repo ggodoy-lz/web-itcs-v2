@@ -763,6 +763,30 @@ select.itcs-select {
 #subheader .svc-hero-badge,
 #subheader .crumb { text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55); }
 
+/* B — Titulo de cabecera mas equilibrado en movil */
+@media (max-width: 767px) {
+  #subheader h1 { font-size: 2.1rem; line-height: 1.18; }
+}
+
+/* C — Tap targets minimos (48px) en campos del formulario */
+.field-set input.form-control,
+.field-set select.form-control { min-height: 48px; }
+
+/* D — Foco visible para navegacion por teclado (accesibilidad) */
+a.menu-item:focus-visible,
+.btn-main:focus-visible,
+.svc-filter-btn:focus-visible,
+.brand-tab:focus-visible,
+.tec-card:focus-visible,
+.svc-card-wrap a:focus-visible,
+a.svc-tech-chip:focus-visible,
+.svc-btn-outline:focus-visible,
+.form-control:focus-visible {
+  outline: 2px solid var(--itcs-teal, #00b3c4);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
 /* --- Botón "Ir arriba" — circular, esquina inferior derecha, discreto --- */
 #back-to-top,
 .back-to-top,
