@@ -763,6 +763,22 @@ select.itcs-select {
 #subheader .svc-hero-badge,
 #subheader .crumb { text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55); }
 
+/* Redes sociales en footer */
+.itcs-social { display: flex; gap: 10px; margin-top: 18px; }
+.itcs-social a {
+  width: 38px; height: 38px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  border: 1px solid rgba(171, 201, 208, 0.18);
+  color: #abc9d0; font-size: 18px;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.itcs-social a:hover {
+  background: var(--itcs-teal, #00b3c4);
+  border-color: var(--itcs-teal, #00b3c4);
+  color: #fff; transform: translateY(-2px);
+}
+
 /* B — Titulo de cabecera mas equilibrado en movil */
 @media (max-width: 767px) {
   #subheader h1 { font-size: 2.1rem; line-height: 1.18; }
