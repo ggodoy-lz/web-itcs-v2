@@ -176,19 +176,19 @@
                         <div class="col-lg-6">
                             <form name="contactForm" id="contact_form" class="position-relative z1000" method="post" action="contact.php">
                                 <div class="field-set">
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Nombre y apellido" required>
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Nombre y apellido" aria-label="Nombre y apellido" autocomplete="name" required>
                                 </div>
                                 <div class="field-set">
-                                    <input type="text" name="company" id="company" class="form-control" placeholder="Empresa (opcional)">
+                                    <input type="text" name="company" id="company" class="form-control" placeholder="Empresa (opcional)" aria-label="Empresa" autocomplete="organization">
                                 </div>
                                 <div class="field-set">
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" aria-label="Email" autocomplete="email" required>
                                 </div>
                                 <div class="field-set">
-                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Teléfono" required>
+                                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="Teléfono" aria-label="Teléfono" autocomplete="tel" required>
                                 </div>
                                 <div class="field-set">
-                                    <select name="topic" id="topic" class="form-control itcs-select" required>
+                                    <select name="topic" id="topic" class="form-control itcs-select" aria-label="Área de interés" required>
                                         <option value="" disabled selected>Área de interés…</option>
                                         <option value="Ciberseguridad">Ciberseguridad</option>
                                         <option value="Infraestructura y Data Center">Infraestructura y Data Center</option>
@@ -204,7 +204,7 @@
                                     </select>
                                 </div>
                                 <div class="field-set mb20">
-                                    <textarea name="message" id="message" class="form-control" placeholder="Mensaje" required></textarea>
+                                    <textarea name="message" id="message" class="form-control" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
                                 </div>
                                 <div class="g-recaptcha" data-sitekey="6LdW03QgAAAAAJko8aINFd1eJUdHlpvT4vNKakj6"></div>
                                 <div id="submit" class="mt20">
