@@ -771,6 +771,8 @@ select.itcs-select {
   object-fit: contain; object-position: center;
   display: block;
 }
+/* Filtro sutil (mas claro que el de las otras slides) */
+.itcs-banner-slide .sw-overlay { background: rgba(2, 19, 28, 0.28); opacity: 1; }
 
 /* Redes sociales en footer */
 .itcs-social { display: flex; gap: 10px; margin-top: 18px; }
