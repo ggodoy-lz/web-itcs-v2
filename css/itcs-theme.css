@@ -763,6 +763,15 @@ select.itcs-select {
 #subheader .svc-hero-badge,
 #subheader .crumb { text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55); }
 
+/* Slide banner "20 años" (imagen con texto integrado, sin recorte) */
+.itcs-banner-slide { background: #010612; }
+.itcs-banner-slide picture { display: block; width: 100%; height: 100%; }
+.itcs-banner-slide img {
+  width: 100%; height: 100%;
+  object-fit: contain; object-position: center;
+  display: block;
+}
+
 /* Redes sociales en footer */
 .itcs-social { display: flex; gap: 10px; margin-top: 18px; }
 .itcs-social a {
