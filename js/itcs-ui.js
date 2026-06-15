@@ -6,6 +6,7 @@
   try {
     var path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
     if (path.indexOf("producto-") === 0) path = "productos.html";
+    if (path.indexOf("soluciones-") === 0) path = "services.html";
     var map = {
       "": "index.html",
       "index.html": "index.html",
