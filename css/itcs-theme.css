@@ -763,6 +763,13 @@ select.itcs-select {
 #subheader .svc-hero-badge,
 #subheader .crumb { text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55); }
 
+/* Logo provisorio en texto (marcas sin logo aún) */
+.itcs-logo-text {
+  font-weight: 800; font-size: 1.5rem; letter-spacing: .5px;
+  color: var(--itcs-ice, #cfe8ee);
+}
+.itcs-brand-logo-lead .itcs-logo-text { font-size: 2rem; }
+
 /* Información detallada (contenido completo, estructurado para web) */
 .itcs-info-section { border-top: 1px solid rgba(171, 201, 208, 0.12); }
 .itcs-info-block {
