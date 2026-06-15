@@ -23,4 +23,15 @@
       if (link && link.parentElement) link.parentElement.classList.add("active");
     }
   } catch (e) {}
+
+  // Boton "Más información": revela la seccion de informacion detallada
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest(".itcs-moreinfo-btn");
+    if (!b) return;
+    e.preventDefault();
+    var sec = document.getElementById("info-completa");
+    if (!sec) return;
+    sec.hidden = false;
+    sec.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 })();

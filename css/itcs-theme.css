@@ -763,6 +763,21 @@ select.itcs-select {
 #subheader .svc-hero-badge,
 #subheader .crumb { text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55); }
 
+/* Información detallada (contenido completo, estructurado para web) */
+.itcs-info-section { border-top: 1px solid rgba(171, 201, 208, 0.12); }
+.itcs-info-block {
+  margin-bottom: 1.7rem;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid rgba(171, 201, 208, 0.08);
+}
+.itcs-info-block:last-child { border-bottom: 0; }
+.itcs-info-h { font-size: 1.3rem; color: var(--itcs-ice, #cfe8ee); }
+.itcs-info-sub { color: var(--itcs-teal, #00b3c4); font-weight: 600; margin-top: -.25rem; }
+.itcs-info-h5 { font-size: 1rem; color: #fff; font-weight: 700; margin: 1rem 0 .35rem; }
+.itcs-info-label { font-weight: 600; color: var(--itcs-ice, #cfe8ee); margin: .8rem 0 .3rem; }
+.itcs-info-list { margin-bottom: .6rem; }
+.itcs-info-section p { opacity: .9; }
+
 /* Slide banner "20 años" dentro del carrusel (llena el slide) */
 .itcs-banner-slide { background: #010612; }
 .itcs-banner-slide picture { display: block; width: 100%; height: 100%; }
