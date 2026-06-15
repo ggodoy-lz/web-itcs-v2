@@ -770,20 +770,34 @@ select.itcs-select {
 }
 .itcs-brand-logo-lead .itcs-logo-text { font-size: 2rem; }
 
-/* Información detallada (contenido completo, estructurado para web) */
+/* Información detallada — layout web en tarjetas (no formato Word) */
 .itcs-info-section { border-top: 1px solid rgba(171, 201, 208, 0.12); }
+.itcs-info-full { columns: 2; column-gap: 1.6rem; }
+@media (max-width: 767px) { .itcs-info-full { columns: 1; } }
 .itcs-info-block {
-  margin-bottom: 1.7rem;
-  padding-bottom: 1.3rem;
-  border-bottom: 1px solid rgba(171, 201, 208, 0.08);
+  break-inside: avoid; -webkit-column-break-inside: avoid;
+  background: linear-gradient(180deg, rgba(171,201,208,.055), rgba(83,149,163,.02));
+  border: 1px solid rgba(171, 201, 208, 0.10);
+  border-radius: 14px;
+  padding: 1.35rem 1.5rem;
+  margin: 0 0 1.6rem;
+  box-shadow: 0 12px 30px rgba(2, 19, 28, 0.18);
 }
-.itcs-info-block:last-child { border-bottom: 0; }
-.itcs-info-h { font-size: 1.3rem; color: var(--itcs-ice, #cfe8ee); }
-.itcs-info-sub { color: var(--itcs-teal, #00b3c4); font-weight: 600; margin-top: -.25rem; }
-.itcs-info-h5 { font-size: 1rem; color: #fff; font-weight: 700; margin: 1rem 0 .35rem; }
-.itcs-info-label { font-weight: 600; color: var(--itcs-ice, #cfe8ee); margin: .8rem 0 .3rem; }
-.itcs-info-list { margin-bottom: .6rem; }
-.itcs-info-section p { opacity: .9; }
+/* Primer bloque = intro (ya se muestra arriba): ocultar para no duplicar */
+.itcs-info-block:first-child { display: none; }
+.itcs-info-h {
+  font-size: 1.18rem; color: #fff; font-weight: 700;
+  padding-left: .7rem; border-left: 3px solid var(--itcs-teal, #00b3c4);
+}
+.itcs-info-sub { color: var(--itcs-teal, #00b3c4); font-weight: 600; margin-top: -.15rem; }
+.itcs-info-h5 { font-size: .98rem; color: #fff; font-weight: 700; margin: 1rem 0 .35rem; }
+.itcs-info-label { font-weight: 600; color: var(--itcs-ice, #cfe8ee); margin: .85rem 0 .35rem; }
+.itcs-info-list { margin-bottom: .5rem; }
+.itcs-info-section p, .itcs-info-block p { opacity: .9; }
+
+/* Fix hover botones btn-line (fx-slide dejaba el texto ilegible) */
+.btn-line.fx-slide:hover span { transform: none !important; opacity: 1 !important; }
+.btn-line.fx-slide::before { display: none !important; }
 
 /* Slide banner "20 años" dentro del carrusel (llena el slide) */
 .itcs-banner-slide { background: #010612; }
