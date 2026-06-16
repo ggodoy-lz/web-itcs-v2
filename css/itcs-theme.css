@@ -804,9 +804,11 @@ section:has(.itcs-info-full) { overflow: visible !important; }
 .itcs-info-list { margin-bottom: .5rem; }
 .itcs-info-section p, .itcs-info-block p { opacity: .9; }
 
-/* Fix hover botones btn-line (fx-slide dejaba el texto ilegible) */
-.btn-line.fx-slide:hover span { transform: none !important; opacity: 1 !important; }
+/* Fix hover botones btn-line: texto se oscurecia (.btn-main:hover pone navy) */
+.btn-line.fx-slide span { transform: none !important; opacity: 1 !important; }
 .btn-line.fx-slide::before { display: none !important; }
+.btn-main.btn-line:hover,
+.btn-main.btn-line:hover span { color: var(--itcs-ice, #cfe8ee) !important; }
 
 /* Slide banner "20 años" dentro del carrusel (llena el slide) */
 .itcs-banner-slide { background: #010612; }
