@@ -36,20 +36,52 @@
     sec.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
-  // Acordeon de "Información detallada"
+  // "Información detallada": índice lateral + scrollspy
   try {
-    var blocks = document.querySelectorAll(".itcs-info-full > .itcs-info-block");
-    var firstOpened = false;
-    blocks.forEach(function (block) {
-      var head = block.querySelector(".itcs-info-h");
-      if (!head || head !== block.firstElementChild) return;
-      head.classList.add("itcs-acc-head");
-      var body = document.createElement("div");
-      body.className = "itcs-acc-body";
-      while (head.nextSibling) body.appendChild(head.nextSibling);
-      block.appendChild(body);
-      head.addEventListener("click", function () { block.classList.toggle("open"); });
-      if (!firstOpened) { block.classList.add("open"); firstOpened = true; }
+    document.querySelectorAll(".itcs-info-full").forEach(function (full) {
+      var all = Array.prototype.slice.call(full.children).filter(function (b) {
+        return b.classList.contains("itcs-info-block");
+      });
+      var blocks = all.slice(1).filter(function (b) { return b.querySelector(".itcs-info-h"); }); // saltar intro (ya se muestra arriba)
+      if (blocks.length < 2) return;
+      var nav = document.createElement("nav");
+      nav.className = "itcs-info-nav";
+      nav.setAttribute("aria-label", "Índice");
+      var inner = document.createElement("div");
+      inner.className = "itcs-info-nav-inner";
+      nav.appendChild(inner);
+      var content = document.createElement("div");
+      content.className = "itcs-info-content";
+      var links = [];
+      blocks.forEach(function (b, i) {
+        var h = b.querySelector(".itcs-info-h");
+        var id = "sec-" + i + "-" + h.textContent.toLowerCase().replace(/[^a-z0-9áéíóúñ]+/g, "-").slice(0, 28).replace(/-+$/, "");
+        b.id = id;
+        content.appendChild(b);
+        var a = document.createElement("a");
+        a.href = "#" + id;
+        a.className = "itcs-info-nav-link";
+        a.textContent = h.textContent;
+        a.addEventListener("click", function (ev) {
+          ev.preventDefault();
+          var y = b.getBoundingClientRect().top + window.scrollY - 96;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        });
+        inner.appendChild(a);
+        links.push({ a: a, b: b });
+      });
+      full.innerHTML = "";
+      full.appendChild(nav);
+      full.appendChild(content);
+      var spy = function () {
+        var y = window.scrollY + 130, cur = links[0];
+        links.forEach(function (l) {
+          if (l.b.getBoundingClientRect().top + window.scrollY <= y) cur = l;
+        });
+        links.forEach(function (l) { l.a.classList.toggle("active", l === cur); });
+      };
+      window.addEventListener("scroll", spy, { passive: true });
+      spy();
     });
   } catch (e) {}
 })();
