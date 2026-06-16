@@ -770,26 +770,39 @@ select.itcs-select {
 }
 .itcs-brand-logo-lead .itcs-logo-text { font-size: 2rem; }
 
-/* Información detallada — layout web en tarjetas (no formato Word) */
+/* Información detallada — acordeón plegable */
 .itcs-info-section { border-top: 1px solid rgba(171, 201, 208, 0.12); }
-.itcs-info-full { columns: 2; column-gap: 1.6rem; }
-@media (max-width: 767px) { .itcs-info-full { columns: 1; } }
-.itcs-info-block {
-  break-inside: avoid; -webkit-column-break-inside: avoid;
-  background: linear-gradient(180deg, rgba(171,201,208,.055), rgba(83,149,163,.02));
-  border: 1px solid rgba(171, 201, 208, 0.10);
-  border-radius: 14px;
-  padding: 1.35rem 1.5rem;
-  margin: 0 0 1.6rem;
-  box-shadow: 0 12px 30px rgba(2, 19, 28, 0.18);
-}
+.itcs-info-full { max-width: 960px; }
 /* Primer bloque = intro (ya se muestra arriba): ocultar para no duplicar */
 .itcs-info-block:first-child { display: none; }
-.itcs-info-h {
-  font-size: 1.18rem; color: #fff; font-weight: 700;
-  padding-left: .7rem; border-left: 3px solid var(--itcs-teal, #00b3c4);
+.itcs-info-block {
+  border: 1px solid rgba(171, 201, 208, 0.12);
+  border-radius: 12px;
+  background: rgba(171, 201, 208, 0.03);
+  margin-bottom: .7rem;
+  overflow: hidden;
+  transition: border-color .2s ease, background .2s ease;
 }
-.itcs-info-sub { color: var(--itcs-teal, #00b3c4); font-weight: 600; margin-top: -.15rem; }
+.itcs-info-block.open { border-color: rgba(83, 149, 163, 0.45); background: rgba(171, 201, 208, 0.05); }
+.itcs-acc-head {
+  cursor: pointer; position: relative;
+  margin: 0 !important;
+  padding: 1.05rem 2.6rem 1.05rem 1.2rem;
+  border-left: 3px solid var(--itcs-teal, #00b3c4);
+  font-size: 1.1rem; color: #fff; font-weight: 700;
+  user-select: none;
+}
+.itcs-acc-head::after {
+  content: ""; position: absolute; right: 1.2rem; top: 50%;
+  width: 9px; height: 9px;
+  border-right: 2px solid var(--itcs-teal, #00b3c4);
+  border-bottom: 2px solid var(--itcs-teal, #00b3c4);
+  transform: translateY(-65%) rotate(45deg); transition: transform .25s ease;
+}
+.itcs-info-block.open .itcs-acc-head::after { transform: translateY(-30%) rotate(225deg); }
+.itcs-acc-body { display: none; padding: .2rem 1.4rem 1.3rem; }
+.itcs-info-block.open .itcs-acc-body { display: block; }
+.itcs-info-sub { color: var(--itcs-teal, #00b3c4); font-weight: 600; margin: 0 0 .6rem; }
 .itcs-info-h5 { font-size: .98rem; color: #fff; font-weight: 700; margin: 1rem 0 .35rem; }
 .itcs-info-label { font-weight: 600; color: var(--itcs-ice, #cfe8ee); margin: .85rem 0 .35rem; }
 .itcs-info-list { margin-bottom: .5rem; }

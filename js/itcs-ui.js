@@ -35,4 +35,21 @@
     sec.hidden = false;
     sec.scrollIntoView({ behavior: "smooth", block: "start" });
   });
+
+  // Acordeon de "Información detallada"
+  try {
+    var blocks = document.querySelectorAll(".itcs-info-full > .itcs-info-block");
+    var firstOpened = false;
+    blocks.forEach(function (block) {
+      var head = block.querySelector(".itcs-info-h");
+      if (!head || head !== block.firstElementChild) return;
+      head.classList.add("itcs-acc-head");
+      var body = document.createElement("div");
+      body.className = "itcs-acc-body";
+      while (head.nextSibling) body.appendChild(head.nextSibling);
+      block.appendChild(body);
+      head.addEventListener("click", function () { block.classList.toggle("open"); });
+      if (!firstOpened) { block.classList.add("open"); firstOpened = true; }
+    });
+  } catch (e) {}
 })();
