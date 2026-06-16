@@ -919,10 +919,6 @@ a.back-to-top {
   background: linear-gradient(180deg, rgba(13,80,101,.88), rgba(6,43,59,.96)) !important;
   border-color: rgba(83,149,163,.36) !important;
 }
-/* Rail vertical "Ir arriba" se superponia al contenido: ocultar y usar boton circular */
-.float-text, .scrollbar-v { display: none !important; }
-#back-to-top { opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; }
-#back-to-top.show { opacity: 1; visibility: visible; }
 
 /* --- Anti-light-mode: cualquier .bg-white / utilidades claras del template --- */
 .bg-white, .bg-white-10, .bg-white-100,
