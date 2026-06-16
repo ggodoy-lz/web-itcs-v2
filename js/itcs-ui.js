@@ -25,6 +25,22 @@
     }
   } catch (e) {}
 
+  // Botón "Ir arriba" circular (abajo-derecha), no se superpone al contenido
+  try {
+    var btt = document.createElement("a");
+    btt.id = "back-to-top";
+    btt.href = "#top";
+    btt.setAttribute("aria-label", "Ir arriba");
+    document.body.appendChild(btt);
+    btt.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    var togBtt = function () { btt.classList.toggle("show", window.scrollY > 400); };
+    window.addEventListener("scroll", togBtt, { passive: true });
+    togBtt();
+  } catch (e) {}
+
   // Boton "Más información": revela la seccion de informacion detallada
   document.addEventListener("click", function (e) {
     var b = e.target.closest && e.target.closest(".itcs-moreinfo-btn");
