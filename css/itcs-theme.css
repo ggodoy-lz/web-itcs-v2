@@ -821,6 +821,17 @@ section:has(.itcs-info-full) { overflow: visible !important; }
 /* Filtro sutil (mas claro que el de las otras slides) */
 .itcs-banner-slide .sw-overlay { background: rgba(2, 19, 28, 0.28); opacity: 1; }
 
+/* Certificaciones ISO en el footer (visibles en toda la web) */
+.itcs-footer-cert { display: flex; gap: 10px; margin-top: 16px; }
+.itcs-footer-cert a { display: inline-block; line-height: 0; }
+.itcs-footer-cert img {
+  height: 78px; width: auto; display: block;
+  border-radius: 6px; border: 1px solid rgba(171, 201, 208, 0.2);
+  background: #fff; padding: 3px;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.itcs-footer-cert a:hover img { transform: translateY(-2px); border-color: var(--itcs-teal, #00b3c4); }
+
 /* Redes sociales en footer */
 .itcs-social { display: flex; gap: 10px; margin-top: 18px; }
 .itcs-social a {
