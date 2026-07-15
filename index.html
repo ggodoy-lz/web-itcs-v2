@@ -399,13 +399,15 @@
                             <p class="mb-0">Recibí tendencias, alertas y actualizaciones de iTCS en tu correo.</p>
                         </div>
                         <div class="col-lg-4">
-                            <form class="row g-2" action="contact.html" method="get">
+                            <form class="row g-2" id="newsletter_form" action="newsletter.php" method="post">
                                 <div class="col-12">
-                                    <input type="email" name="newsletter" class="form-control" placeholder="Tu email" aria-label="Email para newsletter">
+                                    <input type="email" name="newsletter_email" id="newsletter_email" class="form-control" placeholder="Tu email" aria-label="Email para newsletter" required>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn-main w-100"><span>Suscribirme</span></button>
+                                    <button type="submit" id="btn_newsletter_submit" class="btn-main w-100"><span>Suscribirme</span></button>
                                 </div>
+                                <div id="newsletter_success" class="success" style="display: none; color: #40c057; margin-top: 10px; font-size: 14px;">¡Suscripción exitosa! Gracias por sumarte.</div>
+                                <div id="newsletter_error" class="error" style="display: none; color: #fa5252; margin-top: 10px; font-size: 14px;">Ocurrió un error. Intentá de nuevo.</div>
                             </form>
                         </div>
                     </div>
@@ -503,6 +505,7 @@
     <script src="js/swiper.js"></script>
     <script src="js/custom-swiper-1.js"></script>
 <script src="js/itcs-effects.js"></script>
+    <script src="js/validation-newsletter.js"></script>
 </body>
 
 </html>
