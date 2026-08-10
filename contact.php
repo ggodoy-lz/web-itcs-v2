@@ -33,6 +33,32 @@ if (mb_strlen($name) < 2 || mb_strlen($msg) < 10) {
     exit;
 }
 
+// Verificacion de reCAPTCHA contra Google.
+// La clave secreta se lee del entorno; si no esta definida, se omite la
+// verificacion para no romper el formulario (el honeypot sigue activo).
+$recaptcha_secret = getenv('RECAPTCHA_SECRET');
+if ($recaptcha_secret) {
+    $token = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
+    if ($token === '') {
+        echo 'failed';
+        exit;
+    }
+
+    $verify = @file_get_contents(
+        'https://www.google.com/recaptcha/api/siteverify?' . http_build_query(array(
+            'secret'   => $recaptcha_secret,
+            'response' => $token,
+            'remoteip' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : ''
+        ))
+    );
+
+    $result = $verify ? json_decode($verify, true) : null;
+    if (empty($result['success'])) {
+        echo 'failed';
+        exit;
+    }
+}
+
 // Asunto en UTF-8 codificado MIME (evita "â€“" y similares)
 $subject_txt = 'Contacto web — ITCS S.A.' . ($topic !== '' ? ' — ' . $topic : '');
 $subject = '=?UTF-8?B?' . base64_encode($subject_txt) . '?=';

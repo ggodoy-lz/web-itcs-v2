@@ -37,6 +37,14 @@ $(document).ready(function () {
             $("#message").removeClass("error_input");
         }
 
+        // reCAPTCHA sin completar
+        if (typeof grecaptcha !== "undefined" && $.trim(grecaptcha.getResponse()) === "") {
+            error = true;
+            $(".g-recaptcha").addClass("error_input");
+        } else {
+            $(".g-recaptcha").removeClass("error_input");
+        }
+
         if (error === false) {
             $("#send_message").attr({ disabled: "true", value: "Enviando..." });
             $("#success_message").hide();
