@@ -1,0 +1,18 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/u6exojb0edk0/public_html/
+    # Copia el sitio a public_html.
+    # SIN --delete a proposito: public_html contiene carpetas que no estan en el
+    # repo (dev.itcs.com.py, .well-known, etc.) y se borrarian en cada deploy.
+    # Los archivos que se sacan del repo hay que borrarlos a mano del servidor.
+    - >-
+      /usr/bin/rsync -a
+      --exclude='.git/'
+      --exclude='.cpanel.yml'
+      --exclude='.gitignore'
+      --exclude='node_modules/'
+      --exclude='.htaccess'
+      --exclude='env.example'
+      --exclude='it-services-it-technology-and-it-solutions-templa-2026-03-15-19-45-22-utc/'
+      /home/u6exojb0edk0/repositories/web-itcs-v2/ $DEPLOYPATH
