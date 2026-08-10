@@ -13,12 +13,28 @@ $phone   = isset($_POST['phone'])   ? trim($_POST['phone'])         : '';
 $topic   = isset($_POST['topic'])   ? trim($_POST['topic'])         : '';
 $msg     = isset($_POST['message']) ? trim($_POST['message'])       : '';
 
+// Honeypot: campo oculto que sólo completan los bots
+if (!empty($_POST['website'])) {
+    echo 'sent'; // respuesta silenciosa, no se envía nada
+    exit;
+}
+
+// Validacion server-side: sin esto los bots envian mails en blanco
+if ($name === '' || $email === '' || $phone === '' || $msg === '') {
+    echo 'failed';
+    exit;
+}
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $email = '';
+    echo 'failed';
+    exit;
+}
+if (mb_strlen($name) < 2 || mb_strlen($msg) < 10) {
+    echo 'failed';
+    exit;
 }
 
 // Asunto en UTF-8 codificado MIME (evita "â€“" y similares)
-$subject_txt = 'Contacto web — iTCS S.A.' . ($topic !== '' ? ' — ' . $topic : '');
+$subject_txt = 'Contacto web — ITCS S.A.' . ($topic !== '' ? ' — ' . $topic : '');
 $subject = '=?UTF-8?B?' . base64_encode($subject_txt) . '?=';
 
 // From debe ser del propio dominio (SPF); el visitante va en Reply-To
@@ -26,7 +42,7 @@ $name_enc = '=?UTF-8?B?' . base64_encode($name) . '?=';
 $headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $headers .= "Content-Transfer-Encoding: 8bit\r\n";
-$headers .= "From: iTCS Web <info@itcs.com.py>\r\n";
+$headers .= "From: ITCS Web <info@itcs.com.py>\r\n";
 if ($email !== '') {
     $headers .= "Reply-To: " . $name_enc . " <" . $email . ">\r\n";
 }

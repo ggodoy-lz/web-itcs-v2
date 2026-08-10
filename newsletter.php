@@ -9,13 +9,13 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // Asunto en UTF-8 codificado MIME (evita "â€“" y similares)
-$subject = '=?UTF-8?B?' . base64_encode('Nueva suscripción a Newsletter — iTCS S.A.') . '?=';
+$subject = '=?UTF-8?B?' . base64_encode('Nueva suscripción a Newsletter — ITCS S.A.') . '?=';
 
 // From debe ser del propio dominio (SPF); el suscriptor va en Reply-To
 $headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $headers .= "Content-Transfer-Encoding: 8bit\r\n";
-$headers .= "From: iTCS Web <info@itcs.com.py>\r\n";
+$headers .= "From: ITCS Web <info@itcs.com.py>\r\n";
 $headers .= "Reply-To: " . $email . "\r\n";
 
 $message = "Ha recibido una nueva suscripción al newsletter desde el sitio web.\n\n";

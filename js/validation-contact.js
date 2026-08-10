@@ -3,34 +3,34 @@ $(document).ready(function () {
         e.preventDefault();
 
         var error = false;
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var phone = $("#phone").val();
-        var message = $("#message").val();
+        var name = $.trim($("#name").val());
+        var email = $.trim($("#email").val());
+        var phone = $.trim($("#phone").val());
+        var message = $.trim($("#message").val());
 
         $("#name,#email,#phone,#message").click(function () {
             $(this).removeClass("error_input");
         });
 
-        if (name.length == 0) {
+        if (name.length < 2) {
             error = true;
             $("#name").addClass("error_input");
         } else {
             $("#name").removeClass("error_input");
         }
-        if (email.length == 0 || email.indexOf("@") == -1) {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
             error = true;
             $("#email").addClass("error_input");
         } else {
             $("#email").removeClass("error_input");
         }
-        if (phone.length == 0) {
+        if (phone.length < 6) {
             error = true;
             $("#phone").addClass("error_input");
         } else {
             $("#phone").removeClass("error_input");
         }
-        if (message.length == 0) {
+        if (message.length < 10) {
             error = true;
             $("#message").addClass("error_input");
         } else {
